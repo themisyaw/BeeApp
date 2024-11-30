@@ -43,13 +43,27 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
         let htmlContent='';
         array.forEach(item => {
                 htmlContent += `
+                <div class="py-4 my-3 shadow rounded text-start col-12 mx-2 kypseli" data-id="${item.id}">
+                <div class="row p-0 m-0">
+                    
+                    <div class="col">
+                        <h5 class="text-dark" >Beehive ${item.beehiveNumber}</h5>
+                        <h6 class="text-dark" >:  ${item.telara}</h6>
+                    
+                    </div>
+                    <div class="col-4 p-0 text-center">
+                        
+                        ${beehiveIcon}
+                    </div>
+                </div>
                 
-                 <div class="my-2  text-center col-5 bg-light mx-2 kypseli" data-id="${item.id}" >
-                <span class=""  >
-                    ${beehiveIcon}
-                    Beehive ${item.beehiveNumber}
-                </span>
+            
+                
             </div>
+
+
+
+               
             `;
         });
         return htmlContent;
