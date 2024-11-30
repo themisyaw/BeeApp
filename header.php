@@ -20,7 +20,7 @@
   </head>
   <body class=""<?php body_class(); ?>>
     <header class="site-header" id="personalinfo">
-        <h1 class="text-center p-4">BeeAppManGamw</h1>
+        <h1 class="text-center p-4">BeeAppManGamwTin</h1>
         
        <?php 
         get_template_part( 'theme-parts/bottom-menu-content', 'content' );
