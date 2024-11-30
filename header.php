@@ -20,7 +20,7 @@
   </head>
   <body class=""<?php body_class(); ?>>
     <header class="site-header" id="personalinfo">
-        <h1 class="text-center p-4">BeeAppLocal</h1>
+        <h1 class="text-center p-4">BeeApp</h1>
         
        <?php 
         get_template_part( 'theme-parts/bottom-menu-content', 'content' );
