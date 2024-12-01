@@ -19,6 +19,8 @@ import BeeHivesList from "./modules/beehivesList.js";
        
         document.querySelector('.beehivesListUL').addEventListener('click',(e)=>{
             const itemElement = e.target.closest('.kypseli');
+            console.log(e.target)
+            console.log(itemElement)
             const itemID =itemElement.dataset.id;
             const item =beehives.find(item => item.id == itemID);
             if(!itemID)return;

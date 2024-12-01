@@ -2,6 +2,7 @@
 import { beeAppListBase } from './beeAppRequests.js';
 import { beehiveIcon } from '../svgIcons/beehive.js';
 
+
  class BeeHivesList extends beeAppListBase {
     constructor() {
         super();
@@ -54,6 +55,7 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
                     <div class="col-4 p-0 text-center">
                         
                         ${beehiveIcon}
+                       
                     </div>
                 </div>
                 
