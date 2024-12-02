@@ -1,6 +1,6 @@
 
 import { beeAppListBase } from './beeAppRequests.js';
-import { beehiveIcon } from '../svgIcons/beehive.js';
+import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehive.js';
 
 
  class BeeHivesList extends beeAppListBase {
@@ -38,31 +38,62 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
         // document.querySelector('.openGroceryAddRemoveBtn').classList.remove('d-none');
         // document.querySelector('.openGroceryAddRemoveBtn').classList.add('d-block');
     }
+
+    getStars(rating, maxStars = 6) {
+        // Calculate the star count based on the rating
+        const stars = Math.round((rating / 100) * maxStars);
+    
+        // Generate the star display
+        const fullStar = '<span class=" align-items-center justify-content-center starRatingFill dashicons dashicons-star-filled"></span>';  // You can use an icon or image here
+        const emptyStar = '<span class=" align-items-center  justify-content-center starRatingEmpty dashicons dashicons-star-empty"></span>'; // You can use an icon or image here
+        return fullStar.repeat(stars) + emptyStar.repeat(maxStars - stars);
+    }
+    
+    // Example usage
+    
     
     _htmlAddRemoveListContent(array){
         array.sort((a, b) => a.beehiveNumber - b.beehiveNumber);
         let htmlContent='';
+        
+
         array.forEach(item => {
+            const rating = 75; // Replace this with your actual rating value
+        const starsDisplay = this.getStars(item.beehiverating);
+        console.log(starsDisplay);
+            const isSick = Object.values(item.arrwsties).some(value => value === true);
+            const beehiveForFoodIcon = beehiveForFood(item.giaTaisma ?'': 'grayfilter');
+            const beehiveForTrugosIcon = beehiveForTrugos(item.giaTrugo ?'': 'grayfilter');
                 htmlContent += `
-                <div class="py-4 my-3 shadow rounded text-start col-12 mx-2 kypseli" data-id="${item.id}">
-                <div class="row p-0 m-0">
+                <div class="">
+                <div class="row m-2">
+                    <span class="bgRatingStars d-flex rounded-pill starsRating py-1 my-1 px-2">${starsDisplay}</span> 
+                </div>
+                 
+                <div data-id="${item.id}" class="${isSick ? 'errorLightbg' : ''} d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
                     
-                    <div class="col">
-                        <h5 class="text-dark" >Beehive ${item.beehiveNumber}</h5>
-                        <h6 class="text-dark" >:  ${item.telara}</h6>
-                    
+                    <div class="row py-1">
+                        <div class="col-4">
+                            <span class="${isSick ? 'errorbg' : ''} text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">${item.beehiveNumber}</span>
+                        </div>
+                        <div class="col-8">
+
+                            <div class="activityIcons py-1 text-right">
+                                ${beehiveForTrugosIcon}
+                                ${beehiveForFoodIcon}
+
+                            </div>  
+                        </div>
                     </div>
-                    <div class="col-4 p-0 text-center">
-                        
-                        ${beehiveIcon}
-                       
+                
+                    <div class="row">
+                            <div class="col my-2 p-0 text-center">
+                                ${beehiveIcon}
+                            </div>
                     </div>
                 </div>
-                
-            
-                
-            </div>
 
+                 </div>
 
 
                

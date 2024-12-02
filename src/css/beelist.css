@@ -10,6 +10,7 @@ body{
 }
 svg {
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    
 }
 .fw-700{
     font-weight: 700;
@@ -29,7 +30,29 @@ svg {
     left:0px;
     font-size: 22px;
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.1));
+    
 }
 .grayfilter{
-    filter: grayscale(80%);
+    filter: opacity(0.2);
+}
+.errorLightbg{
+    background-color: #ff9999;
+}
+.errorbg{
+    background-color: #ff4f4f;
+}
+.beehivesListUL {
+    justify-content: space-evenly;
+}
+.starRatingFill, .starRatingEmpty {
+    font-size: 12px;
+    display: contents;
+}
+.starsRating{
+    gap: 4px;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    color: #FFB428;
+}
+.bgRatingStars{
+    background-color: #985F35;
 }
