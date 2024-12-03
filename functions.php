@@ -52,7 +52,7 @@ function filter_rest_api_query_by_current_user( $args, $request ) {
     return $args;
 }
 add_filter( 'rest_post_query', 'filter_rest_api_query_by_current_user', 10, 2 );
-add_filter( 'rest_beehive_query', 'filter_rest_api_query_by_current_user', 10, 2 );  // If you have custom post types like 'note'
+add_filter( 'rest_beehive_query', 'filter_rest_api_query_by_current_user', 10, 2 );  
 
 
 

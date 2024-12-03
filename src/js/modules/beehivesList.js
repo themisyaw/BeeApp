@@ -1,6 +1,6 @@
 
 import { beeAppListBase } from './beeAppRequests.js';
-import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehive.js';
+import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from '../svgIcons/beehive.js';
 
 
  class BeeHivesList extends beeAppListBase {
@@ -39,7 +39,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
         // document.querySelector('.openGroceryAddRemoveBtn').classList.add('d-block');
     }
 
-    getStars(rating, maxStars = 6) {
+    getStars(rating, maxStars = 5) {
         // Calculate the star count based on the rating
         const stars = Math.round((rating / 100) * maxStars);
     
@@ -66,34 +66,55 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
             const beehiveForTrugosIcon = beehiveForTrugos(item.giaTrugo ?'': 'grayfilter');
                 htmlContent += `
                 <div class="">
-                <div class="row m-2">
-                    <span class="bgRatingStars d-flex rounded-pill starsRating py-1 my-1 px-2">${starsDisplay}</span> 
-                </div>
-                 
-                <div data-id="${item.id}" class="${isSick ? 'errorLightbg' : ''} d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
                     
-                    <div class="row py-1">
-                        <div class="col-4">
-                            <span class="${isSick ? 'errorbg' : ''} text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">${item.beehiveNumber}</span>
-                        </div>
-                        <div class="col-8">
-
-                            <div class="activityIcons py-1 text-right">
-                                ${beehiveForTrugosIcon}
-                                ${beehiveForFoodIcon}
-
-                            </div>  
-                        </div>
-                    </div>
-                
-                    <div class="row">
-                            <div class="col my-2 p-0 text-center">
-                                ${beehiveIcon}
+                    <div data-id="${item.id}" class="${isSick ? 'errorLightbg' : ''} d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
+                        <div class="py-1 d-flex justify-content-between">
+                            <div class="p-0">
+                                <span class="${isSick ? 'errorbg' : ''} text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">${item.beehiveNumber}</span>
                             </div>
+                            <div class="mr-2 d-flex align-items-center">
+                                <span class="bgRatingStars d-flex rounded-pill starsRating py-1 my-1 px-2">${starsDisplay}</span> 
+                            </div>
+                        </div>
+                        <div class="px-2 py-4">
+                            <div class="d-flex justify-content-between mx-2  border-bottom border-light ">
+                                <div class="  d-flex mb-1  align-items-end">
+                                
+                                    <h6 class="roboto-regular m-0 fs-13">Frames</h6>
+                                </div>
+                                <div class="mb-1   p-0 text-center ">
+                                    <h6 class="roboto-light m-0 fs-13"><span class="fs-16 bglight rounded-pill px-3 roboto-regular color-warning">${item.telara}</span> / 20</h6>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom border-light mx-2 my-2  ">
+                                <div class="d-flex align-items-end mb-1">
+                                
+                                    <h6 class="roboto-regular mb-0 fs-13">Harvest</h6>
+                                </div>
+                                <div class=" mb-1  p-0 text-center ">
+                                    <div class="activityIcons d-flex py-1 text-right">
+                                        ${beehiveForTrugosIcon}
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom border-light mx-2 my-2  ">
+                                <div class="d-flex align-items-end mb-1">
+                                
+                                    <h6 class="roboto-regular mb-0 fs-13">Feeding</h6>
+                                </div>
+                                <div class=" mb-1  p-0 text-center ">
+                                    <div class="activityIcons d-flex pr-1 py-1 text-right">
+                                    ${beehiveForFoodIcon}
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                   
                     </div>
-                </div>
 
-                 </div>
+                </div>
 
 
                
