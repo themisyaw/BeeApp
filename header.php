@@ -26,7 +26,7 @@
         <h1 class="text-center p-4">BeeAppLocal</h1>
         
        <?php 
-        get_template_part( 'theme-parts/bottom-menu-content', 'content' );
+        // get_template_part( 'theme-parts/bottom-menu-content', 'content' );
         ?>
     </div>
     

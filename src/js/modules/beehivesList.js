@@ -26,18 +26,18 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
         // document.querySelector('.save').classList.add('d-none');
         
         console.log(`Rendering after items`);
-        this._bottomMenuDisplay();
+       // this._bottomMenuDisplay();
         this.beehivesListUL.innerHTML = ''; 
         this.beehivesListUL.insertAdjacentHTML("afterbegin", this._htmlAddRemoveListContent(items));
         
     }
-    _bottomMenuDisplay(){
-        document.querySelector('.openBeehivesListBtn').classList.remove('d-block');
-        document.querySelector('.openBeehivesListBtn').classList.add('d-none');
+    // _bottomMenuDisplay(){
+    //     document.querySelector('.openBeehivesListBtn').classList.remove('d-block');
+    //     document.querySelector('.openBeehivesListBtn').classList.add('d-none');
 
-        // document.querySelector('.openGroceryAddRemoveBtn').classList.remove('d-none');
-        // document.querySelector('.openGroceryAddRemoveBtn').classList.add('d-block');
-    }
+    //     // document.querySelector('.openGroceryAddRemoveBtn').classList.remove('d-none');
+    //     // document.querySelector('.openGroceryAddRemoveBtn').classList.add('d-block');
+    // }
 
     getStars(rating, maxStars = 5) {
         // Calculate the star count based on the rating
@@ -53,7 +53,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
     
     
     _htmlAddRemoveListContent(array){
-        array.sort((a, b) => a.beehiveNumber - b.beehiveNumber);
+        
         let htmlContent='';
         
 

@@ -5,30 +5,41 @@
 get_header();
 
 if ( is_user_logged_in() ) {
+    ?>
+    <!-- beehives list -->
+    <section class="container my-5 beehivesListTab d-block">
+        <ul class=" py-0 px-2 row row-cols-2 beehivesListUL ">
 
-    $beehives_query_args = array(
-        'post_type' => 'beehive',
-        'author'    => get_current_user_id(), 
-        'posts_per_page' => -1,
-        'meta_key'=>'beehiveNumber',
-        'orderby'=>'meta_value_num',
-        'order'=>'ASC'
-    );
+        </u>
+    </section>
+    <!-- beehives edit page -->
+    <section class="my-5 container beehiveEditSaveTab d-none">
     
-    $beehives_query = new WP_Query( $beehives_query_args );
-    
-    if($beehives_query->have_posts()){
-        set_query_var( 'beehives_query', $beehives_query );
-        get_template_part('theme-parts/beehiveEdit','content');
-        get_template_part('theme-parts/groceryAddItem','content');
-        get_template_part('theme-parts/beehives','content');
-    }
-    
+        <h3 class="text-start py-3"> Beehive </h3>
+        
+        <ul class="list-group p-0 beehiveUl"> 
+            
+        </ul>
+    </section>
+    <!-- beehives for feed list -->
+    <section class="my-5 container beehiveForFeedTab d-none">
+        <h3 class="text-start py-3"> Beehives For Feed </h3>
 
+        <div class="beehivesForFeed bgWheat shadow">
+            <ul class=" py-0 px-2 row row-cols-3 beehiveUlForFeed ">
+
+            </u>
+        </div>
+        <div class="beehivesFed ">
+            <ul class="list-group p-0 beehiveUlFed"> 
+            
+            </ul>
+        </div>
+    </section>
+    <?php
+    get_template_part('theme-parts/bottom-menu','content');
+    
 }
-
 get_footer();
-
-
 
 ?>

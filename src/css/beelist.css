@@ -97,3 +97,9 @@ svg {
     font-style: normal;
   }
   
+  .bottomMenu{
+    background: #f1d09363;
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }

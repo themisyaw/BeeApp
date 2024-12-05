@@ -50,10 +50,8 @@ function get_beehives_for_current_user( $data ) {
                 'amerikanikiSipsogonia' => get_field( 'amerikanikiSipsogonia' ),
             );
         
-            $telara = get_field( 'telara' );
-            $new_telara = get_field( 'newtelara' );
-            $telara = ( $telara === null || $telara === '' ) ? 0 : $telara;
-            $new_telara = ( $new_telara === null || $new_telara === '' ) ? 0 : $new_telara;
+            $telara = !empty( get_field( 'telara' ) ) ? get_field( 'telara' ) : 0;
+            $new_telara = !empty( get_field( 'newtelara' ) ) ? get_field( 'newtelara' ) : 0;
         
             $beehives[] = array(
                 'id' => get_the_ID(),
@@ -71,7 +69,9 @@ function get_beehives_for_current_user( $data ) {
         }
         
 
-        
+        usort( $beehives, function( $a, $b ) {
+            return intval( $a['beehiveNumber'] ) - intval( $b['beehiveNumber'] );
+        });
 
         // Reset post data
         wp_reset_postdata();

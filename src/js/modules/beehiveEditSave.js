@@ -6,9 +6,14 @@ import { beeAppListBase } from './beeAppRequests.js';
         super();
         
         this.beehiveUl = document.querySelector('.beehiveUl');
+        this.basicMenu= document.querySelector('.basicMenu');
+        this.saveBtn=document.querySelector('.save');
+        this.beehiveEditMenu=document.querySelector('.beehiveEditMenu');
+        
+        
         // Beehive values
         
-        this.saveBtn=document.querySelector('.save');
+       
         this.itemsIDforUpdate=[];
         this.beehiveOld;
         this.beehiveNew;
@@ -28,25 +33,31 @@ import { beeAppListBase } from './beeAppRequests.js';
     
     _filterChanges(obj1, obj2) {
 
-        if(JSON.stringify(obj1) === JSON.stringify(obj2)){
-            return true;
-        }else{
-            return false;
-        }
+        return JSON.stringify(obj1) === JSON.stringify(obj2);
        
     }
     _saveButtonDisplay(){
         
         if(this._filterChanges(this.beehiveOld,this.beehiveNew)){
-            this.saveBtn.setAttribute('disabled', true);
-            this.saveBtn.classList.remove('d-block');
-            this.saveBtn.classList.add('d-none');
+            
+            this.beehiveEditMenu.classList.remove('d-block');
+            this.beehiveEditMenu.classList.add('d-none');
+            
+            this.basicMenu.classList.remove('d-none');
+            this.basicMenu.classList.add('d-block');
+           
+           
             
         }else{
-            // this.saveBtn.classList.remove('d-none');
-            this.saveBtn.removeAttribute('disabled');
-            this.saveBtn.classList.remove('d-none');
-            this.saveBtn.classList.add('d-block');
+           
+            
+            this.beehiveEditMenu.classList.remove('d-none');
+            this.beehiveEditMenu.classList.add('d-block');
+
+            this.basicMenu.classList.remove('d-block');
+            this.basicMenu.classList.add('d-none');
+            
+            
         }
     }
   
@@ -90,6 +101,18 @@ import { beeAppListBase } from './beeAppRequests.js';
     _addBeehiveEvents(){
         //save btn
         this.saveBtn.addEventListener('click',this.save.bind(this));
+        // cancel btn 
+        document.querySelector('.cancelsave').addEventListener('click', () => {
+            this.beehiveUl.innerHTML = ''; 
+            console.log('Before reset:', this.beehiveNew);
+            this.beehiveNew = JSON.parse(JSON.stringify(this.beehiveOld));
+            console.log('After reset:', this.beehiveNew);
+        
+            this.beehiveUl.insertAdjacentHTML("afterbegin", this._htmlAddRemoveListContent(this.beehiveOld));
+            this._saveButtonDisplay();  
+            this._addBeehiveEvents();
+        });
+        
         // beehive Name
         this.beehiveNumInput = document.querySelector('.beehiveNumInput');
         if(this.beehiveNumInput){
@@ -142,9 +165,15 @@ import { beeAppListBase } from './beeAppRequests.js';
         this.beehiveTelaraInput = document.querySelector('.telara');
         if(this.beehiveTelaraInput){
             this.beehiveTelaraInput.addEventListener('change',()=>{
-                this.beehiveNew.telara= Number(this.beehiveTelaraInput.value);
-                console.log(this.beehiveOld)
+                this.beehiveNew.telara= this.beehiveTelaraInput.value;
+                console.log(this.beehiveOld.telara)
                 console.log('telara new -> '+ this.beehiveNew.telara)
+
+                console.log(this.beehiveOld.telara)
+                console.log(this.beehiveNew.telara)
+
+                console.log(this._filterChanges(this.beehiveOld,this.beehiveNew));
+
                 this._saveButtonDisplay();
             });
         }
