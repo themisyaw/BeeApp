@@ -25,7 +25,6 @@ import BeehivesForFeed from "./modules/beehivesForFeed.js";
        
         document.querySelector('.beehivesListUL').addEventListener('click',(e)=>{
             const itemElement = e.target.closest('.kypseli');
-          
             const itemID =itemElement.dataset.id;
             const item =beehives.find(item => item.id == itemID);
             if(!itemID)return;
@@ -34,23 +33,19 @@ import BeehivesForFeed from "./modules/beehivesForFeed.js";
         });
 
         document.querySelector('.openBeehivesListBtn').addEventListener('click', async () => {
-            
             beehives = await this.beehivesList.getBeehives();
             this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
         });
 
         document.querySelector('.openBeehivesForFeedBtn').addEventListener('click', async () => {
-          
             beehivesForFeed = await this.beehivesForFeed.getBeehivesForFeed();
             beehivesForFeed.filter(beehive => beehive.giaTaisma === true);
             this.updateDisplay(this.beehivesForFeed, beehivesForFeed, this.beehivesForFeedTab,'feed');
         });
 
         document.querySelector('.openBeehivesForHarvestBtn').addEventListener('click', async () => {
-          
             beehivesForTrugos = await this.beehivesForFeed.getBeehives();
-
-            
+            alert('xtiipse')
             this.updateDisplay(this.beehivesForFeed, beehivesForTrugos.filter(beehive => beehive.giaTrugo === true), this.beehivesForFeedTab,'harvest');
         });
 
