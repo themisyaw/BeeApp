@@ -81,4 +81,3 @@ function get_beehives_for_current_user( $data ) {
 
     return new WP_REST_Response( 'No beehives found for the current user.', 404 );
 }
-?>

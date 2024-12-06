@@ -9,8 +9,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
         this.openGroceryAddRemoveBtn = document.querySelector('.openGroceryAddRemoveBtn');
         this.beehivesListUL = document.querySelector('.beehivesListUL');
         
-        console.log('beehivesListUL:', this.beehivesListUL);
-        
+       
     }
     events(){
         if(this.openGroceryAddRemoveBtn){
@@ -19,48 +18,25 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
     }
     render(items) {
         
-        console.log(`Rendering items gia arxiki `);
-        console.log(items);
-        
-        // document.querySelector('.save').classList.remove('d-block');
-        // document.querySelector('.save').classList.add('d-none');
-        
-        console.log(`Rendering after items`);
-       // this._bottomMenuDisplay();
         this.beehivesListUL.innerHTML = ''; 
         this.beehivesListUL.insertAdjacentHTML("afterbegin", this._htmlAddRemoveListContent(items));
-        
     }
-    // _bottomMenuDisplay(){
-    //     document.querySelector('.openBeehivesListBtn').classList.remove('d-block');
-    //     document.querySelector('.openBeehivesListBtn').classList.add('d-none');
-
-    //     // document.querySelector('.openGroceryAddRemoveBtn').classList.remove('d-none');
-    //     // document.querySelector('.openGroceryAddRemoveBtn').classList.add('d-block');
-    // }
-
-    getStars(rating, maxStars = 5) {
-        // Calculate the star count based on the rating
-        const stars = Math.round((rating / 100) * maxStars);
     
-        // Generate the star display
+    getStars(rating, maxStars = 5) {
+       
+        const stars = Math.round((rating / 100) * maxStars);// Generate the star display
         const fullStar = '<span class=" align-items-center justify-content-center starRatingFill dashicons dashicons-star-filled"></span>';  // You can use an icon or image here
         const emptyStar = '<span class=" align-items-center  justify-content-center starRatingEmpty dashicons dashicons-star-empty"></span>'; // You can use an icon or image here
         return fullStar.repeat(stars) + emptyStar.repeat(maxStars - stars);
     }
     
-    // Example usage
-    
-    
     _htmlAddRemoveListContent(array){
         
         let htmlContent='';
         
-
         array.forEach(item => {
             const rating = 75; // Replace this with your actual rating value
-        const starsDisplay = this.getStars(item.beehiverating);
-        console.log(starsDisplay);
+            const starsDisplay = this.getStars(item.beehiverating);
             const isSick = Object.values(item.arrwsties).some(value => value === true);
             const beehiveForFoodIcon = beehiveForFood(item.giaTaisma ?'': 'grayfilter');
             const beehiveForTrugosIcon = beehiveForTrugos(item.giaTrugo ?'': 'grayfilter');
@@ -68,7 +44,6 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
                 <div class="">
                     <div class="my-2 px-1 d-flex justify-content-end">
                         <div class="">
-                        
                         ${beehiveForTrugosIcon}
                         </div>
                         <div class="">
@@ -101,9 +76,6 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
                     </div>
 
                 </div>
-
-
-               
             `;
         });
         return htmlContent;

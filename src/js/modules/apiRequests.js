@@ -2,7 +2,7 @@ export class BaseAPI {
     constructor() {
         this.apiRoot = beeAppData.root_url; 
         this.nonce = beeAppData.nonce; 
-        console.log(this.apiRoot)
+       
     }
 
     async fetchData(endpoint, method = 'GET', body = null) {

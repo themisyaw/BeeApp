@@ -20,13 +20,11 @@ import BeehivesForFeed from "./modules/beehivesForFeed.js";
         // Initial fetch for grocery items
         let beehives = await this.beehivesList.getBeehives();
         let beehivesForFeed = await this.beehivesList.getBeehivesForFeed();
-        console.log('BeeHives from API');
-        console.log(beehives)
+       
        
         document.querySelector('.beehivesListUL').addEventListener('click',(e)=>{
             const itemElement = e.target.closest('.kypseli');
-            console.log(e.target)
-            console.log(itemElement)
+          
             const itemID =itemElement.dataset.id;
             const item =beehives.find(item => item.id == itemID);
             if(!itemID)return;
@@ -45,6 +43,7 @@ import BeehivesForFeed from "./modules/beehivesForFeed.js";
             // Re-fetch updated data before displaying the list
             
             beehivesForFeed = await this.beehivesForFeed.getBeehivesForFeed();
+            beehivesForFeed.filter(beehive => beehive.giaTaisma === true);
 
             this.updateDisplay(this.beehivesForFeed, beehivesForFeed, this.beehivesForFeedTab);
         });
@@ -54,8 +53,7 @@ import BeehivesForFeed from "./modules/beehivesForFeed.js";
 
     updateDisplay(display, items, section) {
          this._displayNoneTabs();
-          console.log(section)
-          console.log(items)
+          
           if(section){
             section.classList.remove('d-none');
           }

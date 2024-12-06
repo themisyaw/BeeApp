@@ -8,6 +8,7 @@ import { beeAppListBase } from './beeAppRequests.js';
         
         this.beehiveUlForFeed = document.querySelector('.beehiveUlForFeed');
         this.saveBtn= document.querySelector('.saveForFeed');
+        this.cancelsaveForFeed= document.querySelector('.cancelsaveForFeed');
         this.basicMenu= document.querySelector('.basicMenu');
         this.forfeedmenu= document.querySelector('.forfeedmenu');
 
@@ -15,18 +16,42 @@ import { beeAppListBase } from './beeAppRequests.js';
         this.beehivesForFeedList;
         this.beehivesForFeedListNew;
         this.beehiveUlFed;
-        this._addBeehiveEvents();
+
+        this.saveBtnHandler = this.saveForFeed.bind(this);
+        this.beehiveUlForFeedHandler = this._onclickBeehiveForFeed.bind(this);
+        this.cancelsaveForFeedHandler = this._cancelsave.bind(this);
+
+        this.initStaticListeners();
+    }
+
+    initStaticListeners(){
+        this.saveBtn.addEventListener('click', this.saveBtnHandler);
+        this.beehiveUlForFeed.addEventListener('click', this.beehiveUlForFeedHandler);
+        this.cancelsaveForFeed.addEventListener('click', this.cancelsaveForFeedHandler);
+    }
+
+    async saveForFeed() {
+        try {
+            this.beehivesForFeedListNew.filter(beehive => beehive.giaTaisma === true);
+            const result = await this.addBeehive(this.beehivesForFeedListNew);
+            console.log('Save successful:', result); // Handle success
+           
+            this.beehivesForFeedList = JSON.parse(JSON.stringify(this.beehivesForFeedListNew));  
+            this._cancelsave();
+        } catch (error) {
+            console.error('Save failed:', error); // Handle error
+        }
     }
     
+    
     render(items) {
-        this.beehiveUlForFeed.innerHTML = ''; 
-        console.log(`Rendering items for feed `);
         
-        items.filter(beehive => beehive.giaTaisma === true);
-        console.log(items)
+        this.beehiveUlForFeed.innerHTML = this._htmlAddRemoveListContent(items);
         this.beehivesForFeedList = JSON.parse(JSON.stringify(items)); 
         this.beehivesForFeedListNew=JSON.parse(JSON.stringify(items));  
-        this.beehiveUlForFeed.insertAdjacentHTML("afterbegin", this._htmlAddRemoveListContent(this.beehivesForFeedList));
+        this._saveButtonDisplay();
+      
+        
     }
     _ForSave(obj1, obj2) {
 
@@ -53,43 +78,31 @@ import { beeAppListBase } from './beeAppRequests.js';
             this.basicMenu.classList.add('d-block');
         }
     }
-    _addBeehiveEvents() {
-        this.beehiveUlForFeed.addEventListener('click', (e) => {
-            
-            const itemElement = e.target.closest('.beehiveForFeed');
-            console.log(itemElement)
-            const itemID = itemElement?.dataset.id;
-            // if (!itemID) return;
     
-            const item = this.beehivesForFeedListNew.find(item => item.id == itemID);
-            console.log(item);
-    
-            if (item) {
-                item.giaTaisma = !item.giaTaisma;
-            }
-    
-            if (itemElement.classList.contains('bg-dark')) {
-                itemElement.classList.remove('bg-dark');
-            } else {
-                itemElement.classList.add('bg-dark');
-            }
+    _onclickBeehiveForFeed(e){
+        console.log('se patisa');
+        const itemElement = e.target.closest('.beehiveForFeed');
+        console.log(itemElement)
+        const itemID = itemElement?.dataset.id;
+        console.log(itemID)
+        const item = this.beehivesForFeedListNew.find(item => item.id == itemID);
+        if (item) {
+            item.giaTaisma = !item.giaTaisma;
+        }
+        if (itemElement.classList.contains('bg-dark')) {
+            itemElement.classList.remove('bg-dark');
            
+        } else {
+            itemElement.classList.add('bg-dark');
+            
+        }
+        this._saveButtonDisplay();
+
+    }
     
-            this._saveButtonDisplay();
-        });
-    
-        document.querySelector('.cancelsaveForFeed').addEventListener('click', () => {
-            // Clear the list before inserting new items
-            this.beehiveUlForFeed.innerHTML = ''; 
-            
-            // Reset the list
-            this.beehivesForFeedListNew = JSON.parse(JSON.stringify(this.beehivesForFeedList));
-            
-            // Re-render the content
-            this.beehiveUlForFeed.insertAdjacentHTML("afterbegin", this._htmlAddRemoveListContent(this.beehivesForFeedList));
-            this._saveButtonDisplay();
-            
-        });
+
+    _cancelsave(){
+        this.render(this.beehivesForFeedList.filter(beehive => beehive.giaTaisma === true));
     }
     
     _htmlAddRemoveListContent(items) {
