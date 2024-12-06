@@ -7,9 +7,12 @@ get_header();
 if ( is_user_logged_in() ) {
     ?>
     <!-- beehives list -->
+    <div id="spinner" style="display: none;">
+  <div class="loader">asd</div> <!-- Example spinner -->
+</div>
     <section class="container my-5 beehivesListTab d-block">
         <ul class=" py-0 px-2 row row-cols-2 beehivesListUL ">
-
+       
         </u>
     </section>
     <!-- beehives edit page -->

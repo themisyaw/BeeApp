@@ -8,7 +8,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
         super();
         this.openGroceryAddRemoveBtn = document.querySelector('.openGroceryAddRemoveBtn');
         this.beehivesListUL = document.querySelector('.beehivesListUL');
-        
+        this.spinner = document.getElementById("spinner");
        
     }
   
