@@ -19,6 +19,7 @@ import BeehivesForFeed from "./modules/beehivesForFeed.js";
     async init() {
         // Initial fetch for grocery items
         let beehives = await this.beehivesList.getBeehives();
+        let beehivesForTrugos = await this.beehivesList.getBeehives();
         let beehivesForFeed = await this.beehivesList.getBeehivesForFeed();
        
        
@@ -34,24 +35,29 @@ import BeehivesForFeed from "./modules/beehivesForFeed.js";
 
         document.querySelector('.openBeehivesListBtn').addEventListener('click', async () => {
             
-            // Re-fetch updated data before displaying the list
             beehives = await this.beehivesList.getBeehives();
             this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
         });
 
         document.querySelector('.openBeehivesForFeedBtn').addEventListener('click', async () => {
-            // Re-fetch updated data before displaying the list
-            
+          
             beehivesForFeed = await this.beehivesForFeed.getBeehivesForFeed();
             beehivesForFeed.filter(beehive => beehive.giaTaisma === true);
+            this.updateDisplay(this.beehivesForFeed, beehivesForFeed, this.beehivesForFeedTab,'feed');
+        });
 
-            this.updateDisplay(this.beehivesForFeed, beehivesForFeed, this.beehivesForFeedTab);
+        document.querySelector('.openBeehivesForHarvestBtn').addEventListener('click', async () => {
+          
+            beehivesForTrugos = await this.beehivesForFeed.getBeehives();
+
+            
+            this.updateDisplay(this.beehivesForFeed, beehivesForTrugos.filter(beehive => beehive.giaTrugo === true), this.beehivesForFeedTab,'harvest');
         });
 
         this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
     }
 
-    updateDisplay(display, items, section) {
+    updateDisplay(display, items, section, feedOrHarvest) {
          this._displayNoneTabs();
           
           if(section){
@@ -59,7 +65,7 @@ import BeehivesForFeed from "./modules/beehivesForFeed.js";
           }
        
           
-        display.render(items); // Render new content
+        display.render(items,feedOrHarvest); // Render new content
     }
     
     _displayNoneTabs(){

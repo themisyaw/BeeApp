@@ -16,6 +16,7 @@ import { beeAppListBase } from './beeAppRequests.js';
         this.beehivesForFeedList;
         this.beehivesForFeedListNew;
         this.beehiveUlFed;
+        this.feedOrHarvest;
 
         this.saveBtnHandler = this.saveForFeed.bind(this);
         this.beehiveUlForFeedHandler = this._onclickBeehiveForFeed.bind(this);
@@ -32,7 +33,13 @@ import { beeAppListBase } from './beeAppRequests.js';
 
     async saveForFeed() {
         try {
-            this.beehivesForFeedListNew.filter(beehive => beehive.giaTaisma === true);
+            if(this.feedOrHarvest==='harvest'){
+                this.beehivesForFeedListNew.filter(beehive => beehive.giaTrugo === true);
+            }
+            if(this.feedOrHarvest==='feed'){
+                this.beehivesForFeedListNew.filter(beehive => beehive.giaTaisma === true);
+            }
+            
             const result = await this.addBeehive(this.beehivesForFeedListNew);
             console.log('Save successful:', result); // Handle success
            
@@ -44,8 +51,9 @@ import { beeAppListBase } from './beeAppRequests.js';
     }
     
     
-    render(items) {
-        
+    render(items,feedOrHarvest) {
+        console.log(feedOrHarvest);
+        this.feedOrHarvest=feedOrHarvest;
         this.beehiveUlForFeed.innerHTML = this._htmlAddRemoveListContent(items);
         this.beehivesForFeedList = JSON.parse(JSON.stringify(items)); 
         this.beehivesForFeedListNew=JSON.parse(JSON.stringify(items));  
@@ -86,9 +94,18 @@ import { beeAppListBase } from './beeAppRequests.js';
         const itemID = itemElement?.dataset.id;
         console.log(itemID)
         const item = this.beehivesForFeedListNew.find(item => item.id == itemID);
+
+
+
         if (item) {
-            item.giaTaisma = !item.giaTaisma;
+            if(this.feedOrHarvest === 'feed'){
+                item.giaTaisma = !item.giaTaisma;
+            }
+            if(this.feedOrHarvest === 'harvest'){
+                item.giaTrugo = !item.giaTrugo;
+            }
         }
+
         if (itemElement.classList.contains('bg-dark')) {
             itemElement.classList.remove('bg-dark');
            
@@ -102,7 +119,14 @@ import { beeAppListBase } from './beeAppRequests.js';
     
 
     _cancelsave(){
-        this.render(this.beehivesForFeedList.filter(beehive => beehive.giaTaisma === true));
+        if(this.feedOrHarvest==='harvest'){
+            this.render(this.beehivesForFeedList.filter(beehive => beehive.giaTrugo === true),this.feedOrHarvest);
+        }
+        if(this.feedOrHarvest==='feed'){
+            this.render(this.beehivesForFeedList.filter(beehive => beehive.giaTaisma === true),this.feedOrHarvest);
+        }
+      
+        
     }
     
     _htmlAddRemoveListContent(items) {

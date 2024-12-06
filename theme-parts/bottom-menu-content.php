@@ -11,7 +11,13 @@
                     <div class="openBeehivesForFeedBtn ">
                         <div class="d-flex align-items-center py-2 px-3 border border-info rounded">
                             <span class="dashicons dashicons-edit text-info color-white "></span>
-                            <span class="text-white ml-1">ForFeed</span>
+                            <span class="text-white ml-1">Feed</span>
+                        </div>
+                    </div>
+                    <div class="openBeehivesForHarvestBtn ">
+                        <div class="d-flex align-items-center py-2 px-3 border border-info rounded">
+                            <span class="dashicons dashicons-edit text-info color-white "></span>
+                            <span class="text-white ml-1">Harvest</span>
                         </div>
                     </div>
 

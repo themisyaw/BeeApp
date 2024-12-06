@@ -11,11 +11,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
         
        
     }
-    events(){
-        if(this.openGroceryAddRemoveBtn){
-            this.openGroceryAddRemoveBtn.addEventListener('click',this.render);
-        }
-    }
+  
     render(items) {
         
         this.beehivesListUL.innerHTML = ''; 
