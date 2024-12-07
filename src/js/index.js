@@ -13,8 +13,8 @@ class App {
       this.beehivesListTab = document.querySelector(".beehivesListTab");
       this.beehivesForFeedTab = document.querySelector(".beehiveForFeedTab");
   
-      this.spinner = document.querySelector(".animated-element");
-  
+      this.spinner = document.querySelector(".animatedSection");
+      // this.animatedSection = document.querySelector(".animatedSection");
       this.init();
     }
   
@@ -33,19 +33,21 @@ class App {
       });
   
       document.querySelector(".openBeehivesListBtn").addEventListener("click", async () => {
-        
+        this._displayNoneTabs();
         beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
         
         this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
       });
   
       document.querySelector(".openBeehivesForFeedBtn").addEventListener("click", async () => {
+        this._displayNoneTabs();
         beehivesForFeed = await this.withSpinner(() => this.beehivesForFeed.getBeehivesForFeed());
         beehivesForFeed = beehivesForFeed.filter((beehive) => beehive.giaTaisma === true);
         this.updateDisplay(this.beehivesForFeed, beehivesForFeed, this.beehivesForFeedTab, "feed");
       });
   
       document.querySelector(".openBeehivesForHarvestBtn").addEventListener("click", async () => {
+        this._displayNoneTabs();
         beehivesForTrugos = await this.withSpinner(() => this.beehivesForFeed.getBeehives());
        
         this.updateDisplay(
@@ -61,16 +63,27 @@ class App {
   
     async withSpinner(asyncFunction) {
       try {
-     
-        this.spinner.style.display = "block"; // Show spinner
-        return await asyncFunction(); // Execute the async function
+        // Start spinner animation
+        this.resetSpinner();
+        this.spinner.style.display = "block";
+  
+        return await asyncFunction();
       } finally {
-        this.spinner.style.display = "none"; // Hide spinner
+        // Stop spinner animation
+        this.spinner.style.display = "none";
+        
       }
     }
   
+    resetSpinner() {
+      // Force reflow to restart animation
+      this.spinner.style.animation = "none"; // Stop current animation
+      void this.spinner.offsetWidth; // Trigger reflow
+      this.spinner.style.animation = "loading 1s ease-in-out infinite"; // Restart animation
+    }
+  
     updateDisplay(display, items, section, feedOrHarvest) {
-      this._displayNoneTabs();
+     
   
       if (section) {
         section.classList.remove("d-none");

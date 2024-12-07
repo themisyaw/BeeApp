@@ -100,78 +100,44 @@ svg {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
   }
-  .loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
+  
+  
+
+
+
+  .animated-element {
+    background: linear-gradient(
+      100deg,
+      wheat 80%,
+      rgb(251, 237, 211) 90%,
+      rgb(242, 224, 191) 80%
+    ) #ededed;
+    background-size: 200% 100%;
+    background-position-x: 180%; /* Set default starting point */
+    
+    filter: grayscale(60%) ;
   }
   
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  .animate{
+    animation: 0.8s loading ease-in-out infinite;
+   
   }
-
-
-
-.animated-element {
-  background: linear-gradient(
-    100deg,
-    rgba(255, 255, 255, 0) 80%,
-    rgba(255, 255, 255, .5) 90%,
-    rgba(255, 255, 255, 0) 80%
-  ) #ededed;
-  background-size: 200% 100%;
-  background-position-x: 180%;
-  animation: 0.3s loading ease-in-out infinite;
-  filter: grayscale(100%);
-}
-
-
-.animated-element .bgRatingStars {
- 
-  background: linear-gradient(
-    100deg,
-    rgba(255, 255, 255, 0) 80%,
-    rgba(255, 255, 255, .5) 90%,
-    rgba(255, 255, 255, 0) 80%
-  ) #ededed;
-  background-size: 200% 100%;
-  background-position-x: 180%;
-  animation: 0.3s loading ease-in-out infinite;
-}
-
-.animated-element .kypseli {
+  .loaderUl{
+    justify-content: space-evenly;
+  }
   
-  background: linear-gradient(
-    100deg,
-    rgba(255, 255, 255, 0) 80%,
-    rgba(255, 255, 255, .5) 90%,
-    rgba(255, 255, 255, 0) 80%
-  ) #ededed;
-  background-size: 200% 100%;
-  background-position-x: 180%;
-  animation: 0.3s loading ease-in-out infinite;
-  
-}
 @keyframes loading {
-  to {
-    background-position-x: -20%;
-  }
-  
-}
-
-
-
-/* Keyframes for diagonal movement */
-@keyframes move-diagonal {
-  0% {
-    filter: blur(5px) grayscale(100%) brightness(0.8) contrast(120%);
-  }
-  100% {
+  from {
+    background-position-x: 180%; 
     
   }
+  to {
+    background-position-x: -20%;
+    
+  }
+  
 }
+
+
+
   
