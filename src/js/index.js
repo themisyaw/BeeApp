@@ -25,6 +25,7 @@ class App {
       let beehivesForFeed = await this.withSpinner(() => this.beehivesList.getBeehivesForFeed());
   
       document.querySelector(".beehivesListUL").addEventListener("click", (e) => {
+        this._displayNoneTabs();
         const itemElement = e.target.closest(".kypseli");
         const itemID = itemElement.dataset.id;
         const item = beehives.find((item) => item.id == itemID);

@@ -12,7 +12,7 @@
                     <?php echo get_svg_icon('beehiveForFood'); ?>
                     </div>
                 </div>
-                <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
+                <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 ">
                     <div class="py-1 d-flex justify-content-between">
                         <div class="p-0">
                             <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">00</span>
@@ -53,7 +53,7 @@
                         <?php echo get_svg_icon('beehiveForFood'); ?>
                         </div>
                     </div>
-                    <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
+                    <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 ">
                         <div class="py-1 d-flex justify-content-between">
                             <div class="p-0">
                                 <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">00</span>
@@ -94,7 +94,7 @@
                     <?php echo get_svg_icon('beehiveForFood'); ?>
                     </div>
                 </div>
-                <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
+                <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 ">
                     <div class="py-1 d-flex justify-content-between">
                         <div class="p-0">
                             <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">00</span>
@@ -135,7 +135,7 @@
                     <?php echo get_svg_icon('beehiveForFood'); ?>
                     </div>
                 </div>
-                <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
+                <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 ">
                     <div class="py-1 d-flex justify-content-between">
                         <div class="p-0">
                             <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">00</span>

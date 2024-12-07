@@ -52,7 +52,7 @@ import { beeAppListBase } from './beeAppRequests.js';
     
     
     render(items,feedOrHarvest) {
-        console.log(feedOrHarvest);
+        
         this.feedOrHarvest=feedOrHarvest;
         this.beehiveUlForFeed.innerHTML = this._htmlAddRemoveListContent(items);
         this.beehivesForFeedList = JSON.parse(JSON.stringify(items)); 
