@@ -1,6 +1,6 @@
 
 import { beeAppListBase } from './beeAppRequests.js';
-import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from '../svgIcons/beehive.js';
+import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehive.js';
 
 
  class BeeHivesList extends beeAppListBase {
@@ -8,7 +8,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
         super();
         this.openGroceryAddRemoveBtn = document.querySelector('.openGroceryAddRemoveBtn');
         this.beehivesListUL = document.querySelector('.beehivesListUL');
-        this.spinner = document.getElementById("spinner");
+        
        
     }
   
@@ -46,7 +46,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood, beehiveFrameIcon } from 
                             ${beehiveForFoodIcon}
                         </div>
                     </div>
-                    <div data-id="${item.id}" class="${isSick ? 'errorLightbg' : ''} d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
+                    <div data-id="${item.id}"  class=" ${isSick ? 'errorLightbg' : ''} d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
                         <div class="py-1 d-flex justify-content-between">
                             <div class="p-0">
                                 <span class="${isSick ? 'errorbg' : ''} text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">${item.beehiveNumber}</span>

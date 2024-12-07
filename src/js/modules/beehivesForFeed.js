@@ -88,14 +88,10 @@ import { beeAppListBase } from './beeAppRequests.js';
     }
     
     _onclickBeehiveForFeed(e){
-        console.log('se patisa');
+        
         const itemElement = e.target.closest('.beehiveForFeed');
-        console.log(itemElement)
         const itemID = itemElement?.dataset.id;
-        console.log(itemID)
         const item = this.beehivesForFeedListNew.find(item => item.id == itemID);
-
-
 
         if (item) {
             if(this.feedOrHarvest === 'feed'){

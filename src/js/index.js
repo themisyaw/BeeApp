@@ -13,7 +13,7 @@ class App {
       this.beehivesListTab = document.querySelector(".beehivesListTab");
       this.beehivesForFeedTab = document.querySelector(".beehiveForFeedTab");
   
-      this.spinner = document.getElementById("spinner");
+      this.spinner = document.querySelector(".animated-element");
   
       this.init();
     }
@@ -33,7 +33,9 @@ class App {
       });
   
       document.querySelector(".openBeehivesListBtn").addEventListener("click", async () => {
+        
         beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
+        
         this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
       });
   
@@ -45,7 +47,7 @@ class App {
   
       document.querySelector(".openBeehivesForHarvestBtn").addEventListener("click", async () => {
         beehivesForTrugos = await this.withSpinner(() => this.beehivesForFeed.getBeehives());
-        alert("χτύπησε");
+       
         this.updateDisplay(
           this.beehivesForFeed,
           beehivesForTrugos.filter((beehive) => beehive.giaTrugo === true),
@@ -59,6 +61,7 @@ class App {
   
     async withSpinner(asyncFunction) {
       try {
+     
         this.spinner.style.display = "block"; // Show spinner
         return await asyncFunction(); // Execute the async function
       } finally {
