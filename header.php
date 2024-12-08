@@ -28,11 +28,20 @@
        
       </div>
       <div class="container ">
-        <span class="dashicons dashicons-plus-alt2 openAddNewBeehive"></span>
-        <div class="d-none newbeehiveForm">
-          <input type="numberic" class="newBeehiveNumberInput"/>
+        <span class="dashicons rounded-circle m-4 p-2 align-items-center justify-content-center d-flex dashicons-plus-alt2 openAddNewBeehive"></span>
+        <div class=" newbeehiveForm messageDiv">
+          
+          <input type="number" class="newBeehiveNumberInput "/>
           <button class="btn btn-dark addNewBeeHive ">AddNew</button>
 
+        </div>
+        <div class="container">
+          <button id="openDivBtn" class="btn btn-primary mt-5">Open Sliding Div</button>
+        </div>
+
+        <div class="messageDiv m-2">
+          <button id="closeDivBtn" class="btn btn-danger btn-sm float-end">×</button>
+          <span class="p-4">Message</span>
         </div>
         
       </div>

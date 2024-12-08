@@ -25,12 +25,19 @@ class App {
     }
 
     openCreateBeehiveForm() {
-      console.log('blepw to render');
-      this.newbeehiveForm.classList.remove('d-none');
-      this.newbeehiveForm.classList.add('d-block');
+      this.newbeehiveForm.classList.add('open');
+    }
+    closeCreateBeehiveForm() {
+      this.newbeehiveForm.classList.remove('open');
     }
   
     async init() {
+
+     
+    
+      
+
+
       // Initial fetch for grocery items
       let beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
       let beehivesForTrugos = await this.withSpinner(() => this.beehivesList.getBeehives());

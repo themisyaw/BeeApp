@@ -167,4 +167,25 @@ svg {
 
 }
 
+
+.messageDiv {
+  position: fixed;
+  bottom: 5%;
+  right: -100%; /* Start off-screen */
+  z-index: 10000;
+  padding: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: right 0.5s ease; /* Smooth slide-in/out effect */
+}
+
+.messageDiv.open {
+  right: 0; /* Slide into view */
+}
+.openAddNewBeehive{
+  position: fixed;
+  bottom:15%;
+  right: 5px;
+  z-index: 100000;
+}
   
