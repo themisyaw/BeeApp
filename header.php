@@ -23,8 +23,20 @@
   </head>
   <body class=""<?php body_class(); ?>>
     <header class="site-header" id="personalinfo">
+      <div class="container">
         <h1 class="text-center p-4">BeeAppLocal</h1>
+       
+      </div>
+      <div class="container ">
+        <span class="dashicons dashicons-plus-alt2 openAddNewBeehive"></span>
+        <div class="d-none newbeehiveForm">
+          <input type="numberic" class="newBeehiveNumberInput"/>
+          <button class="btn btn-dark addNewBeeHive ">AddNew</button>
+
+        </div>
         
+      </div>
+       
        <?php 
         // get_template_part( 'theme-parts/bottom-menu-content', 'content' );
         ?>

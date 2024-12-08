@@ -35,7 +35,7 @@ class beehiveEditSave extends beeAppListBase {
 
     async save() {
         try {
-            const result = await this.addBeehive(this.beehiveNew);
+            const result = await this.saveBeehive(this.beehiveNew);
             console.log('Save successful:', result);
 
             this.beehiveOld = JSON.parse(JSON.stringify(this.beehiveNew));

@@ -36,8 +36,9 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
             const isSick = Object.values(item.arrwsties).some(value => value === true);
             const beehiveForFoodIcon = beehiveForFood(item.giaTaisma ?'': 'grayfilter');
             const beehiveForTrugosIcon = beehiveForTrugos(item.giaTrugo ?'': 'grayfilter');
+           
                 htmlContent += `
-                <div class="">
+                <div class="kypselianimatedElement">
                     <div class="my-2 px-1 d-flex justify-content-end">
                         <div class="">
                         ${beehiveForTrugosIcon}

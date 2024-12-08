@@ -3,20 +3,20 @@
             <div class="col text-center basicMenu ">
                 <div class="align-items-center  justify-content-center d-flex">
                     <div class="openBeehivesListBtn ">
-                        <div class="d-flex align-items-center py-2 px-3 border border-info rounded">
+                        <div class="d-flex align-items-center py-2 px-3 rounded">
                             <!-- <span class="dashicons dashicons-cart text-info "></span> -->
                             <span class="text-white ml-1">Beehives</span>
                         </div>
                     </div>
                     <div class="openBeehivesForFeedBtn ">
-                        <div class="d-flex align-items-center py-2 px-3 border border-info rounded">
-                            <span class="dashicons dashicons-edit text-info color-white "></span>
+                        <div class="d-flex align-items-center py-2 px-3 rounded">
+                           
                             <span class="text-white ml-1">Feed</span>
                         </div>
                     </div>
                     <div class="openBeehivesForHarvestBtn ">
-                        <div class="d-flex align-items-center py-2 px-3 border border-info rounded">
-                            <span class="dashicons dashicons-edit text-info color-white "></span>
+                        <div class="d-flex align-items-center py-2 px-3  rounded">
+                            
                             <span class="text-white ml-1">Harvest</span>
                         </div>
                     </div>

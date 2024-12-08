@@ -15,6 +15,9 @@ export class beeAppListBase extends BaseAPI {
     }
 
     async addBeehive(item) {
+        return await this.post('/wp-json/beehives/v1/create', item);
+    }
+    async saveBeehive(item) {
         return await this.post('/wp-json/beehives/v1/save', item);
     }
 

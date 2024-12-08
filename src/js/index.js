@@ -2,20 +2,32 @@
 import beehiveEditSave from "./modules/beehiveEditSave.js"; 
 import BeeHivesList from "./modules/beehivesList.js"; 
 import BeehivesForFeed from "./modules/beehivesForFeed.js"; 
+import BeehiveCreateNew from "./modules/beehiveCreateNew.js";
+
+
 
 class App {
     constructor() {
       this.beehivesList = new BeeHivesList();
       this.beehiveEditSave = new beehiveEditSave();
       this.beehivesForFeed = new BeehivesForFeed();
+      this.beehiveCreateNew = new BeehiveCreateNew();
   
       this.beehiveEditSaveTab = document.querySelector(".beehiveEditSaveTab");
       this.beehivesListTab = document.querySelector(".beehivesListTab");
       this.beehivesForFeedTab = document.querySelector(".beehiveForFeedTab");
+      this.newbeehiveForm = document.querySelector('.newbeehiveForm');
+      this.addNewBeeHive = document.querySelector('.addNewBeeHive');
   
       this.spinner = document.querySelector(".animatedSection");
       // this.animatedSection = document.querySelector(".animatedSection");
       this.init();
+    }
+
+    openCreateBeehiveForm() {
+      console.log('blepw to render');
+      this.newbeehiveForm.classList.remove('d-none');
+      this.newbeehiveForm.classList.add('d-block');
     }
   
     async init() {
@@ -23,13 +35,37 @@ class App {
       let beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
       let beehivesForTrugos = await this.withSpinner(() => this.beehivesList.getBeehives());
       let beehivesForFeed = await this.withSpinner(() => this.beehivesList.getBeehivesForFeed());
-  
+      console.log(beehives)
+      
+      
+      document.querySelector('.addNewBeeHive').addEventListener('click', async () => {
+        try {
+            const result = await this.beehiveCreateNew.addNewBeehive(); // Wait for addNewBeehive to complete
+            console.log('Result from addNewBeehive:', );
+
+            if(result){
+              beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
+              this._displayNoneTabs();
+              this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
+            }
+          
+            
+        } catch (error) {
+            console.error('Error occurred while adding new beehive:', error);
+        }
+      });
+
+      document.querySelector('.openAddNewBeehive').addEventListener('click',this.openCreateBeehiveForm.bind(this));
+
+
       document.querySelector(".beehivesListUL").addEventListener("click", (e) => {
-        this._displayNoneTabs();
+       
         const itemElement = e.target.closest(".kypseli");
         const itemID = itemElement.dataset.id;
-        const item = beehives.find((item) => item.id == itemID);
         if (!itemID) return;
+        const item = beehives.find((item) => item.id == itemID);
+       
+        this._displayNoneTabs();
         this.updateDisplay(this.beehiveEditSave, item, this.beehiveEditSaveTab);
       });
   
@@ -58,10 +94,14 @@ class App {
           "harvest"
         );
       });
+
+      
   
       this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
     }
-  
+    
+    
+    
     async withSpinner(asyncFunction) {
       try {
         // Start spinner animation
@@ -75,6 +115,8 @@ class App {
         
       }
     }
+
+    
   
     resetSpinner() {
       // Force reflow to restart animation
