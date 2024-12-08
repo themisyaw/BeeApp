@@ -22,12 +22,12 @@ class BeehiveCreateNew extends beeAppListBase {
             console.log(beehives);
             const exists = beehives.some(beehive => beehive.beehiveNumber === this.newBeehiveNumberInput.value);
             if (exists) {
-                alert(' uparxei')
+              
                 this.newBeehiveNumberInput.value = '';
             }else{
                 const result = await this.addBeehive(beehiveNumber); 
                 console.log('Save successful:');
-                alert('den uparxei')
+               
                 this.newBeehiveNumberInput.value = '';
                 return result;
             }
