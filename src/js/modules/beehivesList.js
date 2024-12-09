@@ -21,15 +21,19 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
     async searchDisplayBeehives(){
         const beehiveNumber = this.searchInput.value;
         
-        const searchResuls = await this.searchBeehives(beehiveNumber);
-       
-        this.beehiveResults = searchResuls ? [searchResuls] : [];
-        console.log(beehiveNumber)
-        this.app.searchResults(this.beehiveResults);
+        if(this.searchInput.value.trim() === ""){
+            this.app.showBeehiveList();
+        }else{
+            const searchResuls = await this.searchBeehives(beehiveNumber);
+            this.beehiveResults = searchResuls ? [searchResuls] : [];
+            console.log(beehiveNumber)
+            this.app.searchResults(this.beehiveResults);
+        }
+        
     }
 
     init(){
-        this.searchInput.addEventListener('change', this.inputHandler);
+        this.searchInput.addEventListener('keyup', this.inputHandler);
        
     }
 

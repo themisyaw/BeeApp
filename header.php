@@ -26,7 +26,7 @@
       <div class="container">
         <h1 class="text-center p-4">BeeAppLocal</h1>
         <div class="input-group input-group-sm mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+          
           <input type="number"  class="form-control searchInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
         </div>
       </div>
