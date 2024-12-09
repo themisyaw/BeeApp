@@ -1,36 +1,61 @@
 import { beeAppListBase } from './beeAppRequests.js';
 
 class beehiveEditSave extends beeAppListBase {
-    constructor() {
-        super();
+    constructor(app) {
 
+        super();
+        this.app = app;
         // Static Elements
         this.beehiveUl = document.querySelector('.beehiveUl');
         this.basicMenu = document.querySelector('.basicMenu');
         this.saveBtn = document.querySelector('.save');
         this.beehiveEditMenu = document.querySelector('.beehiveEditMenu');
         this.cancelBtn = document.querySelector('.cancelsave');
-
+        this.deleteBeehiveBtn = document.querySelector('.deleteBeehiveBtn');
         // Data
         this.itemsIDforUpdate = [];
         this.beehiveOld = null;
         this.beehiveNew = null;
+        this.beehiveID= null;
 
         // Bind Static Handlers
         this.saveHandler = this.save.bind(this);
+        this.deleteHandler = this.deleteBeehive.bind(this);
         this.cancelHandler = this.cancelsave.bind(this);
         this.dynamicHandler = this.handleDynamicEvents.bind(this);
+        
 
         // Attach Static Event Listeners
         this.initStaticListeners();
     }
 
     initStaticListeners() {
+        
         this.saveBtn.addEventListener('click', this.saveHandler);
+        this.deleteBeehiveBtn.addEventListener('click', this.deleteHandler);  
         this.cancelBtn.addEventListener('click', this.cancelHandler);
         this.beehiveUl.addEventListener('input', this.dynamicHandler); // For input changes
         this.beehiveUl.addEventListener('change', this.dynamicHandler); // For checkboxes/radios
         this.beehiveUl.addEventListener('click', this.dynamicHandler); // For clicks
+
+    }
+
+    async deleteBeehive() {
+        if (!this.beehiveID || typeof this.beehiveID !== 'number') {
+            throw new Error('Invalid beehive ID provided for deletion');
+        }
+        try {
+            const result = await this.delete(`/wp-json/beehives/v1/delete?id=${Number(this.beehiveID)}`);
+            // After deletion, navigate back to the beehive list
+            if (result.success) {
+                // message success
+                this.app.showBeehiveList();
+            }else{
+                // message fail
+            }
+        } catch (error) {
+            console.error('Error occurred while deleting beehive:', error);
+        }
     }
 
     async save() {
@@ -50,6 +75,8 @@ class beehiveEditSave extends beeAppListBase {
     }
 
     render(item) {
+        this.beehiveID = item.id;     
+        
         this.beehiveUl.innerHTML = this._htmlAddRemoveListContent(item);
         this.beehiveOld = JSON.parse(JSON.stringify(item));
         this.beehiveNew = JSON.parse(JSON.stringify(item));

@@ -6,19 +6,25 @@ import BeehiveCreateNew from "./modules/beehiveCreateNew.js";
 
 
 
+
 class App {
     constructor() {
-      this.beehivesList = new BeeHivesList();
-      this.beehiveEditSave = new beehiveEditSave();
+      this.beehivesList = new BeeHivesList(this);
+      this.beehiveEditSave = new beehiveEditSave(this);
       this.beehivesForFeed = new BeehivesForFeed();
       this.beehiveCreateNew = new BeehiveCreateNew();
+      
+     
   
       this.beehiveEditSaveTab = document.querySelector(".beehiveEditSaveTab");
       this.beehivesListTab = document.querySelector(".beehivesListTab");
       this.beehivesForFeedTab = document.querySelector(".beehiveForFeedTab");
       this.newbeehiveForm = document.querySelector('.newbeehiveForm');
       this.addNewBeeHive = document.querySelector('.addNewBeeHive');
-  
+
+      
+
+     
       this.spinner = document.querySelector(".animatedSection");
       // this.animatedSection = document.querySelector(".animatedSection");
       this.init();
@@ -34,7 +40,8 @@ class App {
     closeCreateBeehiveForm() {
       this.newbeehiveForm.classList.remove('open');
     }
-  
+
+    
     async init() {
 
       // Initial fetch for grocery items
@@ -42,7 +49,7 @@ class App {
       let beehivesForTrugos = await this.withSpinner(() => this.beehivesList.getBeehives());
       let beehivesForFeed = await this.withSpinner(() => this.beehivesList.getBeehivesForFeed());
       console.log(beehives)
-      
+
       
       document.querySelector('.addNewBeeHive').addEventListener('click', async () => {
         try {
@@ -155,6 +162,21 @@ class App {
       }
       this.beehivesForFeedTab.classList.add("d-none");
     }
+    
+    async showBeehiveList() {
+      this._displayNoneTabs();
+        let beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
+        
+        this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
+    }
+    searchResults(beehives=Array) {
+      this._displayNoneTabs();
+      console.log(typeof(beehives));
+
+      this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
+    }
+    
+    
   }
   
   new App();

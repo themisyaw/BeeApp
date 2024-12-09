@@ -4,13 +4,36 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
 
 
  class BeeHivesList extends beeAppListBase {
-    constructor() {
+    constructor(app) {
         super();
+        this.app = app;
+        // elements
         this.openGroceryAddRemoveBtn = document.querySelector('.openGroceryAddRemoveBtn');
         this.beehivesListUL = document.querySelector('.beehivesListUL');
+        this.searchInput = document.querySelector('.searchInput');
+        //data
+        this.beehiveResults=[];
+        // handlers
+        this.inputHandler = this.searchDisplayBeehives.bind(this);
+        this.init();
+    }
+
+    async searchDisplayBeehives(){
+        const beehiveNumber = this.searchInput.value;
         
+        const searchResuls = await this.searchBeehives(beehiveNumber);
+       
+        this.beehiveResults = searchResuls ? [searchResuls] : [];
+        console.log(beehiveNumber)
+        this.app.searchResults(this.beehiveResults);
+    }
+
+    init(){
+        this.searchInput.addEventListener('change', this.inputHandler);
        
     }
+
+    
   
     render(items) {
         

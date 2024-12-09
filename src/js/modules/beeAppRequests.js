@@ -21,11 +21,11 @@ export class beeAppListBase extends BaseAPI {
         return await this.post('/wp-json/beehives/v1/save', item);
     }
 
-    // async deleteBeehive(itemId) {
-    //     return await this.delete(`${this.endpoint}/${itemId}`);
-    // }
+    async deleteBeehive(itemId) {
+        return await this.delete('/wp-json/beehives/v1/delete',itemId);
+    }
+    async searchBeehives(beehiveNumber) {
+        return await this.get(`/wp-json/beehives/v1/search/${beehiveNumber}`);
+    }
 
-    // async updateBeehive(itemId, updatedData) {
-    //     return await this.update(`${this.endpoint}/${itemId}`, updatedData);
-    // }
 }

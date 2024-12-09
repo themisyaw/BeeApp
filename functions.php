@@ -3,6 +3,8 @@
 require get_theme_file_path('/route/beehiveSave.php');
 require get_theme_file_path('/route/getbeeHives.php');
 require get_theme_file_path('/route/beehiveCreate.php');
+require get_theme_file_path('/route/beehiveDelete.php');
+require get_theme_file_path('/route/beehivesSearch.php');
 // require_once get_template_directory() . '/route/beeHivesForFeed.php';
 require get_theme_file_path('/icons/beehiveIcon.php');
 

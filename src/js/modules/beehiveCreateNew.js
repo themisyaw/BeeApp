@@ -7,7 +7,6 @@ class BeehiveCreateNew extends beeAppListBase {
         // Static Elements
         this.newBeehiveNumberInput = document.querySelector('.newBeehiveNumberInput');
 
-
     }
     async addNewBeehive() {
         try {

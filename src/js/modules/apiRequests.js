@@ -32,8 +32,8 @@ export class BaseAPI {
         return this.fetchData(endpoint, 'POST', data);
     }
 
-    delete(endpoint) {
-        return this.fetchData(endpoint, 'DELETE');
+    delete(endpoint, data) {
+        return this.fetchData(endpoint, 'DELETE', data);
     }
 
     update(endpoint, data) {
