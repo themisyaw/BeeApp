@@ -171,7 +171,7 @@ svg {
 .messageDiv {
   position: fixed;
   bottom: 5%;
-  right: -100%; /* Start off-screen */
+  right: -65%; /* Start off-screen */
   z-index: 10000;
   padding: 10px;
   background-color: #f8f9fa;
@@ -183,9 +183,9 @@ svg {
   right: 0; /* Slide into view */
 }
 .openAddNewBeehive{
-  position: fixed;
+  /* position: fixed;
   bottom:15%;
   right: 5px;
-  z-index: 100000;
+  z-index: 100000; */
 }
   

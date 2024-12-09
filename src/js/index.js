@@ -25,18 +25,17 @@ class App {
     }
 
     openCreateBeehiveForm() {
-      this.newbeehiveForm.classList.add('open');
+      this.newbeehiveForm.classList.toggle('open');
+      if (this.newbeehiveForm.classList.contains('open')) {
+        const inputField = this.newbeehiveForm.querySelector('.newBeehiveNumberInput');
+        inputField.focus();
+    }
     }
     closeCreateBeehiveForm() {
       this.newbeehiveForm.classList.remove('open');
     }
   
     async init() {
-
-     
-    
-      
-
 
       // Initial fetch for grocery items
       let beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
