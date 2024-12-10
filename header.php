@@ -34,7 +34,7 @@
         <div class=" newbeehiveForm d-flex rounded-pill align-items-center messageDiv">
           <span class="dashicons align-items-center mr-4 p-3 justify-content-center d-flex dashicons-plus-alt2 openAddNewBeehive"></span>
           
-          <input type="number" class="newBeehiveNumberInput "/>
+          <input tabindex="-1" type="number" class="newBeehiveNumberInput "/>
           <button class="btn btn-dark addNewBeeHive ">AddNew</button>
 
         </div>

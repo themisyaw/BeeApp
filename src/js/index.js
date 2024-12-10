@@ -169,10 +169,9 @@ class App {
         
         this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
     }
-    searchResults(beehives=Array) {
+    searchResults(beehives) {
       this._displayNoneTabs();
-      console.log(typeof(beehives));
-
+      
       this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
     }
     
