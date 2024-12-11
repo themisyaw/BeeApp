@@ -22,19 +22,19 @@
     ?>   
   </head>
   <body class=""<?php body_class(); ?>>
-    <header class="site-header bg-dark" id="personalinfo">
+    <header class="site-header bgWheat" id="personalinfo">
       <div class="container pb-3">
       <h1 class="text-center">BeeAppLocal</h1>
         <div class="row px-2 justify-content-between d-flex align-items-center">
           <div class="align-items-center justify-content-start ml-1 col-5  d-flex">
-            <span class="dashicons openSearchInput rounded-circle bg-white dashicons-search align-items-center d-flex justify-content-center  iconHeaderFontSize "></span>
-            <span class="ml-3 text-light">Search ...</span>
+            <span class="dashicons mr-3 openSearchInput rounded-circle bglight  dashicons-search align-items-center d-flex justify-content-center  iconHeaderFontSize "></span>
+            <input type="number"  class="bgWheat border-0 form-control w-50 searchInput" aria-label="" aria-describedby="">
 
           </div>
 
           <div class="align-items-center justify-content-end mr-1 col-5  d-flex">
             <span class="mr-3 text-light">Add new</span>
-            <span class="dashicons rounded-circle d-flex bg-white align-items-center justify-content-center iconHeaderFontSize dashicons-plus-alt2 openAddNewBeehive"></span>
+            <span class="dashicons rounded-circle d-flex bglight  align-items-center justify-content-center iconHeaderFontSize dashicons-plus-alt2 openAddNewBeehive"></span>
             
           </div>
           
@@ -57,7 +57,7 @@
     <div class="row p-0 m-0 justify-content-between d-flex align-items-center">
       <div class="align-items-center justify-content-start ml-1 col-5  d-flex">
           
-            <input type="number"  class="form-control w-50 searchInput" aria-label="" aria-describedby="">
+           
          
 
       </div>

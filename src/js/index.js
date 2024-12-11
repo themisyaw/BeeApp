@@ -34,6 +34,7 @@ class App {
       this.newbeehiveForm.classList.toggle('open');
       if (this.newbeehiveForm.classList.contains('open')) {
         const inputField = this.newbeehiveForm.querySelector('.newBeehiveNumberInput');
+        
         inputField.focus();
     }
   }
@@ -42,6 +43,7 @@ class App {
       document.querySelector('.searchInput').classList.toggle('open');
       if (document.querySelector('.searchInput').classList.contains('open')) {
         const inputField = document.querySelector('.searchInput');
+        document.querySelector('.searchInput').value="";
         inputField.focus();
     }
   }
