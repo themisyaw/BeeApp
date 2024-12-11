@@ -22,44 +22,53 @@
     ?>   
   </head>
   <body class=""<?php body_class(); ?>>
-    <header class="site-header" id="personalinfo">
-      <div class="container">
-        <h1 class="text-center p-4">BeeAppLocal</h1>
-        <div class="input-group input-group-sm mb-3">
+    <header class="site-header bg-dark" id="personalinfo">
+      <div class="container pb-3">
+      <h1 class="text-center">BeeAppLocal</h1>
+        <div class="row px-2 justify-content-between d-flex align-items-center">
+          <div class="align-items-center justify-content-start ml-1 col-5  d-flex">
+            <span class="dashicons openSearchInput rounded-circle bg-white dashicons-search align-items-center d-flex justify-content-center  iconHeaderFontSize "></span>
+            <span class="ml-3 text-light">Search ...</span>
+
+          </div>
+
+          <div class="align-items-center justify-content-end mr-1 col-5  d-flex">
+            <span class="mr-3 text-light">Add new</span>
+            <span class="dashicons rounded-circle d-flex bg-white align-items-center justify-content-center iconHeaderFontSize dashicons-plus-alt2 openAddNewBeehive"></span>
+            
+          </div>
           
-          <input type="number"  class="form-control searchInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          
+
         </div>
+        
       </div>
-      <div class="container ">
-        <div class=" newbeehiveForm d-flex rounded-pill align-items-center messageDiv">
-          <span class="dashicons align-items-center mr-4 p-3 justify-content-center d-flex dashicons-plus-alt2 openAddNewBeehive"></span>
-          
-          <input tabindex="-1" type="number" class="newBeehiveNumberInput "/>
-          <button class="btn btn-dark addNewBeeHive ">AddNew</button>
-
-        </div>
-       
-
+      
         <!-- <div class="messageDiv m-2">
           <button id="closeDivBtn" class="btn btn-danger btn-sm float-end">×</button>
           <span class="p-4">Message</span>
         </div> -->
         
-      </div>
-       
        <?php 
         // get_template_part( 'theme-parts/bottom-menu-content', 'content' );
         ?>
-    </div>
     
-         
-       
-      
-
-      
-   
     </header>
+    <div class="row p-0 m-0 justify-content-between d-flex align-items-center">
+      <div class="align-items-center justify-content-start ml-1 col-5  d-flex">
+          
+            <input type="number"  class="form-control w-50 searchInput" aria-label="" aria-describedby="">
+         
+
+      </div>
+      <div class="align-items-center justify-content-end mr-1 col-5  d-flex">
+          <div class=" newbeehiveForm rounded d-flex align-items-center justify-content-end messageDiv">
+            
+            <input tabindex="-1" type="number" class="newBeehiveNumberInput form-control w-50"/>
+            <button class="btn btn-dark addNewBeeHive ">AddNew</button>
+          </div>
+      </div>
+
+
+    </div>
    
-  
-
-

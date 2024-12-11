@@ -168,19 +168,22 @@ svg {
 }
 
 
-.messageDiv {
-  position: fixed;
-  bottom: 5%;
-  right: -65%; /* Start off-screen */
-  z-index: 10000;
-  padding: 10px;
-  background-color: #f8f9fa;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: right 0.5s ease; /* Smooth slide-in/out effect */
+.messageDiv, .searchInput {
+  
+    opacity: 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease;
+}
+.iconHeaderFontSize{
+  font-size: 20px;
+  box-shadow: 
+  0px 0px 0px 6px #ffffff, 0px 0px 7px 8px rgb(255 255 255)
+  ;
 }
 
-.messageDiv.open {
-  right: 0; /* Slide into view */
+.messageDiv.open, .searchInput.open {
+  opacity: 1;
 }
 .openAddNewBeehive{
   /* position: fixed;

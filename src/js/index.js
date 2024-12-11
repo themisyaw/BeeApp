@@ -36,7 +36,15 @@ class App {
         const inputField = this.newbeehiveForm.querySelector('.newBeehiveNumberInput');
         inputField.focus();
     }
+  }
+    openSearchInputForm() {
+
+      document.querySelector('.searchInput').classList.toggle('open');
+      if (document.querySelector('.searchInput').classList.contains('open')) {
+        const inputField = document.querySelector('.searchInput');
+        inputField.focus();
     }
+  }
     closeCreateBeehiveForm() {
       this.newbeehiveForm.classList.remove('open');
     }
@@ -69,6 +77,7 @@ class App {
       });
 
       document.querySelector('.openAddNewBeehive').addEventListener('click',this.openCreateBeehiveForm.bind(this));
+      document.querySelector('.openSearchInput').addEventListener('click',this.openSearchInputForm.bind(this));
 
 
       document.querySelector(".beehivesListUL").addEventListener("click", (e) => {
