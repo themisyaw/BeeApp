@@ -40,7 +40,7 @@ import { beeAppListBase } from './beeAppRequests.js';
                 this.beehivesForFeedListNew.filter(beehive => beehive.giaTaisma === true);
             }
             
-            const result = await this.addBeehive(this.beehivesForFeedListNew);
+            const result = await this.saveBeehive(this.beehivesForFeedListNew);
             console.log('Save successful:', result); // Handle success
            
             this.beehivesForFeedList = JSON.parse(JSON.stringify(this.beehivesForFeedListNew));  

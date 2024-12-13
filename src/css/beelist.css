@@ -136,7 +136,6 @@ svg {
     
   }
   
-  
 }
 
 .kypselianimatedElement{
@@ -166,29 +165,66 @@ svg {
 
 
 }
-
-
-.messageDiv, .searchInput {
-  
-    opacity: 0;
-   
-    transition: opacity 0.5s ease;
-}
-.iconHeaderFontSize{
-  font-size: 20px;
+.openSearch{
+  width: 40%!important;
  
-  box-shadow: 0px 0px 0px 10px #FAEFDB, 0px 0px 7px 8px #957d4f;
+    overflow:hidden;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+  
 }
+.closeSearch{
+  
+  /* width: auto; */ width:15%!important;
+
+  overflow:hidden;
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+  
+}
+
+.openSearchInput, .openAddNewBeehive{
+ width: 15%;
+  -webkit-transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+.searchInput {
+ 
+  width:0%;
+  overflow:hidden;
+  -webkit-transition: width 0.8s ease-in-out;
+  -moz-transition: width 0.8s ease-in-out;
+  -o-transition: width 0.8s ease-in-out;
+  transition: width 0.8s ease-in-out;
+}
+
 .searchInput:focus{
   background-color: #FAEFDB!important;
-  box-shadow: 0px 0px 4px 0px white!important;
+  box-shadow: 0px 0px 4px 0px rgba(170, 39, 39, 0)!important;
   border: none!important;
 }
 .messageDiv.open, .searchInput.open {
-  opacity: 1;
+  width: 100%;
+  /* opacity: 1;
+
   background-color: #FAEFDB!important;
   box-shadow: 0px 0px 4px 0px white!important;
-  border: none!important;
+  border: none!important; */
+}
+.newbeehiveForm.open{
+ 
+  top: 0px;
+}
+.newbeehiveForm{
+  top: -10%;
+    transition: 0.4s ease;
+  
 }
 .openAddNewBeehive{
   /* position: fixed;

@@ -32,21 +32,47 @@ class App {
 
     openCreateBeehiveForm() {
       this.newbeehiveForm.classList.toggle('open');
+      const addNewIcon =document.querySelector('.addNewIcon');
       if (this.newbeehiveForm.classList.contains('open')) {
+       
+       
+       
+          addNewIcon.classList.remove('dashicons-plus-alt2');
+          addNewIcon.classList.add('dashicons-minus');
         const inputField = this.newbeehiveForm.querySelector('.newBeehiveNumberInput');
-        
         inputField.focus();
-    }
+      }else{
+        addNewIcon.classList.remove('dashicons-minus');
+        addNewIcon.classList.add('dashicons-plus-alt2');
+       
+      }
   }
-    openSearchInputForm() {
+    openSearchInputForm(e) {
+      console.log(e.target)
+      const inputField = document.querySelector('.searchInput');
+      const inputDiv = document.querySelector('.openSearchInput');
 
-      document.querySelector('.searchInput').classList.toggle('open');
-      if (document.querySelector('.searchInput').classList.contains('open')) {
+       inputField.classList.toggle('open');
+     
+
+      if (inputField.classList.contains('open')) {
+       
+
+        inputDiv.classList.remove('closeSearch');
+        inputDiv.classList.add('openSearch');
+
         const inputField = document.querySelector('.searchInput');
-        document.querySelector('.searchInput').value="";
+        inputField.value="";
         inputField.focus();
+       
+      }else{
+       
+        inputDiv.classList.remove('openSearch');
+        inputDiv.classList.add('closeSearch');
+       
+      }
+     
     }
-  }
     closeCreateBeehiveForm() {
       this.newbeehiveForm.classList.remove('open');
     }
@@ -60,7 +86,10 @@ class App {
       let beehivesForFeed = await this.withSpinner(() => this.beehivesList.getBeehivesForFeed());
       console.log(beehives)
 
-      
+      document.querySelector('.searchInput').addEventListener('blur',(e)=>{
+        
+        this.openSearchInputForm(e);
+      })
       document.querySelector('.addNewBeeHive').addEventListener('click', async () => {
         try {
             const result = await this.beehiveCreateNew.addNewBeehive(); // Wait for addNewBeehive to complete
@@ -79,7 +108,7 @@ class App {
       });
 
       document.querySelector('.openAddNewBeehive').addEventListener('click',this.openCreateBeehiveForm.bind(this));
-      document.querySelector('.openSearchInput').addEventListener('click',this.openSearchInputForm.bind(this));
+      document.querySelector('.searchIcon').addEventListener('click',this.openSearchInputForm.bind(this));
 
 
       document.querySelector(".beehivesListUL").addEventListener("click", (e) => {
@@ -143,10 +172,10 @@ class App {
     
   
     resetSpinner() {
-      // Force reflow to restart animation
-      this.spinner.style.animation = "none"; // Stop current animation
-      void this.spinner.offsetWidth; // Trigger reflow
-      this.spinner.style.animation = "loading 1s ease-in-out infinite"; // Restart animation
+      
+      this.spinner.style.animation = "none"; 
+      void this.spinner.offsetWidth; 
+      this.spinner.style.animation = "loading 1s ease-in-out infinite"; 
     }
   
     updateDisplay(display, items, section, feedOrHarvest) {

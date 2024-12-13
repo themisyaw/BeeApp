@@ -26,15 +26,22 @@
       <div class="container pb-3">
       <h1 class="text-center">BeeAppLocal</h1>
         <div class="row px-2 justify-content-between d-flex align-items-center">
-          <div class="align-items-center justify-content-start ml-1 col-5  d-flex">
-            <span class="dashicons mr-3 openSearchInput rounded-circle bglight  dashicons-search align-items-center d-flex justify-content-center  iconHeaderFontSize "></span>
-            <input type="number"  class="bgWheat border-0 form-control w-50 searchInput" aria-label="" aria-describedby="">
+          <div class="align-items-center openSearchInput p- position-retive bglight shadow justify-content-center ml1 d-flex rounded closeSearch">
+            <span class="dashicons rounded bglight mx-2 searchIcon  dashicons-search align-items-center d-flex   ">
+              
+
+            </span>
+            <input type="number"  class="border-0 bg-transparent form-control p-0 searchInput" aria-label="" aria-describedby="">
+            
 
           </div>
 
-          <div class="align-items-center justify-content-end mr-1 col-5  d-flex">
-            <span class="mr-3 text-light">Add new</span>
-            <span class="dashicons rounded-circle d-flex bglight  align-items-center justify-content-center iconHeaderFontSize dashicons-plus-alt2 openAddNewBeehive"></span>
+          <div class="align-items-center justify-content-end openAddNewBeehive bglight shadow rounded mr-1 col-5 py-2  d-flex">
+            <span class="mr-3 text-dark">Add new</span>
+            <span class="dashicons rounded d-flex bglight addNewIcon  align-items-center justify-content-center  dashicons-plus-alt2 ">
+            
+
+            </span>
             
           </div>
           
@@ -54,21 +61,16 @@
         ?>
     
     </header>
-    <div class="row p-0 m-0 justify-content-between d-flex align-items-center">
-      <div class="align-items-center justify-content-start ml-1 col-5  d-flex">
-          
-           
-         
-
-      </div>
-      <div class="align-items-center justify-content-end mr-1 col-5  d-flex">
-          <div class=" newbeehiveForm rounded d-flex align-items-center justify-content-end messageDiv">
+    
+      <div class="align-items-center position-absolute top-0 justify-content-center mr-1 col newbeehiveForm">
+          <div class="row rounded d-flex align-items-center justify-content-center">
+            <div class="col-6 d-flex">
+              <input tabindex="-1" type="number" class="newBeehiveNumberInput form-control w-50"/>
+              <button class="btn btn-dark addNewBeeHive ">Save</button>
+            </div>
             
-            <input tabindex="-1" type="number" class="newBeehiveNumberInput form-control w-50"/>
-            <button class="btn btn-dark addNewBeeHive ">AddNew</button>
+            
           </div>
       </div>
-
-
-    </div>
+    
    

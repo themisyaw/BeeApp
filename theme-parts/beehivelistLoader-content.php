@@ -15,7 +15,7 @@
                 <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 ">
                     <div class="py-1 d-flex justify-content-between">
                         <div class="p-0">
-                            <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">00</span>
+                            <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">&nbsp;&nbsp;</span>
                         </div>
                         <div class="mr-2 d-flex align-items-center ">
                             <span class="bgRatingStars d-flex rounded-pill starsRating py-1 my-1 px-2 ">
@@ -56,7 +56,7 @@
                     <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 ">
                         <div class="py-1 d-flex justify-content-between">
                             <div class="p-0">
-                                <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">00</span>
+                                <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">&nbsp;&nbsp;</span>
                             </div>
                             <div class="mr-2 d-flex align-items-center ">
                                 <span class="bgRatingStars d-flex rounded-pill starsRating py-1 my-1 px-2 ">
@@ -97,7 +97,7 @@
                 <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 ">
                     <div class="py-1 d-flex justify-content-between">
                         <div class="p-0">
-                            <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">00</span>
+                            <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">&nbsp;&nbsp;</span>
                         </div>
                         <div class="mr-2 d-flex align-items-center ">
                             <span class="bgRatingStars d-flex rounded-pill starsRating py-1 my-1 px-2 ">
@@ -138,7 +138,7 @@
                 <div data-id=""  class="animated-element animate  d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 ">
                     <div class="py-1 d-flex justify-content-between">
                         <div class="p-0">
-                            <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">00</span>
+                            <span class=" text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">&nbsp;&nbsp;</span>
                         </div>
                         <div class="mr-2 d-flex align-items-center ">
                             <span class="bgRatingStars d-flex rounded-pill starsRating py-1 my-1 px-2 ">
