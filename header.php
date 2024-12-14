@@ -24,30 +24,9 @@
   <body class=""<?php body_class(); ?>>
     <header class="site-header bgWheat position-relative" id="personalinfo">
       <div class="container py-3">
-      <!-- <h1 class="text-center">BeeAppLocal</h1> -->
-        <div class="row px-2 justify-content-between d-flex align-items-center">
-          <div class="align-items-center openSearchInput p- position-retive bglight shadow justify-content-center ml1 d-flex rounded closeSearch">
-            <span class="dashicons rounded bglight mx-2 searchIcon  dashicons-search align-items-center d-flex   ">
-              
-
-            </span>
-            <input type="number"  class="border-0 bg-transparent form-control p-0 searchInput" aria-label="" aria-describedby="">
-            
-
-          </div>
-
-          <div class="align-items-center justify-content-center openAddNewBeehive bglight shadow rounded mr-1 col-5 py-2  d-flex">
-            <span class="mr-2 text-dark">Add new</span>
-            <span class="dashicons rounded d-flex bglight addNewIcon  align-items-center justify-content-center  dashicons-plus-alt2 ">
-            
-
-            </span>
-            
-          </div>
-          
-          
-
-        </div>
+        <h1 class="text-center m-0 pt-2">BeeMan</h1>
+        
+        
         
       </div>
       

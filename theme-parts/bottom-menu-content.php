@@ -1,23 +1,39 @@
-    <div class="row mx-2 my-2 bottomMenu justify-content-center shadow bgWheat align-items-center fixed-bottom">
+    <div class="row  bottomMenu bglight justify-content-center shadow align-items-center fixed-bottom">
 
             <div class="col text-center basicMenu ">
-                <div class="align-items-center  justify-content-center d-flex">
+                <div class="align-items-end px-2 justify-content-start d-flex">
                     <div class="openBeehivesListBtn ">
-                        <div class="d-flex align-items-center py-2 px-3 rounded">
+                        <div class="d-block align-items-center pt-2 px-2 rounded">
                             <!-- <span class="dashicons dashicons-cart text-info "></span> -->
-                            <span class="text-white ml-1">Beehives</span>
+                             <div class="rounded-pill px-4 py-2 bgWheat position-relative ">
+                                    <?php echo get_svg_icon('beehiveBottom'); ?>
+                                    <span class="text-dark fs-13">Beehives</span>
+                                    <span class="p-2 fs-13 rounded-circle bg-dark text-light" >2</span>
+                                    
+                             </div>
+                           
+                           
+                           
                         </div>
                     </div>
                     <div class="openBeehivesForFeedBtn ">
-                        <div class="d-flex align-items-center py-2 px-3 rounded">
+                        <div class="d-block align-items-center  pt-2 px-3 mx-2 rounded">
+                           <div class="rounded-pill px-4 py-2 position-relative ">
+                                <?php echo get_svg_icon('beehiveForFoodBottom'); ?>
+                               
+                            </div>
+                            <div class="text-dark fs-13">Feed</div>
                            
-                            <span class="text-white ml-1">Feed</span>
                         </div>
                     </div>
                     <div class="openBeehivesForHarvestBtn ">
-                        <div class="d-flex align-items-center py-2 px-3  rounded">
+                        <div class="d-block align-items-center  pt-2 px-3 mx-2 rounded">
+                            <div class="rounded-pill px-4 py-2 position-relative ">
+                                <?php echo get_svg_icon('beehiveForHarvestBottom'); ?>
+                                <div class="text-dark fs-13">Harvest</div>
+
+                            </div>
                             
-                            <span class="text-white ml-1">Harvest</span>
                         </div>
                     </div>
 
