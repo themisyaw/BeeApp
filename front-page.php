@@ -16,7 +16,7 @@ if ( is_user_logged_in() ) {
     <?php 
         get_template_part('theme-parts/beehivelistLoader','content');
     ?>
-    <section class="container my-5 beehivesListTab d-block">
+    <section class="container mb-5 mt-2 beehivesListTab d-block">
         <ul class=" py-0 px-2 row row-cols-2 beehivesListUL ">
             
         

@@ -22,9 +22,9 @@
     ?>   
   </head>
   <body class=""<?php body_class(); ?>>
-    <header class="site-header bgWheat" id="personalinfo">
-      <div class="container pb-3">
-      <h1 class="text-center">BeeAppLocal</h1>
+    <header class="site-header bgWheat position-relative" id="personalinfo">
+      <div class="container py-3">
+      <!-- <h1 class="text-center">BeeAppLocal</h1> -->
         <div class="row px-2 justify-content-between d-flex align-items-center">
           <div class="align-items-center openSearchInput p- position-retive bglight shadow justify-content-center ml1 d-flex rounded closeSearch">
             <span class="dashicons rounded bglight mx-2 searchIcon  dashicons-search align-items-center d-flex   ">
@@ -36,8 +36,8 @@
 
           </div>
 
-          <div class="align-items-center justify-content-end openAddNewBeehive bglight shadow rounded mr-1 col-5 py-2  d-flex">
-            <span class="mr-3 text-dark">Add new</span>
+          <div class="align-items-center justify-content-center openAddNewBeehive bglight shadow rounded mr-1 col-5 py-2  d-flex">
+            <span class="mr-2 text-dark">Add new</span>
             <span class="dashicons rounded d-flex bglight addNewIcon  align-items-center justify-content-center  dashicons-plus-alt2 ">
             
 
@@ -59,18 +59,25 @@
        <?php 
         // get_template_part( 'theme-parts/bottom-menu-content', 'content' );
         ?>
-    
-    </header>
-    
-      <div class="align-items-center position-absolute top-0 justify-content-center mr-1 col newbeehiveForm">
+         
+         <div class="align-items-center position-absolute d-flex py-4  bgWheat h-100 top-0 justify-content-center pb-2 col newbeehiveForm">
+
+         <div class="btn btn-alarm position-absolute border-0 text-dark closeCreateNewForm rounded bglight d-flex align-items-center shadow mx-1">
+                <div class="dashicons dashicons-no"></div>
+              </div>
           <div class="row rounded d-flex align-items-center justify-content-center">
-            <div class="col-6 d-flex">
-              <input tabindex="-1" type="number" class="newBeehiveNumberInput form-control w-50"/>
-              <button class="btn btn-dark addNewBeeHive ">Save</button>
+            <div class="col-10 d-flex">
+              <input tabindex="-1" type="number" placeholder="beehive number" class="mx-2 bglight border-0 shadow newBeehiveNumberInput form-control "/>
+              <button class="btn btn-dark addNewBeeHive border-0 text-light  rounded  mx-2">Add</button>
+              
             </div>
             
             
           </div>
       </div>
+    
+    </header>
+    
+     
     
    

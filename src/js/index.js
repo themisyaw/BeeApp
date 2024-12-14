@@ -34,9 +34,6 @@ class App {
       this.newbeehiveForm.classList.toggle('open');
       const addNewIcon =document.querySelector('.addNewIcon');
       if (this.newbeehiveForm.classList.contains('open')) {
-       
-       
-       
           addNewIcon.classList.remove('dashicons-plus-alt2');
           addNewIcon.classList.add('dashicons-minus');
         const inputField = this.newbeehiveForm.querySelector('.newBeehiveNumberInput');
@@ -75,6 +72,8 @@ class App {
     }
     closeCreateBeehiveForm() {
       this.newbeehiveForm.classList.remove('open');
+      document.querySelector('.addNewIcon').classList.remove('dashicons-minus');
+      document.querySelector('.addNewIcon').classList.add('dashicons-plus-alt2');
     }
 
     
@@ -89,6 +88,10 @@ class App {
       document.querySelector('.searchInput').addEventListener('blur',(e)=>{
         
         this.openSearchInputForm(e);
+      })
+      document.querySelector('.closeCreateNewForm').addEventListener('click',()=>{
+        this.closeCreateBeehiveForm();
+       
       })
       document.querySelector('.addNewBeeHive').addEventListener('click', async () => {
         try {
