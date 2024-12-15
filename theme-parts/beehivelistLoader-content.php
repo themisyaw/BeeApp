@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<section class="container my-5 animatedSection ">
+<section class="container my-5 pb-5 animatedSection ">
         <ul class=" py-0 px-2 row row-cols-2 loaderUl ">
             <div class="">
                 <div class="my-2 px-1 d-flex justify-content-end ">

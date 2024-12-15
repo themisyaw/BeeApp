@@ -21,6 +21,7 @@ class App {
       this.beehivesForFeedTab = document.querySelector(".beehiveForFeedTab");
       this.newbeehiveForm = document.querySelector('.newbeehiveForm');
       this.addNewBeeHive = document.querySelector('.addNewBeeHive');
+      
 
       
 
@@ -125,21 +126,21 @@ class App {
         this.updateDisplay(this.beehiveEditSave, item, this.beehiveEditSaveTab);
       });
   
-      document.querySelector(".openBeehivesListBtn").addEventListener("click", async () => {
+      document.querySelector(".openBeehivesListBtn").addEventListener("click", async (e) => {
         this._displayNoneTabs();
         beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
         
-        this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
+        this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab,null,e);
       });
   
-      document.querySelector(".openBeehivesForFeedBtn").addEventListener("click", async () => {
+      document.querySelector(".openBeehivesForFeedBtn").addEventListener("click", async (e) => {
         this._displayNoneTabs();
         beehivesForFeed = await this.withSpinner(() => this.beehivesForFeed.getBeehivesForFeed());
         beehivesForFeed = beehivesForFeed.filter((beehive) => beehive.giaTaisma === true);
-        this.updateDisplay(this.beehivesForFeed, beehivesForFeed, this.beehivesForFeedTab, "feed");
+        this.updateDisplay(this.beehivesForFeed, beehivesForFeed, this.beehivesForFeedTab, "feed",e);
       });
   
-      document.querySelector(".openBeehivesForHarvestBtn").addEventListener("click", async () => {
+      document.querySelector(".openBeehivesForHarvestBtn").addEventListener("click", async (e) => {
         this._displayNoneTabs();
         beehivesForTrugos = await this.withSpinner(() => this.beehivesForFeed.getBeehives());
        
@@ -147,7 +148,8 @@ class App {
           this.beehivesForFeed,
           beehivesForTrugos.filter((beehive) => beehive.giaTrugo === true),
           this.beehivesForFeedTab,
-          "harvest"
+          "harvest",
+          e
         );
       });
 
@@ -180,15 +182,28 @@ class App {
       void this.spinner.offsetWidth; 
       this.spinner.style.animation = "loading 1s ease-in-out infinite"; 
     }
-  
-    updateDisplay(display, items, section, feedOrHarvest) {
-     
-  
+
+    _removeClickedBottomMenu(){
+      const menuItems = document.querySelectorAll('.bottomMenuitemText');
+
+
+      menuItems.forEach(item => {
+        item.classList.remove('fw-600');
+    });
+    }
+    updateDisplay(display, items, section, feedOrHarvest,e) {
+      console.log(e)
+      if(e){
+        this._removeClickedBottomMenu();
+        const menuItem = e.target.closest('.bottomMenuitemText');
+        menuItem.classList.add('fw-600');
+      }
+      
       if (section) {
         section.classList.remove("d-none");
       }
-  
-      display.render(items, feedOrHarvest); // Render new content
+     
+      display.render(items, feedOrHarvest); 
     }
   
     _displayNoneTabs() {

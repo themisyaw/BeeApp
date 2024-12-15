@@ -5,22 +5,22 @@
             
     
                 <div class="align-items-end mx-2   justify-content-between d-flex basicMenu">
-                    <div class="openBeehivesListBtn ">
-                        <div class="d-block text-center py-2 px-4 rounded">
+                    <div class="openBeehivesListBtn bottomMenuitemText ">
+                        <div class="d-block text-center  py-2 px-2 rounded">
                                     <?php echo get_svg_icon('beehiveBottom'); ?> 
-                                    <div class="text-dark fs-13 mt-1">Beehives (<span class="beehivesTotal">20</span>)</div>
+                                    <div class="text-dark fs-13   px-3  rounded mt-1">Beehives (<span class="beehivesTotal">20</span>)</div>
                         </div>
                     </div>
-                    <div class="openBeehivesForFeedBtn ">
-                        <div class="d-block text-center py-2 px-4  rounded">
+                    <div class="openBeehivesForFeedBtn bottomMenuitemText ">
+                        <div class="d-block text-center  py-2 px-2  rounded">
                                 <?php echo get_svg_icon('beehiveForFoodBottom'); ?>
-                                <div class="text-dark fs-13 mt-1">Feed (<span class="feedTotal">20</span>)</div>
+                                <div class="text-dark fs-13   px-3  rounded mt-1">Feed (<span class="feedTotal">20</span>)</div>
                         </div>
                     </div>
-                    <div class="openBeehivesForHarvestBtn ">
-                        <div class="d-block text-center py-2 px-4  rounded">
+                    <div class="openBeehivesForHarvestBtn bottomMenuitemText ">
+                        <div class="d-block text-center  py-2  px-2  rounded">
                                 <?php echo get_svg_icon('beehiveForHarvestBottom'); ?>
-                                <div class="text-dark fs-13 mt-1">Harvest (<span class="harvestTotal">20</span>)</div>
+                                <div class="text-dark fs-13    px-3  rounded mt-1">Harvest (<span class="harvestTotal">20</span>)</div>
                         </div>
                     </div>
 

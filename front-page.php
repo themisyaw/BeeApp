@@ -16,7 +16,7 @@ if ( is_user_logged_in() ) {
     <?php 
         get_template_part('theme-parts/beehivelistLoader','content');
     ?>
-    <section class="container mb-5 mt-2 beehivesListTab d-block">
+    <section class="container mb-5 pb-5 mt-2 beehivesListTab d-block">
     <div class="row px-2 justify-content-between d-flex align-items-center">
           <div class="align-items-center openSearchInput p- position-retive bglight shadow justify-content-center ml1 d-flex rounded closeSearch">
             <span class="dashicons rounded bglight mx-2 searchIcon  dashicons-search align-items-center d-flex   ">
@@ -37,7 +37,7 @@ if ( is_user_logged_in() ) {
         </ul>
     </section>
     <!-- beehives edit page -->
-    <section class="my-5 container beehiveEditSaveTab d-none">
+    <section class="my-5 pb-5 container beehiveEditSaveTab d-none">
     <div class="button btn deleteBeehiveBtn color-dark bg-light">Delete</div>
         <h3 class="text-start py-3"> Beehive </h3>
         
@@ -47,7 +47,7 @@ if ( is_user_logged_in() ) {
         </ul>
     </section>
     <!-- beehives for feed list -->
-    <section class="my-5 container beehiveForFeedTab d-none">
+    <section class="my-5 pb-5 container beehiveForFeedTab d-none">
         <h3 class="text-start py-3"> Beehives For Feed </h3>
 
         <div class="beehivesForFeed bgWheat shadow">

@@ -4,7 +4,7 @@
 // $beehives_query = get_query_var( 'beehives_query' );
 ?>
    
-<section class="my-5 container beehiveEditSaveTab d-none">
+<section class="my-5 container pb-5 beehiveEditSaveTab d-none">
      <h3 class="text-start py-3"> Beehive Edit </h3>
      
     <!-- <div class="row my-3 ">
