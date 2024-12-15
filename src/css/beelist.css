@@ -96,7 +96,6 @@ svg {
   
   .bottomMenu{
     background: rgba( 250, 239, 219, 0.5 );
-    box-shadow: 0px 0px 10px 3px #faefdb;
     backdrop-filter: blur( 3px );
     -webkit-backdrop-filter: blur( 3px );
    
