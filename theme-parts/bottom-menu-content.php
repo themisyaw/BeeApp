@@ -1,10 +1,10 @@
-    <div class="row  bottomMenu bglight justify-content-center shadow align-items-center fixed-bottom">
+    <div class="row  bottomMenu  justify-content-center align-items-center fixed-bottom">
 
             <div class="basicMenu col">
 
             
     
-                <div class="align-items-end px-2 mx-2  justify-content-between d-flex basicMenu">
+                <div class="align-items-end px-2 mx-2 pt-2  justify-content-between d-flex basicMenu">
                     <div class="openBeehivesListBtn ">
                         <div class="d-block text-center rounded">
                                     <?php echo get_svg_icon('beehiveBottom'); ?> 
