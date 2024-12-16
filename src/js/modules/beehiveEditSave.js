@@ -12,6 +12,9 @@ class beehiveEditSave extends beeAppListBase {
         this.beehiveEditMenu = document.querySelector('.beehiveEditMenu');
         this.cancelBtn = document.querySelector('.cancelsave');
         this.deleteBeehiveBtn = document.querySelector('.deleteBeehiveBtn');
+        this.harvestTotal=document.querySelector('.harvestTotal');
+        this.beehivesTotal=document.querySelector('.beehivesTotal');
+        this.feedTotal=document.querySelector('.feedTotal');
         // Data
         this.itemsIDforUpdate = [];
         this.beehiveOld = null;
@@ -28,6 +31,7 @@ class beehiveEditSave extends beeAppListBase {
         // Attach Static Event Listeners
         this.initStaticListeners();
     }
+    
 
     initStaticListeners() {
         
@@ -49,6 +53,7 @@ class beehiveEditSave extends beeAppListBase {
             // After deletion, navigate back to the beehive list
             if (result.success) {
                 // message success
+                this.app._bottomMenuBeehivesCounter();
                 this.app.showBeehiveList();
             }else{
                 // message fail
@@ -62,7 +67,7 @@ class beehiveEditSave extends beeAppListBase {
         try {
             const result = await this.saveBeehive(this.beehiveNew);
             console.log('Save successful:', result);
-
+            this.app._bottomMenuBeehivesCounter();
             this.beehiveOld = JSON.parse(JSON.stringify(this.beehiveNew));
             this.cancelsave();
         } catch (error) {
@@ -105,13 +110,13 @@ class beehiveEditSave extends beeAppListBase {
 
         // Range Inputs
         if (target.classList.contains('telara')) {
-            this.beehiveNew.telara = target.value;
+            this.beehiveNew.telara = Number(target.value);
         }
         if (target.classList.contains('newTelara')) {
             this.beehiveNew.newtelara = Number(target.value);
         }
         if (target.id === 'beehiveRatingInput') {
-            this.beehiveNew.beehiverating = target.value;
+            this.beehiveNew.beehiverating =target.value;
         }
 
         // Radio Buttons
@@ -124,6 +129,10 @@ class beehiveEditSave extends beeAppListBase {
 
     _saveButtonDisplay() {
         const isSame = JSON.stringify(this.beehiveOld) === JSON.stringify(this.beehiveNew);
+        console.log('beehiveOld')
+        console.log(this.beehiveOld)
+        console.log('beehiveNew')
+        console.log(this.beehiveNew)
         if (isSame) {
             this.beehiveEditMenu.classList.add('d-none');
             this.basicMenu.classList.remove('d-none');

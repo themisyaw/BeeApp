@@ -11,7 +11,7 @@ class App {
     constructor() {
       this.beehivesList = new BeeHivesList(this);
       this.beehiveEditSave = new beehiveEditSave(this);
-      this.beehivesForFeed = new BeehivesForFeed();
+      this.beehivesForFeed = new BeehivesForFeed(this);
       this.beehiveCreateNew = new BeehiveCreateNew();
       
      
@@ -21,7 +21,9 @@ class App {
       this.beehivesForFeedTab = document.querySelector(".beehiveForFeedTab");
       this.newbeehiveForm = document.querySelector('.newbeehiveForm');
       this.addNewBeeHive = document.querySelector('.addNewBeeHive');
-      
+      this.harvestTotal=document.querySelector('.harvestTotal');
+      this.beehivesTotal=document.querySelector('.beehivesTotal');
+      this.feedTotal=document.querySelector('.feedTotal');
 
       
 
@@ -77,7 +79,14 @@ class App {
       document.querySelector('.addNewIcon').classList.add('dashicons-plus-alt2');
     }
 
-    
+    async _bottomMenuBeehivesCounter(){
+      let beehives = await this.beehivesList.getBeehives();
+      
+      this.beehivesTotal.innerHTML = beehives.length
+      this.harvestTotal.innerHTML = beehives.filter((beehive) => beehive.giaTrugo === true).length;
+      this.feedTotal.innerHTML = beehives.filter((beehive) => beehive.giaTaisma === true).length;
+
+    }
     async init() {
 
       // Initial fetch for grocery items
@@ -85,6 +94,7 @@ class App {
       let beehivesForTrugos = await this.withSpinner(() => this.beehivesList.getBeehives());
       let beehivesForFeed = await this.withSpinner(() => this.beehivesList.getBeehivesForFeed());
       console.log(beehives)
+      this._bottomMenuBeehivesCounter();
 
       document.querySelector('.searchInput').addEventListener('blur',(e)=>{
         
@@ -192,7 +202,7 @@ class App {
     });
     }
     updateDisplay(display, items, section, feedOrHarvest,e) {
-      console.log(e)
+     
       if(e){
         this._removeClickedBottomMenu();
         const menuItem = e.target.closest('.bottomMenuitemText');

@@ -26,6 +26,7 @@ function createBeehive($request) {
 
     if (function_exists('update_field')) {
         update_field('beehiveNumber', $beehiveNumber, $post_id);
+        update_field('beehiverating', 0, $post_id);
     } else {
         return new WP_Error('acf_missing', 'ACF plugin is not active or update_field function not found.', array('status' => 500));
     }

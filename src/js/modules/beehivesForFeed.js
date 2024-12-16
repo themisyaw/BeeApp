@@ -3,9 +3,9 @@ import { beeAppListBase } from './beeAppRequests.js';
 
  class beehivesForFeed extends beeAppListBase {
 
-    constructor() {
+    constructor(app) {
         super();
-        
+        this.app = app;
         this.beehiveUlForFeed = document.querySelector('.beehiveUlForFeed');
         this.saveBtn= document.querySelector('.saveForFeed');
         this.cancelsaveForFeed= document.querySelector('.cancelsaveForFeed');
@@ -42,7 +42,7 @@ import { beeAppListBase } from './beeAppRequests.js';
             
             const result = await this.saveBeehive(this.beehivesForFeedListNew);
             console.log('Save successful:', result); // Handle success
-           
+            this.app._bottomMenuBeehivesCounter();
             this.beehivesForFeedList = JSON.parse(JSON.stringify(this.beehivesForFeedListNew));  
             this._cancelsave();
         } catch (error) {
