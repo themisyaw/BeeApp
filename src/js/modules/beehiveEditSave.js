@@ -1,5 +1,5 @@
 import { beeAppListBase } from './beeAppRequests.js';
-
+// import _ from 'lodash';
 class beehiveEditSave extends beeAppListBase {
     constructor(app) {
 
@@ -81,10 +81,17 @@ class beehiveEditSave extends beeAppListBase {
 
     render(item) {
         this.beehiveID = item.id;     
-        
+       
         this.beehiveUl.innerHTML = this._htmlAddRemoveListContent(item);
-        this.beehiveOld = JSON.parse(JSON.stringify(item));
-        this.beehiveNew = JSON.parse(JSON.stringify(item));
+console.log('yo');
+console.log(item)
+        this.beehiveOld = _.cloneDeep(item);
+        this.beehiveNew = _.cloneDeep(item);
+        // this.beehiveOld = JSON.parse(JSON.stringify(item));
+        // this.beehiveNew = JSON.parse(JSON.stringify(item));
+
+        console.log(this.beehiveNew)
+        console.log(this.beehiveOld)
         this._saveButtonDisplay();
     }
 
@@ -111,6 +118,7 @@ class beehiveEditSave extends beeAppListBase {
         // Range Inputs
         if (target.classList.contains('telara')) {
             this.beehiveNew.telara = Number(target.value);
+            console.log(this.beehiveNew.telara)
         }
         if (target.classList.contains('newTelara')) {
             this.beehiveNew.newtelara = Number(target.value);
@@ -128,7 +136,8 @@ class beehiveEditSave extends beeAppListBase {
     }
 
     _saveButtonDisplay() {
-        const isSame = JSON.stringify(this.beehiveOld) === JSON.stringify(this.beehiveNew);
+        // const isSame = JSON.stringify(this.beehiveOld) === JSON.stringify(this.beehiveNew);
+        const isSame = _.isEqual(this.beehiveOld, this.beehiveNew);
         console.log('beehiveOld')
         console.log(this.beehiveOld)
         console.log('beehiveNew')

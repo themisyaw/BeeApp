@@ -53,11 +53,18 @@ function update_single_beehive($data) {
         'newtelara',
         'telara'
     );
+
     foreach ($fields_to_update as $field) {
         if (isset($data[$field])) {
-            update_field($field, $data[$field], $post_id); // Using ACF's `update_field` function
+           
+            if ($field === 'telara' || $field === 'newtelara') {
+                update_field($field, intval($data[$field]), $post_id);
+            } else {
+                update_field($field, $data[$field], $post_id);
+            }
         }
     }
+
     $arrwsties = $data['arrwsties'] ?? []; // Grab arrwsties from the incoming data
 
     if (is_array($arrwsties)) {
@@ -73,3 +80,4 @@ function update_single_beehive($data) {
         'post_id' => $post_id,
     );
 }
+

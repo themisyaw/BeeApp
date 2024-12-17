@@ -27,7 +27,31 @@ function createBeehive($request) {
     if (function_exists('update_field')) {
         update_field('beehiveNumber', $beehiveNumber, $post_id);
         update_field('beehiverating', 0, $post_id);
-    } else {
+    } 
+    if (function_exists('update_field')) {
+       
+        $fields = array(
+            'beehiveNumber' => $beehiveNumber,
+            'beehiverating' => 0,
+            'giaTaisma'     => false,
+            'giaTrugo'      => false,
+            'beehiveType' => "Κυψέλη",
+            'beehiverating' => 0,
+            'amerikanikiSipsogonia'=>false,
+            'orfano'=>false,
+            'nozemiasi'=>false,
+            'kakibasilissa'=>false,
+            'baroa'=>false,
+            'askosfairwsi'=>false,
+            'newtelara'=>0,
+            'telara'=>0
+        );
+
+        foreach ($fields as $field_key => $value) {
+            update_field($field_key, $value, $post_id);
+        }
+    
+    }else {
         return new WP_Error('acf_missing', 'ACF plugin is not active or update_field function not found.', array('status' => 500));
     }
 

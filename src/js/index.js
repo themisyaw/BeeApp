@@ -130,10 +130,15 @@ class App {
         const itemElement = e.target.closest(".kypseli");
         const itemID = itemElement.dataset.id;
         if (!itemID) return;
+        
+        
         const item = beehives.find((item) => item.id == itemID);
+        
        
         this._displayNoneTabs();
         this.updateDisplay(this.beehiveEditSave, item, this.beehiveEditSaveTab);
+        console.log('yo1');
+        console.log(item)
       });
   
       document.querySelector(".openBeehivesListBtn").addEventListener("click", async (e) => {
