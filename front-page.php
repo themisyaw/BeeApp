@@ -37,7 +37,7 @@ if ( is_user_logged_in() ) {
         </ul>
     </section>
     <!-- beehives edit page -->
-    <section class="my-5 pb-5 container beehiveEditSaveTab d-none">
+    <section class="mb-5 pb-5 container beehiveEditSaveTab d-none">
     <div class="button btn deleteBeehiveBtn color-dark bg-light">Delete</div>
         <h3 class="text-start py-3"> Beehive </h3>
         

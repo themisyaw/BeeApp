@@ -118,13 +118,16 @@ console.log(item)
         // Range Inputs
         if (target.classList.contains('telara')) {
             this.beehiveNew.telara = Number(target.value);
+            document.querySelector('.telaraSpan').innerHTML = Number(target.value);
             console.log(this.beehiveNew.telara)
         }
         if (target.classList.contains('newTelara')) {
             this.beehiveNew.newtelara = Number(target.value);
+            document.querySelector('.newTelaraSpan').innerHTML = Number(target.value);
         }
         if (target.id === 'beehiveRatingInput') {
             this.beehiveNew.beehiverating =target.value;
+            document.querySelector('.beehiveRatingSpan').innerHTML = Number(target.value);
         }
 
         // Radio Buttons
@@ -155,90 +158,109 @@ console.log(item)
 
     _htmlAddRemoveListContent(item) {
         let htmlContent = `
-            <div class="row">
-                <div class="col">
-                    <label>Beehive </label>
+            <div class="row my-2 py-2 bgWheat">
+                <div class="col d-flex align-items-center">
+                    <h5 class="m-0 text-dark">Beehive </h5>
                 </div>
-                <div class="col">
-                    <input type="text" value="${this._escapeHTML(item.beehiveNumber)}" class="beehiveNumInput">
+                <div class="col py-2">
+                    <input type="number" value="${this._escapeHTML(item.beehiveNumber)}" class="beehiveNumInput w-50 text-center form-control rounded  bglight border-0 shadow" >
                 </div>
             </div>
-    
-            <div class="row">
-                <div class="col">
-                    <label>For Feed </label>
+            <div class="row my-2 py-2 d-block bgWheat">
+                <div class="col px-0 py-2 d-flex">
+                    <div class="col-6 ">
+                        <h5 class="m-0 text-dark">For Feed </h5>
+                    </div>
+                    <div class="col-6 ">
+                        <div class="form-check">
+                            <input ${item.giaTaisma ? 'checked' : ''} class="checkboxes rounded bglight form-check-input border-0 shadow " type="checkbox" value="" id="taismaCheckbox">
+                            <label class="form-check-label m-0" for="taismaCheckbox"></label>
+                        </div>
+                    </div>
                 </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input ${item.giaTaisma ? 'checked' : ''} class="form-check-input" type="checkbox" value="" id="taismaCheckbox">
-                        <label class="form-check-label" for="taismaCheckbox"></label>
+        
+                <div class="col px-0 d-flex py-2">
+                    <div class="col-6 ">
+                        <h5 class="m-0 text-dark">For Trugos </h5>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input ${item.giaTrugo ? 'checked' : ''} class="checkboxes rounded bglight form-check-input border-0 shadow" type="checkbox" value="" id="trugosCheckbox">
+                            <label class="form-check-label text-dark" for="trugosCheckbox"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-2 py-2 d-block bgWheat">
+                <div class="col px-0 py-2 d-flex">
+                    <div class="col-6 d-flex align-items-center">
+                        <h5 class="m-0 text-dark">Frames </h5>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-right pt-2">
+                        <span class=" text-dark px-3 py-2 bglight"> <span class="telaraSpan text-end  ">${item.telara}</span> / 20</span>
+                        </div>
+                        
+                        <input type="range" min="0" max="20" class="telara bglight my-4 form-range  w-100" value="${item.telara || 0}">
+                    </div>
+                </div>
+        
+                <div class="col px-0 py-2 d-flex">
+                    <div class="col-6 d-flex align-items-center">
+                        <h5 class="m-0 text-dark">New Frames </h5>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-right pt-2">
+                        <span class=" text-dark px-3 py-2 bglight"> <span class="newTelaraSpan text-end  ">${item.newtelara}</span> / 20</span>
+                        </div>
+                       
+                        <input type="range" min="0" max="20" class="bglight newTelara my-4 w-100" value="${item.newtelara || 0}">
                     </div>
                 </div>
             </div>
     
-            <div class="row">
-                <div class="col">
-                    <label>For Trugos </label>
+            <div class="row my-2 py-2 bgWheat">
+                <div class="col d-flex align-items-center ">
+                    <h5 class="m-0 text-dark">Type </h5>
                 </div>
                 <div class="col">
-                    <div class="form-check">
-                        <input ${item.giaTrugo ? 'checked' : ''} class="form-check-input" type="checkbox" value="" id="trugosCheckbox">
-                        <label class="form-check-label" for="trugosCheckbox"></label>
+                    <div class="d-flex align-items-center my-1 py-1">
+                        <input class="form-check-input " type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
+                        <label class="form-check-label custom-radio bglight" for="beeTypeKypseliInput"></label>
+                        <label class="my-0 ml-2 text-dark"  for="beeTypeKypseliInput">Hive</label>
+                    </div>
+                    <div class="d-flex align-items-center  my-1 py-1">
+                        <input class="form-check-input " type="radio" name="beeTypeRadios" value="Παραφυάδα" id="beeTypeParafuadaInput" ${item.beehiveType === 'Παραφυάδα' ? 'checked' : ''}>
+                        <label class="form-check-label text-dark custom-radio bglight" for="beeTypeParafuadaInput"></label>
+                        <label class="my-0 ml-2 text-dark" for="beeTypeParafuadaInput">Nucleus colony</label>
                     </div>
                 </div>
             </div>
     
-            <div class="row">
-                <div class="col">
-                    <label>Telara </label>
+            <div class="row my-2 py-2 bgWheat">
+                <div class="col d-flex align-items-center  ">
+                    <h5 class="m-0 text-dark">Bee Rating </h5>
                 </div>
-                <div class="col">
-                    <input type="range" min="0" max="20" class="telara form-range" value="${item.telara || 0}">
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col">
-                    <label>New Telara </label>
-                </div>
-                <div class="col">
-                    <input type="range" min="0" max="20" class="newTelara" value="${item.newtelara || 0}">
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col">
-                    <label>Type </label>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
-                        <label class="form-check-label" for="beeTypeKypseliInput">Beehive</label>
+                <div class="col py-2">
+                    <div class="text-right pt-2">
+                        <span class=" text-dark px-3 py-2 bglight"> <span class="beehiveRatingSpan text-end  ">${item.beehiverating}</span> %</span>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="beeTypeRadios" value="Παραφυάδα" id="beeTypeParafuadaInput" ${item.beehiveType === 'Παραφυάδα' ? 'checked' : ''}>
-                        <label class="form-check-label" for="beeTypeParafuadaInput">Queen births</label>
+                    <input type="range" class="bglight w-100 my-4 form-range" min="0" max="100" value="${item.beehiverating || 0}" id="beehiveRatingInput">
+
+                </div>
+                
+              
+            </div>
+    
+            <div class="row my-2 py-2 bgWheat">
+                <div class="col py-2">
+                    <h5 cass="m-0 text-dark">Diseases</h5>
+                </div>
+                <div class="col d-block arrwstiesForm">
+                    <div>
+                        ${this._generateCheckboxes(item.arrwsties)}
                     </div>
                 </div>
-            </div>
-    
-            <div class="row">
-                <div class="col">
-                    <label>Bee Rating </label>
-                </div>
-                <div class="col">
-                    <label for="beehiveRatingInput" class="form-label">Beehive Rate</label>
-                    <input type="range" class="form-range" min="0" max="100" value="${item.beehiverating || 0}" id="beehiveRatingInput">
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col">
-                    <label>Diseases</label>
-                </div>
-                <form class="col d-block arrwstiesForm">
-                    ${this._generateCheckboxes(item.arrwsties)}
-                </form>
             </div>
         `;
         
@@ -247,19 +269,19 @@ console.log(item)
     
     _generateCheckboxes(arrwsties) {
         const diseaseList = [
-            { value: 'askosfairwsi', label: 'askosfairwsi' },
-            { value: 'baroa', label: 'baroa' },
-            { value: 'kakibasilissa', label: 'kakibasilissa' },
-            { value: 'nozemiasi', label: 'nozemiasi' },
-            { value: 'orfano', label: 'orfano' },
-            { value: 'amerikanikiSipsogonia', label: 'amerikanikiSipsogonia' }
+            { value: 'askosfairwsi', label: 'Chalkbrood' },
+            { value: 'baroa', label: 'Varroa ' },
+            { value: 'kakibasilissa', label: 'Bad queen' },
+            { value: 'nozemiasi', label: 'Nosema ' },
+            { value: 'orfano', label: 'Orphaned ' },
+            { value: 'amerikanikiSipsogonia', label: 'American foulbrood' }
         ];
         
         return diseaseList.map(disease => {
             return `
-                <div class="form-check">
-                    <input ${arrwsties[disease.value] ? 'checked' : ''} class="form-check-input" type="checkbox" value="${disease.value}" id="${disease.value}CheckBox">
-                    <label class="form-check-label" for="${disease.value}CheckBox">${disease.label}</label>
+                <div class="form-check my-2">
+                    <input ${arrwsties[disease.value] ? 'checked' : ''} class="rounded checkboxes bglight form-check-input border-0 shadow" type="checkbox" value="${disease.value}" id="${disease.value}CheckBox">
+                    <label class="ml-3 text-dark form-check-label" for="${disease.value}CheckBox">${disease.label}</label>
                 </div>
             `;
         }).join('');

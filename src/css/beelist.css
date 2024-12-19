@@ -255,9 +255,86 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  -webkit-appearance: none;
+  border: none;
+}
+.checkboxes:checked {
+  box-shadow: 0px 0px 10px 0px #FF9500 !important;
+  background-color: #FF9500  !important;
+  
+}
 
-/* For Firefox */
+
+
+
 input[type="number"] {
     -moz-appearance: textfield;
+}
+input[type="range"] {
+  -webkit-appearance: none; 
+ 
+  height: 8px; 
+  
+  border-radius: 5px; 
+  outline: none; 
+  opacity: 0.9; 
+  
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Αφαιρεί το προεπιλεγμένο στυλ */
+  appearance: none;
+  width: 20px; /* Πλάτος */
+  height: 20px; /* Ύψος */
+  box-shadow: 0px 0px 10px 0px #FF9500 !important;
+  background-color: #FF9500  !important;
+  border-radius: 50%;
+  cursor: pointer; 
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 0px #FF9500 !important;
+  background-color: #FF9500  !important;
+  cursor: pointer;
+}
+ /* Hide the default radio button */
+ input[type="radio"] {
+  display: none; /* Hides the default radio */
+}
+
+/* Custom radio button styles */
+.custom-radio {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+ 
+  border-radius: 50%; /* Makes it circular */
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Inner circle when selected */
+.custom-radio::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #FF9500;
+  box-shadow: 0px 0px 10px 0px #FF9500 !important;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Show inner circle when checked */
+input[type="radio"]:checked + .custom-radio::after {
+  transform: translate(-50%, -50%) scale(1);
 }
   
