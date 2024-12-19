@@ -41,7 +41,7 @@ if ( is_user_logged_in() ) {
     <div class="button btn deleteBeehiveBtn color-dark bg-light">Delete</div>
         <h3 class="text-start py-3"> Beehive </h3>
         
-        <ul class="list-group p-0 beehiveUl"> 
+        <ul class="list-group p-0 beehiveUl px-2"> 
             
             
         </ul>
