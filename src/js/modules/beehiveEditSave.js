@@ -160,110 +160,106 @@ console.log(item)
         let htmlContent = `
             <div class="row my-3 py-2 bgWheat rounded shadow">
                 <div class="col d-flex align-items-center">
-                    <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Beehive </h5>
+                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Beehive </h6>
                 </div>
-                <div class="col-7 py-2">
+                <div class="col-7 py-2 d-flex justify-content-end">
                     <input type="number" value="${this._escapeHTML(item.beehiveNumber)}" class="font-weight-bold beehiveNumInput w-50 text-center form-control rounded  bglight border-0 shadow" >
                 </div>
             </div>
-            <div class="rounded shadow row my-3 py-2 d-block bgWheat">
-                <div class="col px-0 py-2 d-flex">
+           
+            <div class="rounded shadow row my-3 py-2 d-flex bgWheat">
+                <div class="col px-0 py-2 d-flex align-items-start">
                     <div class="col d-flex  ">
-                        <h5 class="m-0 text-dark px-3 py-2 rounded bglight">For Feed </h5>
+                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Add a flag </h6>
                     </div>
-                    <div class="col-7 ">
+                    
+                </div>
+            
+                <div class="col px-0 d-block py-2">
+                    <div class="col my-2 ">
                         <div class="form-check">
                             <input ${item.giaTaisma ? 'checked' : ''} class="checkboxes rounded bglight form-check-input border-0 shadow " type="checkbox" value="" id="taismaCheckbox">
-                            <label class="form-check-label m-0" for="taismaCheckbox"></label>
+                            <label class="form-check-label m-0 ml-3" for="taismaCheckbox">For Feed</label>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="rounded shadow row my-3 py-2 d-block bgWheat">
-        
-                <div class="col px-0 d-flex py-2">
-                    <div class="col d-flex  ">
-                        <h5 class="m-0 text-dark px-3 py-2 rounded bglight">For Trugos </h5>
-                    </div>
-                    <div class="col-7 ">
+                    <div class="col my-2 ">
                         <div class="form-check">
                             <input ${item.giaTrugo ? 'checked' : ''} class="checkboxes rounded bglight form-check-input border-0 shadow" type="checkbox" value="" id="trugosCheckbox">
-                            <label class="form-check-label text-dark" for="trugosCheckbox"></label>
+                            <label class="form-check-label text-dark ml-3" for="trugosCheckbox">For Harvest</label>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
-                <div class="col px-0 py-2 d-flex">
-                    <div class="col d-flex align-items-center">
-                        <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Frames </h5>
-                    </div>
-                    <div class="col-7">
-                        <div class="text-right pt-2">
-                        <span class=" text-dark px-3 py-2 bglight rounded"> <span class="telaraSpan text-end font-weight-bold ">${item.telara}</span> / 20</span>
-                        </div>
-                        
-                        <input type="range" min="0" max="20" class="telara bglight my-4 form-range  w-100" value="${item.telara || 0}">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
-        
-                <div class="col px-0 py-2 d-flex">
-                    <div class="col d-flex align-items-center">
-                        <h5 class="m-0 text-dark px-3 py-2 rounded bglight">New Frames </h5>
-                    </div>
-                    <div class="col-7">
-                        <div class="text-right pt-2">
-                        <span class=" text-dark px-3 py-2 bglight rounded"> <span class="newTelaraSpan text-end font-weight-bold  ">${item.newtelara}</span> / 20</span>
-                        </div>
-                       
-                        <input type="range" min="0" max="20" class="bglight newTelara my-4 w-100" value="${item.newtelara || 0}">
-                    </div>
-                </div>
-            </div>
-    
-            <div class="rounded shadow row my-3 py-2 bgWheat">
-                <div class="col d-flex align-items-center ">
-                    <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Type </h5>
+             <div class="rounded shadow row my-3 py-2 bgWheat">
+                <div class="col d-flex align-items-start ">
+                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Type </h6>
                 </div>
                 <div class="col-7">
-                    <div class="d-flex align-items-center my-1 py-1">
+                    <div class="d-flex align-items-start my-1 py-1">
                         <input class="form-check-input " type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
                         <label class="form-check-label custom-radio bglight" for="beeTypeKypseliInput"></label>
-                        <label class="my-0 ml-2 text-dark"  for="beeTypeKypseliInput font-weight-bold">Hive</label>
+                        <label class="my-0 ml-2 text-dark"  for="beeTypeKypseliInput">Hive</label>
                     </div>
-                    <div class="d-flex align-items-center  my-1 py-1">
+                    <div class="d-flex align-items-start  my-1 py-1">
                         <input class="form-check-input " type="radio" name="beeTypeRadios" value="Παραφυάδα" id="beeTypeParafuadaInput" ${item.beehiveType === 'Παραφυάδα' ? 'checked' : ''}>
                         <label class="form-check-label text-dark custom-radio bglight" for="beeTypeParafuadaInput"></label>
-                        <label class="my-0 ml-2 text-dark" for="beeTypeParafuadaInput font-weight-bold">Nucleus colony</label>
+                        <label class="my-0 ml-2 text-dark " for="beeTypeParafuadaInput">Nucleus colony</label>
                     </div>
                 </div>
             </div>
-    
-            <div class="rounded shadow row my-3 py-2 bgWheat">
-                <div class="col d-flex align-items-center  ">
-                    <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Bee Rating </h5>
+            <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
+                <div class="col p-0 pt-2 d-flex justify-content-between">
+                    <div class="col d-flex align-items-start">
+                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Frames </h6>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <span class=" text-dark px-3 py-2 bglight rounded"> <span class="telaraSpan text-end font-weight-bold ">${item.telara}</span> / 20</span>
+                    </div>
                 </div>
-                <div class="col-7 py-2">
-                    <div class="text-right pt-2">
+                 <div class="col mt-3">
+                        <input type="range" min="0" max="20" class="telara bglight my-4 form-range  w-100" value="${item.telara || 0}">
+                </div>
+            </div>
+            <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
+                <div class="col p-0 pt-2 d-flex justify-content-between">
+                    <div class="col d-flex align-items-start">
+                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">New Frames </h6>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <span class=" text-dark px-3 py-2 bglight rounded"> <span class="newTelaraSpan text-end font-weight-bold ">${item.newtelara}</span> / 20</span>
+                    </div>
+                </div>
+                 <div class="col mt-3">
+                        <input type="range" min="0" max="20" class="newTelara bglight my-4 form-range  w-100" value="${item.newtelara || 0}">
+                </div>
+            </div>
+            <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
+                <div class="col p-0 pt-2 d-flex justify-content-between">
+                    <div class="col d-flex align-items-start">
+                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Bee Rating </h6>
+                    </div>
+                    <div class="col d-flex justify-content-end">
                         <span class=" text-dark px-3 py-2 bglight rounded"> <span class="beehiveRatingSpan text-end font-weight-bold ">${item.beehiverating}</span> %</span>
                     </div>
-                    <input type="range" class="bglight w-100 my-4 form-range" min="0" max="100" value="${item.beehiverating || 0}" id="beehiveRatingInput">
-
                 </div>
-                
-              
+                 <div class="col mt-3">
+                        <input type="range" class="bglight w-100 my-4 form-range" min="0" max="100" value="${item.beehiverating || 0}" id="beehiveRatingInput">
+                </div>
             </div>
+
+            
+            
+    
+            
     
             <div class="rounded shadow row my-3 py-2 bgWheat">
-                <div class="col d-flex align-items-start  py-2">
+            
+                <div class="col-12 d-flex align-items-start  py-2">
                     <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Diseases</h5>
                 </div>
-                <div class="col-7 d-block arrwstiesForm">
+                <div class="col">
+                </div>
+                <div class="col-7  d-block arrwstiesForm">
                     <div>
                         ${this._generateCheckboxes(item.arrwsties)}
                     </div>
