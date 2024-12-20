@@ -160,21 +160,35 @@ console.log(item)
         let htmlContent = `
             <div class="row my-3 py-2 bgWheat rounded shadow">
                 <div class="col d-flex align-items-center">
-                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Beehive </h6>
+                    <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Beehive </h5>
                 </div>
                 <div class="col-7 py-2 d-flex justify-content-end">
                     <input type="number" value="${this._escapeHTML(item.beehiveNumber)}" class="font-weight-bold beehiveNumInput w-50 text-center form-control rounded  bglight border-0 shadow" >
                 </div>
             </div>
-           
+            <div class="rounded shadow row my-3 py-2 bgWheat">
+                <div class="col d-flex align-items-start ">
+                    <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Type </h5>
+                </div>
+                <div class="col-7">
+                    <div class="d-flex align-items-start my-1 py-1">
+                        <input class="form-check-input " type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
+                        <label class="form-check-label custom-radio bglight" for="beeTypeKypseliInput"></label>
+                        <label class="my-0 ml-2 text-dark"  for="beeTypeKypseliInput">Hive</label>
+                    </div>
+                    <div class="d-flex align-items-start  my-1 py-1">
+                        <input class="form-check-input " type="radio" name="beeTypeRadios" value="Παραφυάδα" id="beeTypeParafuadaInput" ${item.beehiveType === 'Παραφυάδα' ? 'checked' : ''}>
+                        <label class="form-check-label text-dark custom-radio bglight" for="beeTypeParafuadaInput"></label>
+                        <label class="my-0 ml-2 text-dark " for="beeTypeParafuadaInput">Nucleus colony</label>
+                    </div>
+                </div>
+            </div>
             <div class="rounded shadow row my-3 py-2 d-flex bgWheat">
                 <div class="col px-0 py-2 d-flex align-items-start">
                     <div class="col d-flex  ">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Add a flag </h6>
+                        <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Add a flag </h5>
                     </div>
-                    
                 </div>
-            
                 <div class="col px-0 d-block py-2">
                     <div class="col my-2 ">
                         <div class="form-check">
@@ -190,27 +204,11 @@ console.log(item)
                     </div>
                 </div>
             </div>
-             <div class="rounded shadow row my-3 py-2 bgWheat">
-                <div class="col d-flex align-items-start ">
-                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Type </h6>
-                </div>
-                <div class="col-7">
-                    <div class="d-flex align-items-start my-1 py-1">
-                        <input class="form-check-input " type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
-                        <label class="form-check-label custom-radio bglight" for="beeTypeKypseliInput"></label>
-                        <label class="my-0 ml-2 text-dark"  for="beeTypeKypseliInput">Hive</label>
-                    </div>
-                    <div class="d-flex align-items-start  my-1 py-1">
-                        <input class="form-check-input " type="radio" name="beeTypeRadios" value="Παραφυάδα" id="beeTypeParafuadaInput" ${item.beehiveType === 'Παραφυάδα' ? 'checked' : ''}>
-                        <label class="form-check-label text-dark custom-radio bglight" for="beeTypeParafuadaInput"></label>
-                        <label class="my-0 ml-2 text-dark " for="beeTypeParafuadaInput">Nucleus colony</label>
-                    </div>
-                </div>
-            </div>
+             
             <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
                 <div class="col p-0 pt-2 d-flex justify-content-between">
                     <div class="col d-flex align-items-start">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Frames </h6>
+                        <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Frames </h5>
                     </div>
                     <div class="col d-flex justify-content-end">
                         <span class=" text-dark px-3 py-2 bglight rounded"> <span class="telaraSpan text-end font-weight-bold ">${item.telara}</span> / 20</span>
@@ -223,7 +221,7 @@ console.log(item)
             <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
                 <div class="col p-0 pt-2 d-flex justify-content-between">
                     <div class="col d-flex align-items-start">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">New Frames </h6>
+                        <h5 class="m-0 text-dark px-3 py-2 rounded bglight">New Frames </h5>
                     </div>
                     <div class="col d-flex justify-content-end">
                         <span class=" text-dark px-3 py-2 bglight rounded"> <span class="newTelaraSpan text-end font-weight-bold ">${item.newtelara}</span> / 20</span>
@@ -236,7 +234,7 @@ console.log(item)
             <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
                 <div class="col p-0 pt-2 d-flex justify-content-between">
                     <div class="col d-flex align-items-start">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Bee Rating </h6>
+                        <h5 class="m-0 text-dark px-3 py-2 rounded bglight">Bee Rating </h5>
                     </div>
                     <div class="col d-flex justify-content-end">
                         <span class=" text-dark px-3 py-2 bglight rounded"> <span class="beehiveRatingSpan text-end font-weight-bold ">${item.beehiverating}</span> %</span>
@@ -246,12 +244,6 @@ console.log(item)
                         <input type="range" class="bglight w-100 my-4 form-range" min="0" max="100" value="${item.beehiverating || 0}" id="beehiveRatingInput">
                 </div>
             </div>
-
-            
-            
-    
-            
-    
             <div class="rounded shadow row my-3 py-2 bgWheat">
             
                 <div class="col-12 d-flex align-items-start  py-2">
