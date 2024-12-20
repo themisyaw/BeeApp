@@ -171,12 +171,12 @@ class beehiveEditSave extends beeAppListBase {
                     <input type="number" value="${this._escapeHTML(item.beehiveNumber)}" class="font-weight-bold beehiveNumInput w-50 text-center form-control rounded  bglight border-0 shadow" >
                 </div>
             </div>
-            <div class="rounded d-block shadow  row my-3 py-2 bgWheat">
+            <div class="rounded d-block shadow  row my-3 py-2 bgWheat" >
                 <div class="col py-2 d-flex align-items-center justify-content-between "data-toggle="collapse" data-target="#collapse_beehiveType" >
                     <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Type </h6>
                     <h6 class="m-0 text-dark px-3 py-2 rounded bglight">${item.beehiveType === 'Κυψέλη' ? 'Hive' : 'Nucleus colony'} </h6>
                 </div>
-                <div class="col p-0  collapse" id="collapse_beehiveType">
+                <div class="col p-0  collapse" id="collapse_beehiveType" style="box-sizing: border-box;">
                     <div class="d-flex align-items-center  p-2 pt-4 mx-2 ">
                         <input class="form-check-input " type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
                         <label class="form-check-label custom-radio bglight" for="beeTypeKypseliInput"></label>
