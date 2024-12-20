@@ -38,9 +38,14 @@ if ( is_user_logged_in() ) {
     </section>
     <!-- beehives edit page -->
     <section class="mb-5 pb-5 container beehiveEditSaveTab d-none">
-    <div class="button btn deleteBeehiveBtn color-dark bg-light">Delete</div>
-        <h3 class="text-start py-3"> Beehive </h3>
-        
+        <div class="row px-3 justify-content-end">
+
+            <div class="button btn deleteBeehiveBtn text-light px-3 my-3 bg-danger shadow">
+                <span class="dashicons dashicons-trash m-0 d-flex">
+                        
+                </span>
+            </div>
+        </div>
         <ul class="list-group p-0 beehiveUl px-3"> 
             
             
