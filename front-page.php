@@ -16,6 +16,7 @@ if ( is_user_logged_in() ) {
     <?php 
         get_template_part('theme-parts/beehivelistLoader','content');
     ?>
+  
     <section class="container mb-5 pb-5 mt-2 beehivesListTab d-block">
         <div class="row p-2 justify-content-between d-flex align-items-center beehivesInnerHeader">
             <div class="align-items-center openSearchInput p- position-retive bglight shadow justify-content-center ml1 d-flex rounded closeSearch">

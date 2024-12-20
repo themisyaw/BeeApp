@@ -1,4 +1,5 @@
 import { beeAppListBase } from './beeAppRequests.js';
+import { beehiveForTrugos, beehiveForFood } from '../svgIcons/beehive.js';
 // import _ from 'lodash';
 class beehiveEditSave extends beeAppListBase {
     constructor(app) {
@@ -158,6 +159,9 @@ class beehiveEditSave extends beeAppListBase {
     }
 
     _htmlAddRemoveListContent(item) {
+        const isSick = Object.values(item.arrwsties).some(value => value === true);
+        const beehiveForFoodIcon = beehiveForFood(item.giaTaisma ?'': 'grayfilter');
+        const beehiveForTrugosIcon = beehiveForTrugos(item.giaTrugo ?'': 'grayfilter');
         let htmlContent = `
             <div class="row my-3 py-2 bgWheat rounded shadow">
                 <div class="col d-flex align-items-center">
@@ -167,11 +171,12 @@ class beehiveEditSave extends beeAppListBase {
                     <input type="number" value="${this._escapeHTML(item.beehiveNumber)}" class="font-weight-bold beehiveNumInput w-50 text-center form-control rounded  bglight border-0 shadow" >
                 </div>
             </div>
-            <div class="rounded shadow row my-3 py-2 bgWheat">
-                <div class="col py-2 d-flex align-items-center ">
+            <div class="rounded d-block shadow  row my-3 py-2 bgWheat">
+                <div class="col py-2 d-flex align-items-center justify-content-between "data-toggle="collapse" data-target="#collapse_beehiveType" >
                     <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Type </h6>
+                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight">${item.beehiveType === 'Κυψέλη' ? 'Hive' : 'Nucleus colony'} </h6>
                 </div>
-                <div class="col">
+                <div class="col collapse" id="collapse_beehiveType">
                     <div class="d-flex align-items-center my-1 py-1">
                         <input class="form-check-input " type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
                         <label class="form-check-label custom-radio bglight" for="beeTypeKypseliInput"></label>
@@ -185,7 +190,7 @@ class beehiveEditSave extends beeAppListBase {
                 </div>
             </div>
             <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
-                <div class="col p-0 pt-2 d-flex justify-content-between">
+                <div class="col p-0  d-flex justify-content-between" data-toggle="collapse" data-target="#collapse_telara">
                     <div class="col d-flex align-items-start">
                         <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Frames </h6>
                     </div>
@@ -193,12 +198,12 @@ class beehiveEditSave extends beeAppListBase {
                         <span class=" text-dark px-3 py-2 bglight rounded"> <span class="telaraSpan text-end font-weight-bold ">${item.telara}</span> / 20</span>
                     </div>
                 </div>
-                 <div class="col mt-3">
+                 <div class="col collapse" id="collapse_telara">
                         <input type="range" min="0" max="20" class="telara bglight my-4 form-range  w-100" value="${item.telara || 0}">
                 </div>
             </div>
             <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
-                <div class="col p-0 pt-2 d-flex justify-content-between">
+                <div class="col p-0  d-flex justify-content-between" data-toggle="collapse" data-target="#collapse_newtelara">
                     <div class="col d-flex align-items-start">
                         <h6 class="m-0 text-dark px-3 py-2 rounded bglight">New Frames </h6>
                     </div>
@@ -206,30 +211,37 @@ class beehiveEditSave extends beeAppListBase {
                         <span class=" text-dark px-3 py-2 bglight rounded"> <span class="newTelaraSpan text-end font-weight-bold ">${item.newtelara}</span> / 20</span>
                     </div>
                 </div>
-                 <div class="col mt-3">
+                 <div class="col collapse" id="collapse_newtelara" >
                         <input type="range" min="0" max="20" class="newTelara bglight my-4 form-range  w-100" value="${item.newtelara || 0}">
                 </div>
             </div>
-            <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
-                <div class="col p-0 pt-2 d-flex justify-content-between">
+            
+            <div class=" rounded shadow row my-3 py-2 d-block bgWheat " >
+                <div class="col p-0  d-flex justify-content-between" data-toggle="collapse" data-target="#collapse_beehiverating">
                     <div class="col d-flex align-items-start">
                         <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Bee Rating </h6>
                     </div>
-                    <div class="col d-flex justify-content-end">
+                    <div class="col d-flex justify-content-end ">
                         <span class=" text-dark px-3 py-2 bglight rounded"> <span class="beehiveRatingSpan text-end font-weight-bold ">${item.beehiverating}</span> %</span>
                     </div>
                 </div>
-                 <div class="col mt-3">
+                 <div class="col collapse" id="collapse_beehiverating">
                         <input type="range" class="bglight w-100 my-4 form-range" min="0" max="100" value="${item.beehiverating || 0}" id="beehiveRatingInput">
                 </div>
             </div>
-            <div class="rounded shadow row my-3 py-2 d-flex bgWheat">
-                <div class="col px-0 py-2 d-flex align-items-center">
-                    <div class="col d-flex  ">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Add a flag </h6>
+            <div class="rounded d-block shadow row my-3 py-2 bgWheat">
+                <div class="col px-0 py-2 d-flex align-items-center " data-toggle="collapse" data-target="#collapse_flags">
+                    <div class="col d-flex justify-content-between ">
+                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Flags ( feed/harvest) </h6>
+
+                        <div class="">
+                        ${beehiveForTrugosIcon}
+                         ${beehiveForFoodIcon}
+                        </div>
+                       
                     </div>
                 </div>
-                <div class="col px-0 d-block">
+                <div class="col px-0 collapse" id="collapse_flags">
                     <div class="col my-2 ">
                         <div class="form-check">
                             <input ${item.giaTaisma ? 'checked' : ''} class="checkboxes rounded bglight form-check-input border-0 shadow " type="checkbox" value="" id="taismaCheckbox">
@@ -244,13 +256,13 @@ class beehiveEditSave extends beeAppListBase {
                     </div>
                 </div>
             </div>
-            <div class="rounded shadow row my-3 py-2 bgWheat">
+            <div class="rounded shadow row my-3 py-2 bgWheat ${isSick ? 'errorLightbg' : ''}">
             
-                <div class="col-12 d-flex align-items-start  py-2">
-                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Diseases</h6>
+                <div class="col-12 d-flex align-items-start  py-2" data-toggle="collapse" data-target="#collapse_arrwsties">
+                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight ${isSick ? 'errorLightbg errorbg' : ''}">Diseases</h6>
                 </div>
                 
-                <div class="col d-block arrwstiesForm">
+                <div class="col arrwstiesForm collapse" id="collapse_arrwsties">
                     <div class="row row-cols-2 pl-3 pb-2 pt-4">
                     
                         ${this._generateCheckboxes(item.arrwsties)}
