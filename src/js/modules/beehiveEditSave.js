@@ -242,13 +242,13 @@ class beehiveEditSave extends beeAppListBase {
                     </div>
                 </div>
                 <div class="col px-0 collapse" id="collapse_flags">
-                    <div class="col my-2 ">
+                    <div class="col py-2 ">
                         <div class="form-check">
                             <input ${item.giaTaisma ? 'checked' : ''} class="checkboxes rounded bglight form-check-input border-0 shadow " type="checkbox" value="" id="taismaCheckbox">
                             <label class="form-check-label text-dark m-0 ml-3" for="taismaCheckbox">For Feed</label>
                         </div>
                     </div>
-                    <div class="col my-2 ">
+                    <div class="col py-2 ">
                         <div class="form-check">
                             <input ${item.giaTrugo ? 'checked' : ''} class="checkboxes rounded bglight form-check-input border-0 shadow" type="checkbox" value="" id="trugosCheckbox">
                             <label class="form-check-label text-dark ml-3" for="trugosCheckbox">For Harvest</label>
