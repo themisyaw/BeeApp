@@ -95,7 +95,7 @@ svg {
   }
   
   .bottomMenu{
-    background: rgba( 250, 239, 219, 0.5 );
+    background: rgba( 250, 239, 219, 0.8 );
     backdrop-filter: blur( 3px );
     -webkit-backdrop-filter: blur( 3px );
    
@@ -258,7 +258,7 @@ svg {
 .beehivesInnerHeader,.beehivesEditSaveInnerHeader{
   position: sticky;
   top: 0;
-  background: rgba(250, 239, 219, 0.5);
+  background: rgba(250, 239, 219, 0.7);
   backdrop-filter: blur(3px);
   z-index: 1;
   
