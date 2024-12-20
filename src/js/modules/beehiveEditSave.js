@@ -167,7 +167,7 @@ console.log(item)
                 </div>
             </div>
             <div class="rounded shadow row my-3 py-2 bgWheat">
-                <div class="col py-2 d-flex align-items-start ">
+                <div class="col py-2 d-flex align-items-center ">
                     <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Type </h6>
                 </div>
                 <div class="col">
@@ -223,7 +223,7 @@ console.log(item)
                 </div>
             </div>
             <div class="rounded shadow row my-3 py-2 d-flex bgWheat">
-                <div class="col px-0 py-2 d-flex align-items-start">
+                <div class="col px-0 py-2 d-flex align-items-center">
                     <div class="col d-flex  ">
                         <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Add a flag </h6>
                     </div>
@@ -273,7 +273,7 @@ console.log(item)
         
         return diseaseList.map(disease => {
             return `
-                <div class="form-check my-2">
+                <div class="form-check ${(disease.value === 'askosfairwsi' || disease.value === 'kakibasilissa' || disease.value === 'orfano') ? 'col-5' : 'col-7'} my-2">
                     <input ${arrwsties[disease.value] ? 'checked' : ''} class="rounded checkboxes bglight form-check-input border-0 shadow" type="checkbox" value="${disease.value}" id="${disease.value}CheckBox">
                     <label class="ml-1 text-dark form-check-label" for="${disease.value}CheckBox">${disease.label}</label>
                 </div>
