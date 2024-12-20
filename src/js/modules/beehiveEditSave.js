@@ -15,6 +15,7 @@ class beehiveEditSave extends beeAppListBase {
         this.harvestTotal=document.querySelector('.harvestTotal');
         this.beehivesTotal=document.querySelector('.beehivesTotal');
         this.feedTotal=document.querySelector('.feedTotal');
+      
         // Data
         this.itemsIDforUpdate = [];
         this.beehiveOld = null;
@@ -41,7 +42,8 @@ class beehiveEditSave extends beeAppListBase {
         this.beehiveUl.addEventListener('input', this.dynamicHandler); // For input changes
         this.beehiveUl.addEventListener('change', this.dynamicHandler); // For checkboxes/radios
         this.beehiveUl.addEventListener('click', this.dynamicHandler); // For clicks
-
+       
+       
     }
 
     async deleteBeehive() {
@@ -83,24 +85,21 @@ class beehiveEditSave extends beeAppListBase {
         this.beehiveID = item.id;     
        
         this.beehiveUl.innerHTML = this._htmlAddRemoveListContent(item);
-console.log('yo');
-console.log(item)
+
         this.beehiveOld = _.cloneDeep(item);
         this.beehiveNew = _.cloneDeep(item);
-        // this.beehiveOld = JSON.parse(JSON.stringify(item));
-        // this.beehiveNew = JSON.parse(JSON.stringify(item));
-
-        console.log(this.beehiveNew)
-        console.log(this.beehiveOld)
+        
         this._saveButtonDisplay();
     }
 
     handleDynamicEvents(event) {
         const { target } = event;
-
+        console.log(event)
         // Beehive Number Input
         if (target.classList.contains('beehiveNumInput')) {
+           
             this.beehiveNew.beehiveNumber = target.value;
+            
         }
 
         // Checkboxes
@@ -139,6 +138,8 @@ console.log(item)
     }
 
     _saveButtonDisplay() {
+
+       
         // const isSame = JSON.stringify(this.beehiveOld) === JSON.stringify(this.beehiveNew);
         const isSame = _.isEqual(this.beehiveOld, this.beehiveNew);
         console.log('beehiveOld')

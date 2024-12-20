@@ -245,6 +245,25 @@ svg {
     transition: 0.4s ease;
   
 }
+.save,.saveForFeed{
+  
+  background-color: #FF9500 !important;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+.cancelsaveForFeed,.cancelsave{
+  
+  background-color: #2e2e2e !important;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+.beehivesInnerHeader,.beehivesEditSaveInnerHeader{
+  position: sticky;
+  top: 0;
+  background: rgba(250, 239, 219, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  
+  
+}
 .addNewBeeHive {
   background: #ffa800;
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
