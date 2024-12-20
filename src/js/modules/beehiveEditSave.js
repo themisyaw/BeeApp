@@ -176,7 +176,7 @@ class beehiveEditSave extends beeAppListBase {
                     <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Type </h6>
                     <h6 class="m-0 text-dark px-3 py-2 rounded bglight">${item.beehiveType === 'Κυψέλη' ? 'Hive' : 'Nucleus colony'} </h6>
                 </div>
-                <div class="col p-0 m-0 collapse" id="collapse_beehiveType" style="transition:0.20s easy;">
+                <div class="col p-0 m-0 collapse" id="collapse_beehiveType" style="transition:height 0.3s;">
                     <div class="col pb-2 pt-4 ">
                         <input class="form-check-input " type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
                         <label class="form-check-label custom-radio bglight" for="beeTypeKypseliInput"></label>
