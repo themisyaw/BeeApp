@@ -163,78 +163,80 @@ class beehiveEditSave extends beeAppListBase {
         const beehiveForFoodIcon = beehiveForFood(item.giaTaisma ?'': 'grayfilter');
         const beehiveForTrugosIcon = beehiveForTrugos(item.giaTrugo ?'': 'grayfilter');
         let htmlContent = `
-            <div class="row my-3 py-2 bgWheat rounded shadow">
+            <div class="row my-3 py-3 bglight rounded shadow">
                 <div class="col d-flex align-items-center">
-                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Beehive </h6>
+                    <h6 class="m-0 text-dark px-3 py-2 rounded ">Beehive </h6>
                 </div>
                 <div class="col py-2 d-flex justify-content-end">
-                    <input type="number" value="${this._escapeHTML(item.beehiveNumber)}" class="font-weight-bold beehiveNumInput w-50 text-center form-control rounded  bglight border-0 shadow" >
+                    <input type="number" value="${this._escapeHTML(item.beehiveNumber)}" class="font-weight-bold beehiveNumInput w-50 text-center form-control rounded  bgWheat border-0 shadow" >
                 </div>
             </div>
-            <div class="rounded d-block shadow  row my-3 py-2 bgWheat" >
+            <div class="rounded d-block shadow  row my-3 py-3 bglight" >
                 <div class="col py-2 d-flex align-items-center justify-content-between "data-toggle="collapse" data-target="#collapse_beehiveType" >
-                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Type </h6>
-                    <h6 class="m-0 text-dark px-3 py-2 rounded bglight">${item.beehiveType === 'Κυψέλη' ? 'Hive' : 'Nucleus colony'} </h6>
+                    <h6 class="m-0 text-dark px-3 py-2 rounded ">Type </h6>
+                    <h6 class="m-0 text-dark px-3 py-2 rounded bgWheat">${item.beehiveType === 'Κυψέλη' ? 'Hive' : 'Nucleus colony'} </h6>
                 </div>
                 <div class="col p-0 m-0 collapse" id="collapse_beehiveType" style="transition:height 0.3s;box-sizing: border-box;">
-                    <div class="col  ">
-                        <input class="form-check-input " type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
-                        <label class="form-check-label custom-radio bglight" for="beeTypeKypseliInput"></label>
-                        <label class="my-0 ml-2 text-dark"  for="beeTypeKypseliInput">Hive</label>
-                    </div>
-                    <div class="col    ">
-                        <input class="form-check-input " type="radio" name="beeTypeRadios" value="Παραφυάδα" id="beeTypeParafuadaInput" ${item.beehiveType === 'Παραφυάδα' ? 'checked' : ''}>
-                        <label class="form-check-label text-dark custom-radio bglight" for="beeTypeParafuadaInput"></label>
-                        <label class="my-0 ml-2 text-dark " for="beeTypeParafuadaInput">Nucleus colony</label>
+                    <div class="pl-3">
+                        <div class="col pb-2 pt-4 d-flex align-items-center ">
+                            <input class="form-check-input " type="radio" name="beeTypeRadios" value="Κυψέλη" id="beeTypeKypseliInput" ${item.beehiveType === 'Κυψέλη' ? 'checked' : ''}>
+                            <label class="form-check-label custom-radio bg-light" for="beeTypeKypseliInput"></label>
+                            <label class="my-0 ml-2 text-dark"  for="beeTypeKypseliInput">Hive</label>
+                        </div>
+                        <div class="col py-2  d-flex align-items-center  ">
+                            <input class="form-check-input " type="radio" name="beeTypeRadios" value="Παραφυάδα" id="beeTypeParafuadaInput" ${item.beehiveType === 'Παραφυάδα' ? 'checked' : ''}>
+                            <label class="form-check-label text-dark custom-radio bg-light" for="beeTypeParafuadaInput"></label>
+                            <label class="my-0 ml-2 text-dark " for="beeTypeParafuadaInput">Nucleus colony</label>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
+            <div class=" rounded shadow row my-3 py-3 d-block bglight">
                 <div class="col p-0  d-flex justify-content-between" data-toggle="collapse" data-target="#collapse_telara">
                     <div class="col d-flex align-items-start">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Frames </h6>
+                        <h6 class="m-0 text-dark px-3 py-2 rounded ">Frames </h6>
                     </div>
                     <div class="col d-flex justify-content-end">
-                        <span class=" text-dark px-3 py-2 bglight rounded"> <span class="telaraSpan text-end font-weight-bold ">${item.telara}</span> / 20</span>
+                        <span class=" text-dark px-3 py-2 bgWheat rounded"> <span class="telaraSpan text-end font-weight-bold ">${item.telara}</span> / 20</span>
                     </div>
                 </div>
                  <div class="col collapse" id="collapse_telara">
-                        <input type="range" min="0" max="20" class="telara bglight my-4 form-range  w-100" value="${item.telara || 0}">
+                        <input type="range" min="0" max="20" class="telara bgWheat mt-5 mb-3  form-range  w-100" value="${item.telara || 0}">
                 </div>
             </div>
-            <div class=" rounded shadow row my-3 py-2 d-block bgWheat">
+            <div class=" rounded shadow row my-3 py-3 d-block bglight">
                 <div class="col p-0  d-flex justify-content-between" data-toggle="collapse" data-target="#collapse_newtelara">
                     <div class="col d-flex align-items-start">
                         <h6 class="m-0 text-dark px-3 py-2 rounded bglight">New Frames </h6>
                     </div>
                     <div class="col d-flex justify-content-end">
-                        <span class=" text-dark px-3 py-2 bglight rounded"> <span class="newTelaraSpan text-end font-weight-bold ">${item.newtelara}</span> / 20</span>
+                        <span class=" text-dark px-3 py-2 bgWheat rounded"> <span class="newTelaraSpan text-end font-weight-bold ">${item.newtelara}</span> / 20</span>
                     </div>
                 </div>
                  <div class="col collapse" id="collapse_newtelara" >
-                        <input type="range" min="0" max="20" class="newTelara bglight my-4 form-range  w-100" value="${item.newtelara || 0}">
+                        <input type="range" min="0" max="20" class="newTelara bgWheat mt-5 mb-3  form-range  w-100" value="${item.newtelara || 0}">
                 </div>
             </div>
             
-            <div class=" rounded shadow row my-3 py-2 d-block bgWheat " >
+            <div class=" rounded shadow row my-3 py-3 d-block bglight " >
                 <div class="col p-0  d-flex justify-content-between" data-toggle="collapse" data-target="#collapse_beehiverating">
                     <div class="col d-flex align-items-start">
                         <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Bee Rating </h6>
                     </div>
                     <div class="col d-flex justify-content-end ">
-                        <span class=" text-dark px-3 py-2 bglight rounded"> <span class="beehiveRatingSpan text-end font-weight-bold ">${item.beehiverating}</span> %</span>
+                        <span class=" text-dark px-3 py-2 bgWheat rounded"> <span class="beehiveRatingSpan text-end font-weight-bold ">${item.beehiverating}</span> %</span>
                     </div>
                 </div>
                  <div class="col collapse" id="collapse_beehiverating">
-                        <input type="range" class="bglight w-100 my-4 form-range" min="0" max="100" value="${item.beehiverating || 0}" id="beehiveRatingInput">
+                        <input type="range" class="bgWheat w-100 mt-5 mb-3  form-range" min="0" max="100" value="${item.beehiverating || 0}" id="beehiveRatingInput">
                 </div>
             </div>
-            <div class="rounded d-block shadow row my-3 py-2 bgWheat">
+            <div class="rounded d-block shadow row my-3 py-3 bglight">
                 <div class="col px-0 py-2 d-flex align-items-center " data-toggle="collapse" data-target="#collapse_flags">
                     <div class="col d-flex justify-content-between ">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bglight">Flags ( feed/harvest) </h6>
+                        <h6 class="m-0 text-dark px-3 py-2 rounded d-flex align-items-center ">Flags ( feed/harvest) </h6>
 
-                        <div class="">
+                        <div class="p-2 rounded bgWheat">
                         ${beehiveForTrugosIcon}
                          ${beehiveForFoodIcon}
                         </div>
@@ -242,21 +244,23 @@ class beehiveEditSave extends beeAppListBase {
                     </div>
                 </div>
                 <div class="col p-0 m-0 collapse" id="collapse_flags">
-                    <div class="col pb-2 pt-4 ">
-                        <div class="form-check">
-                            <input ${item.giaTaisma ? 'checked' : ''} class="checkboxes rounded bglight form-check-input border-0 shadow " type="checkbox" value="" id="taismaCheckbox">
-                            <label class="form-check-label text-dark m-0 ml-3" for="taismaCheckbox">For Feed</label>
+                    <div class="pl-3">
+                        <div class="col pb-2 pt-4 ">
+                            <div class="form-check">
+                                <input ${item.giaTaisma ? 'checked' : ''} class="checkboxes rounded bg-light form-check-input border-0 shadow " type="checkbox" value="" id="taismaCheckbox">
+                                <label class="form-check-label text-dark m-0 ml-3" for="taismaCheckbox">For Feed</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col py-2 ">
-                        <div class="form-check">
-                            <input ${item.giaTrugo ? 'checked' : ''} class="checkboxes rounded bglight form-check-input border-0 shadow" type="checkbox" value="" id="trugosCheckbox">
-                            <label class="form-check-label text-dark ml-3" for="trugosCheckbox">For Harvest</label>
+                        <div class="col py-2 ">
+                            <div class="form-check">
+                                <input ${item.giaTrugo ? 'checked' : ''} class="checkboxes rounded bg-light form-check-input border-0 shadow" type="checkbox" value="" id="trugosCheckbox">
+                                <label class="form-check-label text-dark ml-3" for="trugosCheckbox">For Harvest</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="rounded shadow row my-3 py-2 bgWheat ${isSick ? 'errorLightbg' : ''}">
+            <div class="rounded shadow row my-3 py-3 bglight ${isSick ? 'errorLightbg' : ''}">
             
                 <div class="col-12 d-flex align-items-start  py-2" data-toggle="collapse" data-target="#collapse_arrwsties">
                     <h6 class="m-0 text-dark px-3 py-2 rounded bglight ${isSick ? 'errorLightbg errorbg' : ''}">Diseases</h6>
@@ -287,7 +291,7 @@ class beehiveEditSave extends beeAppListBase {
         return diseaseList.map(disease => {
             return `
                 <div class="form-check ${(disease.value === 'askosfairwsi' || disease.value === 'kakibasilissa' || disease.value === 'orfano') ? 'col-5' : 'col-7'} my-2">
-                    <input ${arrwsties[disease.value] ? 'checked' : ''} class="rounded checkboxes bglight form-check-input border-0 shadow" type="checkbox" value="${disease.value}" id="${disease.value}CheckBox">
+                    <input ${arrwsties[disease.value] ? 'checked' : ''} class="rounded checkboxes bg-light form-check-input border-0 shadow" type="checkbox" value="${disease.value}" id="${disease.value}CheckBox">
                     <label class="ml-1 text-dark form-check-label" for="${disease.value}CheckBox">${disease.label}</label>
                 </div>
             `;
