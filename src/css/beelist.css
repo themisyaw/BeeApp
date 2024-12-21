@@ -112,7 +112,12 @@ svg {
     top: -10px;
   }
   
-  
+  .beehiveForFeed{
+    filter: drop-shadow(2px 4px 1px gray);
+  }
+  .beehivesForFeed{
+    min-height: 10rem;
+  }
 
 
 

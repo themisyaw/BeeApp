@@ -88,11 +88,11 @@ import { beeAppListBase } from './beeAppRequests.js';
     }
     
     _onclickBeehiveForFeed(e){
-        
+        const itemElementStyle = e.target.closest('.beehiveForFeed h4');
         const itemElement = e.target.closest('.beehiveForFeed');
         const itemID = itemElement?.dataset.id;
         const item = this.beehivesForFeedListNew.find(item => item.id == itemID);
-
+       
         if (item) {
             if(this.feedOrHarvest === 'feed'){
                 item.giaTaisma = !item.giaTaisma;
@@ -102,11 +102,13 @@ import { beeAppListBase } from './beeAppRequests.js';
             }
         }
 
-        if (itemElement.classList.contains('bg-dark')) {
-            itemElement.classList.remove('bg-dark');
+        if (itemElementStyle.classList.contains('bg-dark')) {
+            itemElementStyle.classList.remove('bg-dark','text-white');
+           
            
         } else {
-            itemElement.classList.add('bg-dark');
+            itemElementStyle.classList.add('bg-dark','text-white');
+           
             
         }
         this._saveButtonDisplay();
@@ -129,8 +131,8 @@ import { beeAppListBase } from './beeAppRequests.js';
         let htmlContent = "";
         items.forEach(item => {
             htmlContent += `
-                <div class="beehiveForFeed m-2" data-id="${item.id}">
-                    <h4 class="p-2 text-center">${item.beehiveNumber}</h4>
+                <div class="beehiveForFeed col py-2" data-id="${item.id}">
+                    <h4 class="m-2 bgWheat rounded py-2 text-center">${item.beehiveNumber}</h4>
                 </div>
             `;
         });
