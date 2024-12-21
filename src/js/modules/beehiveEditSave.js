@@ -165,7 +165,7 @@ class beehiveEditSave extends beeAppListBase {
         let htmlContent = `
             <div class="row my-3 py-3 bglight rounded shadow">
                 <div class="col d-flex align-items-center">
-                    <h6 class="m-0 text-dark px-3 py-2 rounded bg-light">Beehive </h6>
+                    <h6 class="m-0 text-dark px-3 py-2 rounded bg-white">Beehive </h6>
                 </div>
                 <div class="col py-2 d-flex justify-content-end">
                     <input type="number" value="${this._escapeHTML(item.beehiveNumber)}" class="font-weight-bold beehiveNumInput w-50 text-center form-control rounded  bgWheat border-0 shadow" >
@@ -173,7 +173,7 @@ class beehiveEditSave extends beeAppListBase {
             </div>
             <div class="rounded d-block shadow  row my-3 py-3 bglight" >
                 <div class="col py-2 d-flex align-items-center justify-content-between "data-toggle="collapse" data-target="#collapse_beehiveType" >
-                    <h6 class="m-0 text-dark px-3 py-2 rounded bg-light">Type </h6>
+                    <h6 class="m-0 text-dark px-3 py-2 rounded bg-white">Type </h6>
                     <h6 class="m-0 text-dark px-3 py-2 rounded bgWheat">${item.beehiveType === 'Κυψέλη' ? 'Hive' : 'Nucleus colony'} </h6>
                 </div>
                 <div class="col p-0 m-0 collapse" id="collapse_beehiveType" style="transition:height 0.3s;box-sizing: border-box;">
@@ -194,7 +194,7 @@ class beehiveEditSave extends beeAppListBase {
             <div class=" rounded shadow row my-3 py-3 d-block bglight">
                 <div class="col p-0  d-flex justify-content-between" data-toggle="collapse" data-target="#collapse_telara">
                     <div class="col d-flex align-items-start">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bg-light">Frames </h6>
+                        <h6 class="m-0 text-dark px-3 py-2 rounded bg-white">Frames </h6>
                     </div>
                     <div class="col d-flex justify-content-end">
                         <span class=" text-dark px-3 py-2 bgWheat rounded"> <span class="telaraSpan text-end font-weight-bold ">${item.telara}</span> / 20</span>
@@ -207,7 +207,7 @@ class beehiveEditSave extends beeAppListBase {
             <div class=" rounded shadow row my-3 py-3 d-block bglight">
                 <div class="col p-0  d-flex justify-content-between" data-toggle="collapse" data-target="#collapse_newtelara">
                     <div class="col d-flex align-items-start">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bg-light">New Frames </h6>
+                        <h6 class="m-0 text-dark px-3 py-2 rounded bg-white">New Frames </h6>
                     </div>
                     <div class="col d-flex justify-content-end">
                         <span class=" text-dark px-3 py-2 bgWheat rounded"> <span class="newTelaraSpan text-end font-weight-bold ">${item.newtelara}</span> / 20</span>
@@ -221,7 +221,7 @@ class beehiveEditSave extends beeAppListBase {
             <div class=" rounded shadow row my-3 py-3 d-block bglight " >
                 <div class="col p-0  d-flex justify-content-between" data-toggle="collapse" data-target="#collapse_beehiverating">
                     <div class="col d-flex align-items-start">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded bg-light">Bee Rating </h6>
+                        <h6 class="m-0 text-dark px-3 py-2 rounded bg-white">Bee Rating </h6>
                     </div>
                     <div class="col d-flex justify-content-end ">
                         <span class=" text-dark px-3 py-2 bgWheat rounded"> <span class="beehiveRatingSpan text-end font-weight-bold ">${item.beehiverating}</span> %</span>
@@ -234,7 +234,7 @@ class beehiveEditSave extends beeAppListBase {
             <div class="rounded d-block shadow row my-3 py-3 bglight">
                 <div class="col px-0 py-2 d-flex align-items-center " data-toggle="collapse" data-target="#collapse_flags">
                     <div class="col d-flex justify-content-between ">
-                        <h6 class="m-0 text-dark px-3 py-2 rounded d-flex align-items-center bg-light">Flags ( feed/harvest) </h6>
+                        <h6 class="m-0 text-dark px-3 py-2 rounded d-flex align-items-center bg-white">Flags ( feed/harvest) </h6>
 
                         <div class="p-2 rounded bgWheat">
                         ${beehiveForTrugosIcon}
@@ -263,7 +263,7 @@ class beehiveEditSave extends beeAppListBase {
             <div class="rounded shadow row my-3 py-3 bglight">
             
                 <div class="col-12 d-flex align-items-start  py-2" data-toggle="collapse" data-target="#collapse_arrwsties">
-                    <h6 class="m-0  px-3 py-2 rounded bg-light ${isSick ? 'errorbg text-light' : 'text-dark'}">Diseases</h6>
+                    <h6 class="m-0  px-3 py-2 rounded bg-white ${isSick ? 'errorbg text-light' : 'text-dark'}">Diseases</h6>
                 </div>
                 
                 <div class="col arrwstiesForm collapse" id="collapse_arrwsties">
