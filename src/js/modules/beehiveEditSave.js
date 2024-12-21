@@ -174,7 +174,7 @@ class beehiveEditSave extends beeAppListBase {
             <div class="rounded d-block shadow  row my-3 py-3 bgWheat" >
                 <div class="col py-2 d-flex align-items-center justify-content-between "data-toggle="collapse" data-target="#collapse_beehiveType" >
                     <h5 class="m-0 text-dark px-3 py-2 rounded ">Type </h5>
-                    <h5 class="m-0 text-dark px-3 py-2 rounded bglight">${item.beehiveType === 'Κυψέλη' ? 'Hive' : 'Nucleus colony'} </h5>
+                    <label class="m-0 text-dark px-3 py-2 rounded bglight">${item.beehiveType === 'Κυψέλη' ? 'Hive' : 'Nucleus colony'} </label>
                 </div>
                 <div class="col p-0 m-0 collapse" id="collapse_beehiveType" style="transition:height 0.3s;box-sizing: border-box;">
                     <div class="pl-3">
