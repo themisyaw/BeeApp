@@ -18,7 +18,7 @@ if ( is_user_logged_in() ) {
     ?>
   
     <section class="container mb-5 pb-5 mt-2 beehivesListTab d-block">
-        <div class="row p-2 justify-content-between d-flex align-items-center beehivesInnerHeader">
+        <div class="row p-2 mt-3 justify-content-between d-flex align-items-center beehivesInnerHeader">
             <div class="align-items-center openSearchInput p- position-retive bglight shadow justify-content-center ml1 d-flex rounded closeSearch">
                 <span class="dashicons rounded bglight mx-2 searchIcon  dashicons-search align-items-center d-flex   ">
                 
@@ -32,7 +32,7 @@ if ( is_user_logged_in() ) {
                 </span>
             </div>
         </div>
-        <ul class=" py-0 px-2 row row-cols-2 beehivesListUL ">
+        <ul class=" py-0 px-2 mt-3 row row-cols-2 beehivesListUL ">
             
         
         </ul>
@@ -40,9 +40,9 @@ if ( is_user_logged_in() ) {
     <!-- beehives edit page -->
     <section class="mb-5 pb-5 mt-2 container beehiveEditSaveTab d-none">
         <div class="row px-3 justify-content-end py-2 beehivesEditSaveInnerHeader">
-            <div class="deleteBeehiveBtn align-items-center justify-content-center  bglight shadow rounded col-5 py-2  d-flex">
-                <span class="mr-2 text-dark">Delete</span>
-                <span class="dashicons dashicons-trash m-0 text-dark d-flex">
+            <div class="deleteBeehiveBtn align-items-center justify-content-center  errorbg shadow rounded px-3 py-2  d-flex">
+                
+                <span class="dashicons dashicons-trash m-0 text-light d-flex">
                   
                 </span>
                 

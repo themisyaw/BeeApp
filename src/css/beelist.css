@@ -186,7 +186,7 @@ svg {
     transition: width 1s ease-in-out;
   
 }
-.closeSearch{
+.closeSearch,.closeSearchSpinner{
   
   /* width: auto; */ width:15%!important;
 
@@ -198,14 +198,14 @@ svg {
   
 }
 
-.openSearchInput, .openAddNewBeehive{
+.openSearchInput, .openAddNewBeehive,.openSearchInputSpinner{
  width: 15%;
   -webkit-transition: width 0.5s ease-in-out;
   -moz-transition: width 0.5s ease-in-out;
   -o-transition: width 0.5s ease-in-out;
   transition: width 0.5s ease-in-out;
 }
-.searchInput {
+.searchInput,.searchInputSpinner {
  
   width:0%;
   overflow:hidden;

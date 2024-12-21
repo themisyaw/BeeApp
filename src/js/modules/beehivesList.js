@@ -11,6 +11,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
         this.openGroceryAddRemoveBtn = document.querySelector('.openGroceryAddRemoveBtn');
         this.beehivesListUL = document.querySelector('.beehivesListUL');
         this.searchInput = document.querySelector('.searchInput');
+        this.spinnerSearchInput = document.querySelector(".animatedSectionSearchInput");
         //data
         this.beehiveResults=[];
         // handlers
@@ -24,7 +25,8 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
         if(this.searchInput.value.trim() === ""){
             this.app.showBeehiveList();
         }else{
-            const searchResuls = await this.searchBeehives(beehiveNumber);
+            
+            const searchResuls = await this.app.withSpinner(() => this.searchBeehives(beehiveNumber),this.spinnerSearchInput);
             this.beehiveResults = searchResuls ? [searchResuls] : [];
             console.log(beehiveNumber)
             this.app.searchResults(this.beehiveResults);

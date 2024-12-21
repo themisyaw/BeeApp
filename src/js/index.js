@@ -29,7 +29,8 @@ class App {
 
      
       this.spinner = document.querySelector(".animatedSection");
-      // this.animatedSection = document.querySelector(".animatedSection");
+      this.spinnerSearchInput = document.querySelector(".animatedSectionSearchInput");
+      
       this.init();
     }
 
@@ -90,9 +91,9 @@ class App {
     async init() {
 
       // Initial fetch for grocery items
-      let beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
-      let beehivesForTrugos = await this.withSpinner(() => this.beehivesList.getBeehives());
-      let beehivesForFeed = await this.withSpinner(() => this.beehivesList.getBeehivesForFeed());
+      let beehives = await this.withSpinner(() => this.beehivesList.getBeehives(),this.spinner);
+      let beehivesForTrugos = await this.withSpinner(() => this.beehivesList.getBeehives(),this.spinner);
+      let beehivesForFeed = await this.withSpinner(() => this.beehivesList.getBeehivesForFeed(),this.spinner);
       console.log(beehives)
       this._bottomMenuBeehivesCounter();
 
@@ -110,7 +111,7 @@ class App {
             console.log('Result from addNewBeehive:', );
 
             if(result){
-              beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
+              beehives = await this.withSpinner(() => this.beehivesList.getBeehives(),this.spinner);
               this._displayNoneTabs();
               this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
             }
@@ -143,21 +144,21 @@ class App {
   
       document.querySelector(".openBeehivesListBtn").addEventListener("click", async (e) => {
         this._displayNoneTabs();
-        beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
+        beehives = await this.withSpinner(() => this.beehivesList.getBeehives(),this.spinner);
         
         this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab,null,e);
       });
   
       document.querySelector(".openBeehivesForFeedBtn").addEventListener("click", async (e) => {
         this._displayNoneTabs();
-        beehivesForFeed = await this.withSpinner(() => this.beehivesForFeed.getBeehivesForFeed());
+        beehivesForFeed = await this.withSpinner(() => this.beehivesForFeed.getBeehivesForFeed(),this.spinner);
         beehivesForFeed = beehivesForFeed.filter((beehive) => beehive.giaTaisma === true);
         this.updateDisplay(this.beehivesForFeed, beehivesForFeed, this.beehivesForFeedTab, "feed",e);
       });
   
       document.querySelector(".openBeehivesForHarvestBtn").addEventListener("click", async (e) => {
         this._displayNoneTabs();
-        beehivesForTrugos = await this.withSpinner(() => this.beehivesForFeed.getBeehives());
+        beehivesForTrugos = await this.withSpinner(() => this.beehivesForFeed.getBeehives(),this.spinner);
        
         this.updateDisplay(
           this.beehivesForFeed,
@@ -175,27 +176,27 @@ class App {
     
     
     
-    async withSpinner(asyncFunction) {
+    async withSpinner(asyncFunction, spinner) {
       try {
         // Start spinner animation
-        this.resetSpinner();
-        this.spinner.style.display = "block";
+        this.resetSpinner(spinner);
+        spinner.classList.remove('d-none')
+        spinner.classList.add('d-block')
   
         return await asyncFunction();
       } finally {
-        // Stop spinner animation
-        this.spinner.style.display = "none";
+        spinner.classList.remove('d-block')
+        spinner.classList.add('d-none')
         
       }
     }
 
-    
   
-    resetSpinner() {
+    resetSpinner(spinner) {
       
-      this.spinner.style.animation = "none"; 
-      void this.spinner.offsetWidth; 
-      this.spinner.style.animation = "loading 1s ease-in-out infinite"; 
+      spinner.style.animation = "none"; 
+      void spinner.offsetWidth; 
+      spinner.style.animation = "loading 1s ease-in-out infinite"; 
     }
 
     _removeClickedBottomMenu(){
@@ -238,7 +239,7 @@ class App {
     
     async showBeehiveList() {
       this._displayNoneTabs();
-        let beehives = await this.withSpinner(() => this.beehivesList.getBeehives());
+        let beehives = await this.withSpinner(() => this.beehivesList.getBeehives(),this.spinner);
         
         this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
     }
