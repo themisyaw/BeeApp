@@ -54,7 +54,7 @@ if ( is_user_logged_in() ) {
         </ul>
     </section>
     <!-- beehives for feed list -->
-    <section class="my-5 pb-5 container beehiveForFeedTab d-none">
+    <section class="mb-5 pb-5 container beehiveForFeedTab d-none">
         <h3 class="text-start py-3"> Beehives For Feed </h3>
 
         <div class="beehivesForFeed  ">

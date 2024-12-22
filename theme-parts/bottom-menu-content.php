@@ -32,10 +32,10 @@
             <div class="col py-3 mx-3 text-center forfeedmenu d-none">
                 <div class="row">
                     <div class="col-6">
-                        <button class="btn w-100 text-light  py-2 cancelsaveForFeed">Cancel</button>
+                        <button class="btn w-100 text-light errorbg  py-2 cancelsaveForFeed">Cancel</button>
                     </div>
                     <div class="col-6">
-                        <button class="btn w-100  text-light py-2 saveForFeed ">SaveForFeed</button>
+                        <button class="btn w-100  text-light bg-dark  py-2 saveForFeed ">SaveForFeed</button>
                     </div>
                 </div>
             </div>
@@ -43,10 +43,10 @@
             <div class="col py-3 mx-3 text-center beehiveEditMenu d-none">
                 <div class="row">
                     <div class="col-6 ">
-                        <button class="btn w-100  text-light py-2 cancelsave">Cancel</button>
+                        <button class="btn w-100  text-light py-2 errorbg  cancelsave">Cancel</button>
                     </div>
                     <div class="col-6">
-                        <button class="btn w-100 text-light py-2 save ">Save</button>
+                        <button class="btn w-100 text-light bg-dark py-2 save ">Save</button>
                     </div>
                 </div>
 

@@ -252,12 +252,12 @@ svg {
 }
 .save,.saveForFeed{
   
-  background-color: #FF9500 !important;
+  /* background-color: #343a40 !important; */
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 .cancelsaveForFeed,.cancelsave{
   
-  background-color: #2e2e2e !important;
+  /* background-color: #2e2e2e !important; */
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 .beehivesInnerHeader,.beehivesEditSaveInnerHeader{
@@ -270,7 +270,7 @@ svg {
   
 }
 .addNewBeeHive {
-  background: #ffa800;
+  background: #343a40;
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
   
 }
@@ -286,8 +286,8 @@ input[type="checkbox"] {
   border: none;
 }
 .checkboxes:checked {
-  box-shadow: 0px 0px 10px 0px #FF9500 !important;
-  background-color: #FF9500 !important;
+  box-shadow: 0px 0px 10px 0px #343a40 !important;
+  background-color: #343a40 !important;
   
 }
 
@@ -312,8 +312,8 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 1rem; /* Πλάτος */
   height: 1rem; /* Ύψος */
-  box-shadow: 0px 0px 10px 0px #FF9500 !important;
-  background-color: #FF9500 !important;
+  box-shadow: 0px 0px 10px 0px #343a40 !important;
+  background-color: #343a40 !important;
   border-radius: 50%;
   cursor: pointer; 
 }
@@ -321,8 +321,8 @@ input[type="range"]::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  box-shadow: 0px 0px 10px 0px #FF9500 !important;
-  background-color: #FF9500 !important;
+  box-shadow: 0px 0px 10px 0px #343a40 !important;
+  background-color: #343a40 !important;
   cursor: pointer;
 }
  /* Hide the default radio button */
@@ -347,8 +347,8 @@ input[type="range"]::-moz-range-thumb {
   content: '';
   width: 1rem;
   height: 1rem;
-  box-shadow: 0px 0px 10px 0px #FF9500 !important;
-  background-color: #FF9500 !important;
+  box-shadow: 0px 0px 10px 0px #343a40 !important;
+  background-color: #343a40 !important;
   border-radius: 50%;
   position: absolute;
   top: 50%;

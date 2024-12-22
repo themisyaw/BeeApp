@@ -131,7 +131,7 @@ import { beeAppListBase } from './beeAppRequests.js';
         let htmlContent = "";
         items.forEach(item => {
             htmlContent += `
-                <div class="beehiveForFeed col py-2" data-id="${item.id}">
+                <div class="beehiveForFeed px-0 py-2" data-id="${item.id}">
                     <h4 class="m-2 bgWheat rounded py-2 text-center">${item.beehiveNumber}</h4>
                 </div>
             `;

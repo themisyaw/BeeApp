@@ -63,8 +63,8 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
             const rating = 75; // Replace this with your actual rating value
             const starsDisplay = this.getStars(item.beehiverating);
             const isSick = Object.values(item.arrwsties).some(value => value === true);
-            const beehiveForFoodIcon = beehiveForFood(item.giaTaisma ?'': 'grayfilter');
-            const beehiveForTrugosIcon = beehiveForTrugos(item.giaTrugo ?'': 'grayfilter');
+            const beehiveForFoodIcon = beehiveForFood(item.giaTaisma ?'': 'grayfilter',28,28);
+            const beehiveForTrugosIcon = beehiveForTrugos(item.giaTrugo ?'': 'grayfilter',28,28);
            
                 htmlContent += `
                 <div class="kypselianimatedElement">
