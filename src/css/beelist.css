@@ -111,9 +111,13 @@ svg {
     scale: 1.4;
     top: -10px;
   }
+  .beehiveFeedLabel{
+    top: 0;
+    left: 0;
+  }
   
   .beehiveForFeed{
-    filter: drop-shadow(2px 4px 1px gray);
+ 
   }
   .beehivesForFeed{
     min-height: 10rem;

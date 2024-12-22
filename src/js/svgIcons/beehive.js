@@ -1,7 +1,8 @@
-export const beehiveIcon  = `
+
+export const beehiveIcon  = (height,width) =>`
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"  viewBox="0 0 379.236 379.236" xml:space="preserve" width="95" height="95">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"  viewBox="0 0 379.236 379.236" xml:space="preserve" width="${width}" height="${height}">
 <g>
 	<g>
 		<g>

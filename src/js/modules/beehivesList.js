@@ -65,7 +65,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
             const isSick = Object.values(item.arrwsties).some(value => value === true);
             const beehiveForFoodIcon = beehiveForFood(item.giaTaisma ?'': 'grayfilter',28,28);
             const beehiveForTrugosIcon = beehiveForTrugos(item.giaTrugo ?'': 'grayfilter',28,28);
-           
+            const beehiveIconIcon = beehiveIcon(95,95);
                 htmlContent += `
                 <div class="kypselianimatedElement">
                     <div class="my-2 px-1 d-flex justify-content-end">
@@ -86,7 +86,7 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
                             </div>
                         </div>
                         <div class="px-1 py-3">
-                            <div class="text-center">${beehiveIcon}</div>
+                            <div class="text-center">${beehiveIconIcon}</div>
                             <div class="d-flex justify-content-between mx-2 pt-3  border-bottom border-light ">
                                 <div class="  d-flex mb-1  align-items-end">
                                 

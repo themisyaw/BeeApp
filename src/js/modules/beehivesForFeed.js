@@ -1,5 +1,6 @@
 
 import { beeAppListBase } from './beeAppRequests.js';
+import { beehiveIcon } from '../svgIcons/beehive.js';
 
  class beehivesForFeed extends beeAppListBase {
 
@@ -88,7 +89,8 @@ import { beeAppListBase } from './beeAppRequests.js';
     }
     
     _onclickBeehiveForFeed(e){
-        const itemElementStyle = e.target.closest('.beehiveForFeed h4');
+        const itemElementStyle = e.target.closest('.beehiveForFeed div');
+      
         const itemElement = e.target.closest('.beehiveForFeed');
         const itemID = itemElement?.dataset.id;
         const item = this.beehivesForFeedListNew.find(item => item.id == itemID);
@@ -103,11 +105,11 @@ import { beeAppListBase } from './beeAppRequests.js';
         }
 
         if (itemElementStyle.classList.contains('bg-dark')) {
-            itemElementStyle.classList.remove('bg-dark','text-white');
+            itemElementStyle.classList.remove('bg-dark');
            
            
         } else {
-            itemElementStyle.classList.add('bg-dark','text-white');
+            itemElementStyle.classList.add('bg-dark');
            
             
         }
@@ -129,13 +131,21 @@ import { beeAppListBase } from './beeAppRequests.js';
     
     _htmlAddRemoveListContent(items) {
         let htmlContent = "";
+        const beehiveSvgIcon = beehiveIcon(40,40);
         items.forEach(item => {
             htmlContent += `
-                <div class="beehiveForFeed px-0 py-2" data-id="${item.id}">
-                    <h4 class="m-2 bgWheat rounded py-2 text-center">${item.beehiveNumber}</h4>
+                <div class="beehiveForFeed position-relative" data-id="${item.id}">
+                    <div class="d-flex justify-content-end  align-items-center rounded shadow p-2 bgWheat m-2">
+                        <h5 class="rounded text-center beehiveFeedLabel px-3 py-2 w-50  position-absolute bglight shadow">${item.beehiveNumber}</h5>
+                        ${beehiveSvgIcon}
+                        
+                        
+                    </div>
                 </div>
             `;
+         
         });
+       
         return htmlContent;
     }
     
