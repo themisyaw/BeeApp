@@ -114,6 +114,8 @@ svg {
   .beehiveFeedLabel{
     top: 0;
     left: 0;
+    z-index: 1;
+    background-color: #faefdbc9;
   }
   
   .beehiveForFeed{

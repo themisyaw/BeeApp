@@ -131,12 +131,12 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
     
     _htmlAddRemoveListContent(items) {
         let htmlContent = "";
-        const beehiveSvgIcon = beehiveIcon(40,40);
+        const beehiveSvgIcon = beehiveIcon(50,50);
         items.forEach(item => {
             htmlContent += `
                 <div class="beehiveForFeed position-relative" data-id="${item.id}">
-                    <div class="d-flex justify-content-end  align-items-center rounded shadow p-2 bgWheat m-2">
-                        <h5 class="rounded text-center beehiveFeedLabel px-3 py-2 w-50  position-absolute bglight shadow">${item.beehiveNumber}</h5>
+                    <div class="d-flex justify-content-center  align-items-center rounded shadow p-4 bgWheat m-2">
+                        <h5 class="rounded text-center beehiveFeedLabel z-3 px-3 py-1 w-50  position-absolute shadow">${item.beehiveNumber}</h5>
                         ${beehiveSvgIcon}
                         
                         
