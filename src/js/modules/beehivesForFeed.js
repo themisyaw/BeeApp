@@ -135,7 +135,7 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
         items.forEach(item => {
             htmlContent += `
                 <div class="beehiveForFeed position-relative" data-id="${item.id}">
-                    <div class="d-flex justify-content-center  align-items-center rounded shadow p-4 bgWheat m-2">
+                    <div class="d-flex justify-content-center  align-items-center rounded shadow  p-4 bgWheat mx-2 my-3">
                         <h5 class="rounded bglight text-center beehiveFeedLabel z-3 px-3 py-1 w-50  position-absolute shadow">${item.beehiveNumber}</h5>
                         ${beehiveSvgIcon}
                         
