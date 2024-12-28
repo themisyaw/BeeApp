@@ -23,7 +23,7 @@
   </head>
   <body class=""<?php body_class(); ?>>
     <header class="site-header bgWheat position-relative " id="personalinfo">
-      <div class="d-flex align-items-center justify-content-center container text-center py-2">
+      <div class="d-flex align-items-center justify-content-center container text-center py-3">
         <div class="line mr-2"></div>
         <?php echo get_svg_icon('svgLogo'); ?>
         <div class="line ml-2"></div>
