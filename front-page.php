@@ -55,18 +55,14 @@ if ( is_user_logged_in() ) {
     </section>
     <!-- beehives for feed list -->
     <section class="mb-5 pb-5 container beehiveForFeedTab d-none">
-        <h3 class="text-start py-3"> Beehives For Feed </h3>
+        <h4 class="text-start py-2 mt-3 d-flex justify-content-center align-items-center"> Beehives for <span class="d-flex mb-0 ml-2 bg-dark text-light rounded p-2 listTitleSpan"><h5 class="m-0"></h5></span> </h4>
 
-        <div class="beehivesForFeed  ">
-            <ul class=" py-0 px-2 row row-cols-3 beehiveUlForFeed ">
+        <div class="beehivesForFeed">
+            <ul class=" py-0 px-2 mt-3 row row-cols-3 beehiveUlForFeed ">
 
-            </u>
-        </div>
-        <div class="beehivesFed ">
-            <ul class="list-group p-0 beehiveUlFed"> 
-            
             </ul>
         </div>
+        
     </section>
     <?php
     get_template_part('theme-parts/bottom-menu','content');

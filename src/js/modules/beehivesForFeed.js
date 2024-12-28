@@ -36,9 +36,11 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
         try {
             if(this.feedOrHarvest==='harvest'){
                 this.beehivesForFeedListNew.filter(beehive => beehive.giaTrugo === true);
+                
             }
             if(this.feedOrHarvest==='feed'){
                 this.beehivesForFeedListNew.filter(beehive => beehive.giaTaisma === true);
+               
             }
             
             const result = await this.saveBeehive(this.beehivesForFeedListNew);
@@ -55,6 +57,12 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
     render(items,feedOrHarvest) {
         
         this.feedOrHarvest=feedOrHarvest;
+        console.log(this.feedOrHarvest)
+        if(this.feedOrHarvest === 'feed'){
+            document.querySelector('.listTitleSpan h5').textContent ='Feed';
+        }else{
+            document.querySelector('.listTitleSpan h5').textContent ='Harvest';
+        }
         this.beehiveUlForFeed.innerHTML = this._htmlAddRemoveListContent(items);
         this.beehivesForFeedList = JSON.parse(JSON.stringify(items)); 
         this.beehivesForFeedListNew=JSON.parse(JSON.stringify(items));  

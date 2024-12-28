@@ -30,6 +30,7 @@ class App {
      
       this.spinner = document.querySelector(".animatedSection");
       this.spinnerSearchInput = document.querySelector(".animatedSectionSearchInput");
+      this.spinnerForFeed = document.querySelector(".animatedSectionForFeed");
       
       this.init();
     }
@@ -151,14 +152,14 @@ class App {
   
       document.querySelector(".openBeehivesForFeedBtn").addEventListener("click", async (e) => {
         this._displayNoneTabs();
-        beehivesForFeed = await this.withSpinner(() => this.beehivesForFeed.getBeehivesForFeed(),this.spinner);
+        beehivesForFeed = await this.withSpinner(() => this.beehivesForFeed.getBeehivesForFeed(),this.spinnerForFeed);
         beehivesForFeed = beehivesForFeed.filter((beehive) => beehive.giaTaisma === true);
         this.updateDisplay(this.beehivesForFeed, beehivesForFeed, this.beehivesForFeedTab, "feed",e);
       });
   
       document.querySelector(".openBeehivesForHarvestBtn").addEventListener("click", async (e) => {
         this._displayNoneTabs();
-        beehivesForTrugos = await this.withSpinner(() => this.beehivesForFeed.getBeehives(),this.spinner);
+        beehivesForTrugos = await this.withSpinner(() => this.beehivesForFeed.getBeehives(),this.spinnerForFeed);
        
         this.updateDisplay(
           this.beehivesForFeed,

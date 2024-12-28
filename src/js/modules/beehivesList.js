@@ -77,9 +77,9 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
                         </div>
                     </div>
                     <div data-id="${item.id}"  class=" ${isSick ? 'errorLightbg' : ''} d-block mb-3 row p-0 shadow bgWheat align-items-end justify-content-center rounded text-start  mx-2 kypseli">
-                        <div class="py-1 d-flex justify-content-between">
+                        <div class="py-1 d-flex justify-content-between position-relative">
                             <div class="p-0">
-                                <span class="${isSick ? 'errorbg' : ''} text-dark beehiveNumberSpan bglight rounded px-3 py-2 text-center fw-700 ">${item.beehiveNumber}</span>
+                                <span class="${isSick ? 'errorbg' : ''} text-dark beehiveNumberSpan position-absolute bglight rounded px-3 py-2 text-center fw-700 ">${item.beehiveNumber}</span>
                             </div>
                             <div class="mr-2 d-flex align-items-center">
                                 <span class="bgRatingStars d-flex rounded-pill starsRating py-1 my-1 px-2">${starsDisplay}</span> 
