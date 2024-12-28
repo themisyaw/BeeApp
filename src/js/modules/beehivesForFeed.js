@@ -155,3 +155,4 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
    
 }
 export default beehivesForFeed;
+

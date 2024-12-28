@@ -22,12 +22,11 @@
     ?>   
   </head>
   <body class=""<?php body_class(); ?>>
-    <header class="site-header bgWheat position-relative" id="personalinfo">
-      <div class="container py-3">
-        <h1 class="text-center m-0 pt-2">BeeMan</h1>
-        
-        
-        
+    <header class="site-header bgWheat position-relative shadow" id="personalinfo">
+      <div class="d-flex align-items-center justify-content-center container text-center py-2">
+        <div class="line mr-2"></div>
+        <?php echo get_svg_icon('svgLogo'); ?>
+        <div class="line ml-2"></div>
       </div>
       
         <!-- <div class="messageDiv m-2">
@@ -43,8 +42,8 @@
 
          <div class="btn btn-alarm position-absolute border-0 text-dark closeCreateNewForm rounded bglight d-flex align-items-center shadow mx-1">
                 <div class="dashicons dashicons-no"></div>
-              </div>
-          <div class="row rounded d-flex align-items-center justify-content-center">
+          </div>
+          <div class="row rounded d-flex align-items-center justify-content-start">
             <div class="col-10 d-flex">
               <input tabindex="-1" type="number" placeholder="beehive number" class="mx-2 bglight border-0 shadow newBeehiveNumberInput form-control "/>
               <button class="btn btn-dark addNewBeeHive border-0 text-light  rounded  mx-2">Add</button>
