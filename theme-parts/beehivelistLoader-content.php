@@ -3,7 +3,7 @@
 ?>
 <section class="container mb-5 pb-5 animatedSectionSearchInput d-none ">
     <div class="row p-2 mt-3 justify-content-between d-flex align-items-center beehivesInnerHeader">
-        <div class="align-items-center opeSearchInputSpinner p- position-retive bglight shadow justify-content-center ml1 d-flex rounded closeSearchSpinner">
+        <div class="align-items-center opeSearchInputSpinner p- position-retive bglight shadow justify-content-center ml-1 d-flex rounded closeSearchSpinner">
             <span class="dashicons rounded bglight mx-2   dashicons-search align-items-center d-flex   ">
             
             </span>
