@@ -19,7 +19,7 @@ if ( is_user_logged_in() ) {
   
     <section class="container mb-5 pb-5 mt-2 beehivesListTab d-block">
         <div class="row p-2 mt-3 justify-content-between d-flex align-items-center beehivesInnerHeader">
-            <div class="align-items-center openSearchInput p- position-retive bglight shadow justify-content-center ml-1 d-flex rounded closeSearch">
+            <div class="align-items-center openSearchInput p- position-retive bglight shadow justify-content-center  d-flex rounded closeSearch">
                 <span class="dashicons rounded bglight mx-2 searchIcon  dashicons-search align-items-center d-flex   ">
                 
                 </span>
