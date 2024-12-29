@@ -2,12 +2,14 @@ import { beeAppListBase } from './beeAppRequests.js';
 
 
 class BeehiveCreateNew extends beeAppListBase {
-    constructor() {
+
+    constructor(app) {
         super();
+        this.app = app;
         // Static Elements
         this.newBeehiveNumberInput = document.querySelector('.newBeehiveNumberInput');
-
     }
+
     async addNewBeehive() {
         try {
             const beehiveNumber = {
@@ -19,20 +21,22 @@ class BeehiveCreateNew extends beeAppListBase {
             if (exists) {
                 this.newBeehiveNumberInput.value = '';
                 // message ->  yparxei autos o arithmos
+                this.app.displayMessage('This beehive number already exist!','errorbg',false);
                 return;
             }else{
                 if(this.newBeehiveNumberInput.value.trim() === ""){
-                    alert('Error!!!');
+                    this.app.displayMessage('Add a beehive number','errorbg',false);
                     return;
                 }
                 const result = await this.addBeehive(beehiveNumber); 
               
                 if (!result || !result.success) {
                     // message -> internet connection
-                   alert('Error!!!');
+                    this.app.displayMessage('Check your Internet Connection','errorbg');
                    return;
                 }
                 // message -> Saved :)
+                this.app.displayMessage('Successfully saved !!!','bglight');
                 this.newBeehiveNumberInput.value = '';
                 return result;
             }

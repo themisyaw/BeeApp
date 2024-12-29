@@ -16,7 +16,8 @@ if ( is_user_logged_in() ) {
     <?php 
         get_template_part('theme-parts/beehivelistLoader','content');
     ?>
-  
+    
+    
     <section class="container mb-5 pb-5 mt-2 beehivesListTab d-block">
         <div class="row p-2 mt-3 justify-content-between d-flex align-items-center beehivesInnerHeader">
             <div class="align-items-center openSearchInput p- position-retive bglight shadow justify-content-center  d-flex rounded closeSearch">
@@ -53,7 +54,7 @@ if ( is_user_logged_in() ) {
             
         </ul>
     </section>
-    <!-- beehives for feed list -->
+    <!-- beehives for feed/harvest list -->
     <section class="mb-5 pb-5 container beehiveForFeedTab d-none">
         <h4 class="text-start py-2 mt-3 d-flex justify-content-center align-items-center"> Beehives for <span class="d-flex mb-0 ml-2 bg-dark text-light rounded p-2 listTitleSpan"><h5 class="m-0"></h5></span> </h4>
 

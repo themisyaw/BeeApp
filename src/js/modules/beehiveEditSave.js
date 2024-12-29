@@ -73,8 +73,11 @@ class beehiveEditSave extends beeAppListBase {
             this.app._bottomMenuBeehivesCounter();
             this.beehiveOld = JSON.parse(JSON.stringify(this.beehiveNew));
             this.cancelsave();
+            this.app.displayMessage('Saved!','bglight');
+            
         } catch (error) {
             console.error('Save failed:', error);
+            this.app.displayMessage('Check your internet connection','errorbg');
         }
     }
 

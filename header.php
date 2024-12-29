@@ -29,10 +29,7 @@
         <div class="line ml-2"></div>
       </div>
       
-        <!-- <div class="messageDiv m-2">
-          <button id="closeDivBtn" class="btn btn-danger btn-sm float-end">×</button>
-          <span class="p-4">Message</span>
-        </div> -->
+        
         
        <?php 
         // get_template_part( 'theme-parts/bottom-menu-content', 'content' );
@@ -53,8 +50,16 @@
             
           </div>
       </div>
+      <div class="messageDiv shadow d-flex rounded align-items-center justify-content-between m-2 p-3 position-fixed ">
+          <h6 class="m-0 text-dark"></h6>
+          <button id="closeDivBtn" class="btn btn-alarm ml-1 px-2 border-0 rounded text-dark rounded bglight d-flex align-items-center shadow  float-end">
+            <div class="dashicons dashicons-no"></div>
+
+          </button>
+      </div>
     
     </header>
+   
     
      
     

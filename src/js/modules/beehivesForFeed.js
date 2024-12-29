@@ -45,11 +45,13 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
             
             const result = await this.saveBeehive(this.beehivesForFeedListNew);
             console.log('Save successful:', result); // Handle success
+            this.app.displayMessage('Saved!','bglight');
             this.app._bottomMenuBeehivesCounter();
             this.beehivesForFeedList = JSON.parse(JSON.stringify(this.beehivesForFeedListNew));  
             this._cancelsave();
         } catch (error) {
             console.error('Save failed:', error); // Handle error
+            this.app.displayMessage('Check your internet connection','errorbg');
         }
     }
     

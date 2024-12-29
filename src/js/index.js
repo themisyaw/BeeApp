@@ -12,7 +12,7 @@ class App {
       this.beehivesList = new BeeHivesList(this);
       this.beehiveEditSave = new beehiveEditSave(this);
       this.beehivesForFeed = new BeehivesForFeed(this);
-      this.beehiveCreateNew = new BeehiveCreateNew();
+      this.beehiveCreateNew = new BeehiveCreateNew(this);
       
      
   
@@ -33,6 +33,20 @@ class App {
       this.spinnerForFeed = document.querySelector(".animatedSectionForFeed");
       
       this.init();
+    }
+
+    displayMessage(message, divClass,timer=true){
+      document.querySelector('.messageDiv button').classList.remove('d-none');
+      document.querySelector('.messageDiv').classList.remove('errorbg');
+      document.querySelector('.messageDiv').classList.remove('bglight');
+      document.querySelector('.messageDiv').classList.add('open',divClass);
+      document.querySelector('.messageDiv h6').textContent=message;
+      if(timer){
+        document.querySelector('.messageDiv button').classList.add('d-none');
+        setTimeout(() => {
+          document.querySelector('.messageDiv').classList.remove('open');
+        }, 2000);
+      }
     }
 
     openCreateBeehiveForm() {
@@ -109,10 +123,11 @@ class App {
       document.querySelector('.addNewBeeHive').addEventListener('click', async () => {
         try {
             const result = await this.beehiveCreateNew.addNewBeehive(); // Wait for addNewBeehive to complete
-            console.log('Result from addNewBeehive:', );
+            
 
             if(result){
               beehives = await this.withSpinner(() => this.beehivesList.getBeehives(),this.spinner);
+              this._bottomMenuBeehivesCounter();
               this._displayNoneTabs();
               this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
             }
@@ -169,10 +184,15 @@ class App {
           e
         );
       });
+      // close message div
+      document.querySelector('#closeDivBtn').addEventListener('click',this.closeDivMessage.bind(this));
 
       
   
       this.updateDisplay(this.beehivesList, beehives, this.beehivesListTab);
+    }
+    closeDivMessage(){
+      document.querySelector('.messageDiv').classList.remove('open');
     }
     
     
