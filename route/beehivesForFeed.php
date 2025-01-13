@@ -23,7 +23,6 @@ function get_beehivesForFeed_for_current_user( $data ) {
         $beehivesForFeed = array();
         while ( $query->have_posts() ) {
             $query->the_post();
-
             if(get_field( 'giaTaisma' )){
                 $arrwsties = array(
                     'orfano' => get_field( 'orfano' ),
@@ -35,7 +34,6 @@ function get_beehivesForFeed_for_current_user( $data ) {
                 );
                 $telara = !empty( get_field( 'telara' ) ) ? get_field( 'telara' ) : 0;
                 $new_telara = !empty( get_field( 'newtelara' ) ) ? get_field( 'newtelara' ) : 0;
-            
                 $beehivesForFeed[] = array(
                     'id' => get_the_ID(),
                     'arrwsties' => $arrwsties,
@@ -56,9 +54,7 @@ function get_beehivesForFeed_for_current_user( $data ) {
             return intval( $a['beehiveNumber'] ) - intval( $b['beehiveNumber'] );
         });
         wp_reset_postdata();
-
         return new WP_REST_Response( $beehivesForFeed, 200 );
     }
-
     return new WP_REST_Response( 'No beehives found for the current user.', 404 );
 }

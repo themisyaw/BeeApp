@@ -5,7 +5,7 @@ function createBeehivesItemsRoute() {
         'methods' => 'POST',
         'callback' => 'createBeehive',
         'permission_callback' => function () {
-            return is_user_logged_in(); // Only logged-in users can access this route
+            return is_user_logged_in(); 
         },
         
     ));

@@ -5,10 +5,8 @@
     <div class="row p-2 mt-3 justify-content-between d-flex align-items-center beehivesInnerHeader">
         <div class="align-items-center opeSearchInputSpinner col-lg-1 position-retive bglight shadow justify-content-center d-flex rounded closeSearchSpinner">
             <span class="dashicons rounded bglight mx-2   dashicons-search align-items-center d-flex   ">
-            
             </span>
             <input type="number"  class="border-0 bg-transparent form-control p-0 searchInputSpinner" aria-label="" aria-describedby="">
-            
         </div>
         <div class="align-items-center justify-content-center  bglight shadow rounded mr-1 col-5 col-lg-2 py-2  d-flex">
             <span class="mr-2 text-dark">Add new</span>
@@ -61,14 +59,11 @@
     </ul>
 </section>
 <section class="container mb-5 pb-5 animatedSection ">
-
     <div class="row p-2 mt-3 justify-content-between d-flex align-items-center beehivesInnerHeader">
             <div class="align-items-center opeSearchInputSpinner  position-retive col-lg-1 bglight shadow justify-content-center ml1 d-flex rounded closeSearchSpinner">
                 <span class="dashicons rounded bglight mx-2   dashicons-search align-items-center d-flex   ">
-                
                 </span>
-                <input type="number"  class="border-0 bg-transparent form-control p-0 searchInputSpinner" aria-label="" aria-describedby="">
-                
+                <input type="number"  class="border-0 bg-transparent form-control p-0 searchInputSpinner" aria-label="" aria-describedby="">                
             </div>
             <div class="align-items-center justify-content-center  bglight shadow rounded mr-1 col-5 col-lg-2 py-2  d-flex">
                 <span class="mr-2 text-dark">Add new</span>
@@ -105,18 +100,14 @@
                     <div class="text-center"><?php echo get_svg_icon('beehive'); ?></div>
                     <div class="d-flex justify-content-between mx-2 pt-3  border-bottom border-light ">
                         <div class="  d-flex mb-1  align-items-end">
-                        
                             <h6 class="roboto-regular m-0 fs-13">Frames</h6>
                         </div>
                         <div class="mb-1   p-0 text-center ">
                             <h6 class="roboto-light m-0 fs-13"><span class="animated-element animate fs-16 bg-light rounded-pill px-3 roboto-regular color-warning">&nbsp;&nbsp;&nbsp;</span> / 20</h6>
                         </div>
                     </div>
-                    
                 </div>
-            
             </div>
-
         </div>
         <div class="">
                 <div class="my-2 px-1 d-flex justify-content-end ">
@@ -153,11 +144,8 @@
                                 <h6 class="roboto-light m-0 fs-13"><span class="animated-element animate fs-16 bg-light rounded-pill px-3 roboto-regular color-warning">&nbsp;&nbsp;&nbsp;</span> / 20</h6>
                             </div>
                         </div>
-                        
                     </div>
-                
                 </div>
-
         </div>
         <div class="">
             <div class="my-2 px-1 d-flex justify-content-end ">

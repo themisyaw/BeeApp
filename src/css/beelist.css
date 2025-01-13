@@ -3,11 +3,9 @@
 }
 body{
     background-color: #FAEFDB;
-   
 }
 svg {
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-    
 }
 
 .fw-700{
@@ -63,179 +61,146 @@ svg {
 .justify-content-space-around{
     justify-content: space-around;
 }
-
-
 .roboto-thin {
     font-family: "Roboto", serif;
     font-weight: 100;
     font-style: normal;
-  }
+}
   
   .roboto-light {
-    font-family: "Roboto", serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .roboto-regular {
-    font-family: "Roboto", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .roboto-medium {
-    font-family: "Roboto", serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .roboto-bold {
-    font-family: "Roboto", serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .bottomMenu{
-    background: rgba( 250, 239, 219, 0.8 );
-    backdrop-filter: blur( 3px );
-    -webkit-backdrop-filter: blur( 3px );
-   
-  }
-  .bottomMenuitem{
-    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-  }
-  .fw-600{
-    filter: drop-shadow(0px 0px 0px black);
-  }
-  .selectedMenuItem{
-    transition: 0.4s ease;
-    scale: 1.4;
-    top: -10px;
-  }
-  .beehiveFeedLabel{
-    top: 8px;
-    left: 0;
-    z-index: 1;
-   
-  }
-  .beehiveFeedLabelLoader{
-    top: -8px;
-    left: -4px;
-    z-index: 1;
-  }
-  .line{
-    width: 45px;
-    height: 1px;
-    background-color: #ff9500;
-    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-  }
-  .svgLogo{
-    filter: none;
-    border: 1px solid #ffffff;
-    border-radius: 50%;
-    box-shadow: 0px 0px 7px 2px #ffffff;
-  }
-  
-  .beehiveForFeed{
- 
-  }
-  .beehivesForFeed{
-    min-height: 10rem;
-  }
-
-
-
-  .animated-element {
-    background: linear-gradient(
-      100deg,
-      wheat 80%,
-      rgb(251, 237, 211) 90%,
-      rgb(242, 224, 191) 80%
-    ) #ededed;
-    background-size: 200% 100%;
-    background-position-x: 180%; /* Set default starting point */
-    
-    filter: grayscale(60%) ;
-  }
-  
-  .animate{
-    animation: 0.8s loading ease-in-out infinite;
-   
-  }
-  .loaderUl{
-    justify-content: space-evenly;
-  }
-  
-@keyframes loading {
-  from {
-    background-position-x: 180%; 
-    
-  }
-  to {
-    background-position-x: -20%;
-    
-  }
-  
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
+.roboto-regular {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bottomMenu{
+  background: rgba( 250, 239, 219, 0.8 );
+  backdrop-filter: blur( 3px );
+  -webkit-backdrop-filter: blur( 3px );
+
+}
+.bottomMenuitem{
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+.fw-600{
+  filter: drop-shadow(0px 0px 0px black);
+}
+.selectedMenuItem{
+  transition: 0.4s ease;
+  scale: 1.4;
+  top: -10px;
+}
+.beehiveFeedLabel{
+  top: 8px;
+  left: 0;
+  z-index: 1;
+}
+.beehiveFeedLabelLoader{
+  top: -8px;
+  left: -4px;
+  z-index: 1;
+}
+.line{
+  width: 45px;
+  height: 1px;
+  background-color: #ff9500;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+.svgLogo{
+  filter: none;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 7px 2px #ffffff;
+}
+.beehivesForFeed{
+min-height: 10rem;
+}
+.animated-element {
+  background: linear-gradient(
+  100deg,
+  wheat 80%,
+  rgb(251, 237, 211) 90%,
+  rgb(242, 224, 191) 80%
+  ) #ededed;
+  background-size: 200% 100%;
+  background-position-x: 180%; 
+  filter: grayscale(60%) ;
+}
+
+.animate{
+  animation: 0.8s loading ease-in-out infinite;
+}
+.loaderUl{
+  justify-content: space-evenly;
+}
+@keyframes loading {
+  from {
+  background-position-x: 180%; 
+  }
+  to {
+  background-position-x: -20%;
+  }
+}
 .kypselianimatedElement{
-    animation: scaleAndRotate linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+  animation: scaleAndRotate linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
 }
 @keyframes scaleAndRotate {
   0% {
-   
-   transform: scale(0.5) ;
-    
+  transform: scale(0.5) ;
   }
   50% {
-   
-    transform: scale(0.8) ;
+  transform: scale(0.8) ;
   }
   100% {
-    
-    transform: scale(1) ;
-    
+  transform: scale(1) ;
+
   }
-  
-
- 
-  
-
-
 }
 .openSearch{
   width: 40%!important;
- 
-    overflow:hidden;
-    -webkit-transition: width 1s ease-in-out;
-    -moz-transition: width 1s ease-in-out;
-    -o-transition: width 1s ease-in-out;
-    transition: width 1s ease-in-out;
-  
-}
-.closeSearch,.closeSearchSpinner{
-  
-  /* width: auto; */ width:15%!important;
-
   overflow:hidden;
   -webkit-transition: width 1s ease-in-out;
   -moz-transition: width 1s ease-in-out;
   -o-transition: width 1s ease-in-out;
   transition: width 1s ease-in-out;
-  
+}
+.closeSearch,.closeSearchSpinner{
+  width:15%!important;
+  overflow:hidden;
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
 
 .openSearchInput, .openAddNewBeehive,.openSearchInputSpinner{
- width: 15%;
+  width: 15%;
   -webkit-transition: width 0.5s ease-in-out;
   -moz-transition: width 0.5s ease-in-out;
   -o-transition: width 0.5s ease-in-out;
   transition: width 0.5s ease-in-out;
 }
 .searchInput,.searchInputSpinner {
- 
   width:0%;
   overflow:hidden;
   -webkit-transition: width 0.8s ease-in-out;
@@ -249,7 +214,6 @@ svg {
 }
 .newBeehiveNumberInput:focus{
   background-color: #FAEFDB!important;
- 
   border: none!important;
 }
 .searchInput:focus{
@@ -259,15 +223,8 @@ svg {
 }
 .searchInput.open {
   width: 100%;
-  /* opacity: 1;
-
-  background-color: #FAEFDB!important;
-  box-shadow: 0px 0px 4px 0px white!important;
-  border: none!important; */
 }
-
 .newbeehiveForm.open,.messageDiv.open{
- 
   top: 0px;
 }
 .messageDiv{
@@ -278,16 +235,11 @@ svg {
 .newbeehiveForm,.messageDiv{
   top: -100%;
   transition: 0.4s ease;
-  
 }
 .save,.saveForFeed{
-  
-  /* background-color: #343a40 !important; */
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 .cancelsaveForFeed,.cancelsave{
-  
-  /* background-color: #2e2e2e !important; */
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 .beehivesInnerHeader,.beehivesEditSaveInnerHeader{
@@ -296,18 +248,15 @@ svg {
   background: rgba(250, 239, 219, 0.7);
   backdrop-filter: blur(3px);
   z-index: 1;
-  
-  
 }
 .addNewBeeHive {
   background: #343a40;
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-  
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 input[type="checkbox"] {
   width: 1rem;
@@ -318,30 +267,22 @@ input[type="checkbox"] {
 .checkboxes:checked {
   box-shadow: 0px 0px 10px 0px #343a40 !important;
   background-color: #343a40 !important;
-  
 }
-
-
-
-
 input[type="number"] {
-    -moz-appearance: textfield;
+-moz-appearance: textfield;
 }
 input[type="range"] {
   -webkit-appearance: none; 
- 
   height: 4px; 
-  
   border-radius: 5px; 
   outline: none; 
   opacity: 0.9; 
-  
 }
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Αφαιρεί το προεπιλεγμένο στυλ */
+  -webkit-appearance: none;
   appearance: none;
-  width: 1rem; /* Πλάτος */
-  height: 1rem; /* Ύψος */
+  width: 1rem; 
+  height: 1rem; 
   box-shadow: 0px 0px 10px 0px #343a40 !important;
   background-color: #343a40 !important;
   border-radius: 50%;
@@ -355,18 +296,17 @@ input[type="range"]::-moz-range-thumb {
   background-color: #343a40 !important;
   cursor: pointer;
 }
- /* Hide the default radio button */
- input[type="radio"] {
-  display: none; /* Hides the default radio */
+
+input[type="radio"] {
+  display: none; 
 }
 
-/* Custom radio button styles */
+
 .custom-radio {
   display: inline-block;
   width: 1rem;
   height: 1rem;
- 
-  border-radius: 50%; /* Makes it circular */
+  border-radius: 50%; 
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -386,8 +326,6 @@ input[type="range"]::-moz-range-thumb {
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.2s ease;
 }
-
-/* Show inner circle when checked */
 input[type="radio"]:checked + .custom-radio::after {
   transform: translate(-50%, -50%) scale(1);
 }

@@ -1,4 +1,5 @@
 <?php
+
 add_action('rest_api_init', function () {
     register_rest_route('beehives/v1', 'delete', array(
         'methods' => 'DELETE',
@@ -16,8 +17,6 @@ function delete_beehive(WP_REST_Request $request) {
     if (empty($id) || !is_numeric($id)) {
         return new WP_Error('invalid_id', 'Invalid beehive ID', array('status' => 400));
     }
-
-    // Try to delete the post
     $deleted = wp_delete_post($id, true); 
     if ($deleted) {
         return rest_ensure_response(array(

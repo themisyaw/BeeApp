@@ -3,7 +3,7 @@ import { BaseAPI } from './apiRequests.js';
 export class beeAppListBase extends BaseAPI {
     constructor() {
         super();
-        this.endpoint = '/wp-json/userBeehives/v1'; // Custom Post Type endpoint
+        this.endpoint = '/wp-json/userBeehives/v1'; 
     }
 
     async getBeehives() {

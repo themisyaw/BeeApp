@@ -5,7 +5,6 @@ require get_theme_file_path('/route/getbeeHives.php');
 require get_theme_file_path('/route/beehiveCreate.php');
 require get_theme_file_path('/route/beehiveDelete.php');
 require get_theme_file_path('/route/beehivesSearch.php');
-// require_once get_template_directory() . '/route/beeHivesForFeed.php';
 require get_theme_file_path('/icons/beehiveIcon.php');
 
 function register_beehiveForFeed_user_route() {
@@ -18,7 +17,6 @@ function register_beehiveForFeed_user_route() {
 add_action( 'rest_api_init', 'register_beehiveForFeed_user_route' );
 
 function get_beehivesForFeed_for_current_user( $data ) {
-    
     $user_id = get_current_user_id();
     $args = array(
         'post_type' => 'beehive',  
@@ -26,12 +24,10 @@ function get_beehivesForFeed_for_current_user( $data ) {
         'posts_per_page' => -1,    
     );
     $query = new WP_Query( $args );
-    
     if ( $query->have_posts() ) {
         $beehivesForFeed = array();
         while ( $query->have_posts() ) {
             $query->the_post();
-
             if(get_field( 'giaTaisma' )){
                 $arrwsties = array(
                     'orfano' => get_field( 'orfano' ),
@@ -43,7 +39,6 @@ function get_beehivesForFeed_for_current_user( $data ) {
                 );
                 $telara = !empty( get_field( 'telara' ) ) ? get_field( 'telara' ) : 0;
                 $new_telara = !empty( get_field( 'newtelara' ) ) ? get_field( 'newtelara' ) : 0;
-            
                 $beehivesForFeed[] = array(
                     'id' => get_the_ID(),
                     'arrwsties' => $arrwsties,
@@ -59,20 +54,16 @@ function get_beehivesForFeed_for_current_user( $data ) {
                 );
             }
         }
-        
         usort( $beehivesForFeed, function( $a, $b ) {
             return intval( $a['beehiveNumber'] ) - intval( $b['beehiveNumber'] );
         });
         wp_reset_postdata();
-
         return new WP_REST_Response( $beehivesForFeed, 200 );
     }
-
     return new WP_REST_Response( 'No beehives found for the current user.', 404 );
 }
 
 function beeApp_Post_Types() {
-// Note Post Type
 register_post_type('beehive', array(
     'capability_type' => 'beehive',
     'map_meta_cap' => true,
@@ -89,12 +80,8 @@ register_post_type('beehive', array(
     ),
     'menu_icon' => 'dashicons-welcome-write-blog'
   ));
-  
-
 }
 add_action('init', 'beeApp_Post_Types');
-
-
 function filter_admin_user_posts($query) {
     if ( is_admin() && $query->is_main_query() && is_user_logged_in() ) {
         // Only allow users to see their own posts in the admin
@@ -104,63 +91,42 @@ function filter_admin_user_posts($query) {
 add_action('pre_get_posts', 'filter_admin_user_posts');
 
 function filter_rest_api_query_by_current_user( $args, $request ) {
-    // Check if the user is logged in
     if ( is_user_logged_in() ) {
         $current_user_id = get_current_user_id();
-
-        // If the request is for posts or custom post types like 'note', filter by author (current user)
         if ( isset( $request['post_type'] ) && ( 'post' === $request['post_type'] || 'beehive' === $request['post_type'] ) ) {
-            // Add the 'author' argument to filter posts by the current user
             $args['author'] = $current_user_id;
         }
     }
-
     return $args;
 }
 add_filter( 'rest_post_query', 'filter_rest_api_query_by_current_user', 10, 2 );
 add_filter( 'rest_beehive_query', 'filter_rest_api_query_by_current_user', 10, 2 );  
-
-
-
 function custom_login_redirect($redirect_to, $request, $user) {
-    // Redirect users to a custom dashboard or home page
-    return home_url(); // Change to your desired URL
+    return home_url(); 
 }
 add_filter('login_redirect', 'custom_login_redirect', 10, 3);
 
 function redirect_non_logged_in_users() {
     global $pagenow;
-
-    // Check if the user is not logged in and not accessing login or admin pages
     if ( ! is_user_logged_in() && $pagenow !== 'wp-login.php' && ! is_admin() ) {
-        wp_redirect( wp_login_url() ); // Redirect to the login page
+        wp_redirect( wp_login_url() ); 
         exit;
     }
 }
 add_action( 'template_redirect', 'redirect_non_logged_in_users' );
-
-add_action( 'template_redirect', 'redirect_non_logged_in_users' );
-
 add_action( 'wp_logout', function() {
-    wp_redirect( wp_login_url() ); // Redirect to the login page
+    wp_redirect( wp_login_url() ); 
     exit;
 });
-
-
-
 add_filter('rest_post_collection_params', function ($params) {
     if (isset($params['per_page'])) {
-        $params['per_page']['maximum'] = 1000; // Increase the maximum limit
+        $params['per_page']['maximum'] = 1000; 
     }
     return $params;
 });
-
 function test() {
-
     wp_enqueue_style('dashicons');
     wp_enqueue_style('beeman-styles', get_theme_file_uri('/src/css/beelist.css'));
-    // wp_enqueue_style('groceries-styles', get_theme_file_uri('/src/css/grocery.css'));
-    // wp_enqueue_style('reminder-styles', get_theme_file_uri('/src/css/reminder.css'));
     wp_enqueue_script('new-script', get_theme_file_uri('/src/js/index.js'), array('jquery'), '1.0', true);
 	wp_localize_script('new-script', 'beeAppData', array(
         'root_url' => esc_url(home_url()),
@@ -168,7 +134,6 @@ function test() {
     ));
 }
 add_action( 'wp_enqueue_scripts', 'test' );
-
 
 add_filter('script_loader_tag', function($tag, $handle) {
     if ('new-script' !== $handle) {

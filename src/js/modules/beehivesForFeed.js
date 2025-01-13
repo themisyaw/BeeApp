@@ -42,24 +42,19 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
                 this.beehivesForFeedListNew.filter(beehive => beehive.giaTaisma === true);
                
             }
-            
             const result = await this.saveBeehive(this.beehivesForFeedListNew);
-            console.log('Save successful:', result); // Handle success
             this.app.displayMessage('Saved!','bglight');
             this.app._bottomMenuBeehivesCounter();
             this.beehivesForFeedList = JSON.parse(JSON.stringify(this.beehivesForFeedListNew));  
             this._cancelsave();
         } catch (error) {
-            console.error('Save failed:', error); // Handle error
             this.app.displayMessage('Check your internet connection','errorbg');
         }
     }
     
     
     render(items,feedOrHarvest) {
-        
         this.feedOrHarvest=feedOrHarvest;
-        console.log(this.feedOrHarvest)
         if(this.feedOrHarvest === 'feed'){
             document.querySelector('.listTitleSpan h5').textContent ='Feed';
         }else{
@@ -69,30 +64,24 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
         this.beehivesForFeedList = JSON.parse(JSON.stringify(items)); 
         this.beehivesForFeedListNew=JSON.parse(JSON.stringify(items));  
         this._saveButtonDisplay();
-      
-        
     }
     _ForSave(obj1, obj2) {
-
         if(JSON.stringify(obj1) === JSON.stringify(obj2)){
             return false;
         }else{
             return true;
         }
-       
     }
     _saveButtonDisplay(){
         if(this._ForSave(this.beehivesForFeedListNew,this.beehivesForFeedList)){
              this.forfeedmenu.classList.remove('d-none');
              this.forfeedmenu.classList.add('d-block');
-
              this.basicMenu.classList.remove('d-block');
              this.basicMenu.classList.add('d-none');
 
         }else{
             this.forfeedmenu.classList.remove('d-block');
             this.forfeedmenu.classList.add('d-none');
-
             this.basicMenu.classList.remove('d-none');
             this.basicMenu.classList.add('d-block');
         }
@@ -100,11 +89,9 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
     
     _onclickBeehiveForFeed(e){
         const itemElementStyle = e.target.closest('.beehiveForFeed div');
-      
         const itemElement = e.target.closest('.beehiveForFeed');
         const itemID = itemElement?.dataset.id;
         const item = this.beehivesForFeedListNew.find(item => item.id == itemID);
-       
         if (item) {
             if(this.feedOrHarvest === 'feed'){
                 item.giaTaisma = !item.giaTaisma;
@@ -113,18 +100,12 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
                 item.giaTrugo = !item.giaTrugo;
             }
         }
-
         if (itemElementStyle.classList.contains('bg-dark')) {
-            itemElementStyle.classList.remove('bg-dark');
-           
-           
+            itemElementStyle.classList.remove('bg-dark'); 
         } else {
-            itemElementStyle.classList.add('bg-dark');
-           
-            
+            itemElementStyle.classList.add('bg-dark');  
         }
         this._saveButtonDisplay();
-
     }
     
 
@@ -135,8 +116,6 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
         if(this.feedOrHarvest==='feed'){
             this.render(this.beehivesForFeedList.filter(beehive => beehive.giaTaisma === true),this.feedOrHarvest);
         }
-      
-        
     }
     
     _htmlAddRemoveListContent(items) {
@@ -153,16 +132,10 @@ import { beehiveIcon } from '../svgIcons/beehive.js';
                     </div>
                 </div>
             `;
-         
         });
-       
         return htmlContent;
     }
-    
-    
-   
-    
-   
+     
 }
 export default beehivesForFeed;
 

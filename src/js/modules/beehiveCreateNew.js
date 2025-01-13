@@ -6,7 +6,6 @@ class BeehiveCreateNew extends beeAppListBase {
     constructor(app) {
         super();
         this.app = app;
-        // Static Elements
         this.newBeehiveNumberInput = document.querySelector('.newBeehiveNumberInput');
     }
 
@@ -20,7 +19,6 @@ class BeehiveCreateNew extends beeAppListBase {
             const exists = beehives.some(beehive => beehive.beehiveNumber === this.newBeehiveNumberInput.value);
             if (exists) {
                 this.newBeehiveNumberInput.value = '';
-                // message ->  yparxei autos o arithmos
                 this.app.displayMessage('This beehive number already exist!','errorbg',false);
                 return;
             }else{
@@ -31,18 +29,16 @@ class BeehiveCreateNew extends beeAppListBase {
                 const result = await this.addBeehive(beehiveNumber); 
               
                 if (!result || !result.success) {
-                    // message -> internet connection
                     this.app.displayMessage('Check your Internet Connection','errorbg');
                    return;
                 }
-                // message -> Saved :)
                 this.app.displayMessage('Successfully saved !!!','bglight');
                 this.newBeehiveNumberInput.value = '';
                 return result;
             }
         } catch (error) {
             console.error('Save failed:', error);
-            throw error; // Propagate the error for the caller to handle
+            throw error; 
         }
     } 
 }

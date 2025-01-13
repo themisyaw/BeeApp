@@ -16,39 +16,29 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
         this.beehiveResults=[];
         // handlers
         this.inputHandler = this.searchDisplayBeehives.bind(this);
+
         this.init();
     }
 
     async searchDisplayBeehives(){
         const beehiveNumber = this.searchInput.value;
-        
         if(this.searchInput.value.trim() === ""){
             this.app.showBeehiveList();
         }else{
-            
             const searchResuls = await this.app.withSpinner(() => this.searchBeehives(beehiveNumber),this.spinnerSearchInput);
-            this.beehiveResults = searchResuls ? [searchResuls] : [];
-            console.log(beehiveNumber)
+            this.beehiveResults = searchResuls ? [searchResuls] : []; 
             this.app.searchResults(this.beehiveResults);
         }
-        
     }
-
     init(){
         this.searchInput.addEventListener('keyup', this.inputHandler);
-       
     }
-
-    
-  
     render(items) {
-        
         this.beehivesListUL.innerHTML = ''; 
         this.beehivesListUL.insertAdjacentHTML("afterbegin", this._htmlAddRemoveListContent(items));
     }
     
     getStars(rating, maxStars = 5) {
-       
         const stars = Math.round((rating / 100) * maxStars);// Generate the star display
         const fullStar = '<span class=" align-items-center justify-content-center starRatingFill dashicons dashicons-star-filled"></span>';  // You can use an icon or image here
         const emptyStar = '<span class=" align-items-center  justify-content-center starRatingEmpty dashicons dashicons-star-empty"></span>'; // You can use an icon or image here
@@ -56,11 +46,9 @@ import { beehiveIcon, beehiveForTrugos, beehiveForFood } from '../svgIcons/beehi
     }
     
     _htmlAddRemoveListContent(array){
-        
         let htmlContent='';
-        
         array.forEach(item => {
-            const rating = 75; // Replace this with your actual rating value
+            const rating = 75; 
             const starsDisplay = this.getStars(item.beehiverating);
             const isSick = Object.values(item.arrwsties).some(value => value === true);
             const beehiveForFoodIcon = beehiveForFood(item.giaTaisma ?'': 'grayfilter',28,28);

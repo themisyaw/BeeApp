@@ -1,6 +1,6 @@
 import { beeAppListBase } from './beeAppRequests.js';
 import { beehiveForTrugos, beehiveForFood } from '../svgIcons/beehive.js';
-// import _ from 'lodash';
+
 class beehiveEditSave extends beeAppListBase {
     constructor(app) {
 
@@ -16,20 +16,16 @@ class beehiveEditSave extends beeAppListBase {
         this.harvestTotal=document.querySelector('.harvestTotal');
         this.beehivesTotal=document.querySelector('.beehivesTotal');
         this.feedTotal=document.querySelector('.feedTotal');
-      
         // Data
         this.itemsIDforUpdate = [];
         this.beehiveOld = null;
         this.beehiveNew = null;
         this.beehiveID= null;
-
         // Bind Static Handlers
         this.saveHandler = this.save.bind(this);
         this.deleteHandler = this.deleteBeehive.bind(this);
         this.cancelHandler = this.cancelsave.bind(this);
         this.dynamicHandler = this.handleDynamicEvents.bind(this);
-        
-
         // Attach Static Event Listeners
         this.initStaticListeners();
     }
@@ -53,9 +49,8 @@ class beehiveEditSave extends beeAppListBase {
         }
         try {
             const result = await this.delete(`/wp-json/beehives/v1/delete?id=${Number(this.beehiveID)}`);
-            // After deletion, navigate back to the beehive list
-            if (result.success) {
-                // message success
+           
+            if (result.success) { 
                 this.app._bottomMenuBeehivesCounter();
                 this.app.showBeehiveList();
             }else{
@@ -69,43 +64,33 @@ class beehiveEditSave extends beeAppListBase {
     async save() {
         try {
             const result = await this.saveBeehive(this.beehiveNew);
-            console.log('Save successful:', result);
             this.app._bottomMenuBeehivesCounter();
             this.beehiveOld = JSON.parse(JSON.stringify(this.beehiveNew));
             this.cancelsave();
             this.app.displayMessage('Saved!','bglight');
             
         } catch (error) {
-            console.error('Save failed:', error);
             this.app.displayMessage('Check your internet connection','errorbg');
         }
     }
-
     cancelsave() {
         this.render(this.beehiveOld);
     }
 
     render(item) {
-        this.beehiveID = item.id;     
-       
+        this.beehiveID = item.id;   
         this.beehiveUl.innerHTML = this._htmlAddRemoveListContent(item);
-
         this.beehiveOld = _.cloneDeep(item);
         this.beehiveNew = _.cloneDeep(item);
-        
         this._saveButtonDisplay();
     }
 
     handleDynamicEvents(event) {
         const { target } = event;
         console.log(event)
-        // Beehive Number Input
         if (target.classList.contains('beehiveNumInput')) {
-           
             this.beehiveNew.beehiveNumber = target.value;
-            
         }
-
         // Checkboxes
         if (target.type === 'checkbox' && target.id === 'taismaCheckbox') {
             this.beehiveNew.giaTaisma = target.checked;
@@ -117,7 +102,6 @@ class beehiveEditSave extends beeAppListBase {
             const disease = target.value;
             this.beehiveNew.arrwsties[disease] = target.checked;
         }
-
         // Range Inputs
         if (target.classList.contains('telara')) {
             this.beehiveNew.telara = Number(target.value);
@@ -132,30 +116,20 @@ class beehiveEditSave extends beeAppListBase {
             this.beehiveNew.beehiverating =target.value;
             document.querySelector('.beehiveRatingSpan').innerHTML = Number(target.value);
         }
-
         // Radio Buttons
         if (target.name === 'beeTypeRadios') {
             this.beehiveNew.beehiveType = target.value;
         }
-
         this._saveButtonDisplay();
     }
 
     _saveButtonDisplay() {
-
-       
-        // const isSame = JSON.stringify(this.beehiveOld) === JSON.stringify(this.beehiveNew);
         const isSame = _.isEqual(this.beehiveOld, this.beehiveNew);
-        console.log('beehiveOld')
-        console.log(this.beehiveOld)
-        console.log('beehiveNew')
-        console.log(this.beehiveNew)
         if (isSame) {
             this.beehiveEditMenu.classList.add('d-none');
             this.basicMenu.classList.remove('d-none');
         } else {
             this.beehiveEditMenu.classList.remove('d-none');
-
             this.basicMenu.classList.remove('d-block');
             this.basicMenu.classList.add('d-none');
         }
