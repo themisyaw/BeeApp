@@ -3,20 +3,20 @@
 ?>
 <section class="container mb-5 pb-5 animatedSectionSearchInput d-none ">
     <div class="row p-2 mt-3 justify-content-between d-flex align-items-center beehivesInnerHeader">
-        <div class="align-items-center opeSearchInputSpinner p- position-retive bglight shadow justify-content-center d-flex rounded closeSearchSpinner">
+        <div class="align-items-center opeSearchInputSpinner col-lg-1 position-retive bglight shadow justify-content-center d-flex rounded closeSearchSpinner">
             <span class="dashicons rounded bglight mx-2   dashicons-search align-items-center d-flex   ">
             
             </span>
             <input type="number"  class="border-0 bg-transparent form-control p-0 searchInputSpinner" aria-label="" aria-describedby="">
             
         </div>
-        <div class="align-items-center justify-content-center  bglight shadow rounded mr-1 col-5 py-2  d-flex">
+        <div class="align-items-center justify-content-center  bglight shadow rounded mr-1 col-5 col-lg-2 py-2  d-flex">
             <span class="mr-2 text-dark">Add new</span>
             <span class="dashicons rounded d-flex bglight   align-items-center justify-content-center  dashicons-plus-alt2 ">
             </span>
         </div>
     </div>
-    <ul class="  py-0 px-2 mt-3 row row-cols-2  loaderUl ">
+    <ul class="  py-0 px-2 mt-3 row row-cols-2 row-cols-lg-4  loaderUl ">
         <div class="">
             <div class="my-2 px-1 d-flex justify-content-end ">
                 <div class="">
@@ -63,20 +63,20 @@
 <section class="container mb-5 pb-5 animatedSection ">
 
     <div class="row p-2 mt-3 justify-content-between d-flex align-items-center beehivesInnerHeader">
-            <div class="align-items-center opeSearchInputSpinner  position-retive bglight shadow justify-content-center ml1 d-flex rounded closeSearchSpinner">
+            <div class="align-items-center opeSearchInputSpinner  position-retive col-lg-1 bglight shadow justify-content-center ml1 d-flex rounded closeSearchSpinner">
                 <span class="dashicons rounded bglight mx-2   dashicons-search align-items-center d-flex   ">
                 
                 </span>
                 <input type="number"  class="border-0 bg-transparent form-control p-0 searchInputSpinner" aria-label="" aria-describedby="">
                 
             </div>
-            <div class="align-items-center justify-content-center  bglight shadow rounded mr-1 col-5 py-2  d-flex">
+            <div class="align-items-center justify-content-center  bglight shadow rounded mr-1 col-5 col-lg-2 py-2  d-flex">
                 <span class="mr-2 text-dark">Add new</span>
                 <span class="dashicons rounded d-flex bglight   align-items-center justify-content-center  dashicons-plus-alt2 ">
                 </span>
             </div>
     </div>
-    <ul class="  py-0 px-2 mt-3 row row-cols-2  loaderUl ">
+    <ul class="  py-0 px-2 mt-3 row row-cols-2 row-cols-lg-4  loaderUl ">
         <div class="">
             <div class="my-2 px-1 d-flex justify-content-end ">
                 <div class="">
@@ -247,7 +247,7 @@
     <h4 class="text-start py-2 mt-3 d-flex justify-content-center align-items-center"> Beehives for <span class="d-flex mb-0 ml-2 bg-dark text-light rounded p-2 "><h5 class="m-0">.......</h5></span> </h4>
 
     <div class="">
-        <ul class=" py-0 px-2 mt-3 row row-cols-3  ">
+        <ul class=" py-0 px-2 mt-3 row row-cols-3 row-cols-lg-6 ">
             <div class="beehiveForFeed position-relative">
                 <div class="d-flex justify-content-center  align-items-center rounded shadow  p-4 bgWheat mx-2 my-3 animated-element animate">
                     <h5 class="rounded  text-center bglight  beehiveFeedLabelLoader  px-3 py-1 w-50  position-absolute shadow">&nbsp;...&nbsp;</h5>

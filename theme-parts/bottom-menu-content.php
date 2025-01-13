@@ -1,6 +1,6 @@
     <div class="row  bottomMenu  justify-content-center align-items-center fixed-bottom">
 
-            <div class="basicMenu col">
+            <div class="basicMenu col col-lg-6">
 
             
     
@@ -29,18 +29,18 @@
                 
            
 
-            <div class="col py-3 mx-3 text-center forfeedmenu d-none">
+            <div class="col py-3 mx-3 col-lg-6 text-center forfeedmenu d-none">
                 <div class="row">
                     <div class="col-6">
                         <button class="btn w-100 text-light errorbg  py-2 cancelsaveForFeed">Cancel</button>
                     </div>
                     <div class="col-6">
-                        <button class="btn w-100  text-light bg-dark  py-2 saveForFeed ">SaveForFeed</button>
+                        <button class="btn w-100  text-light bg-dark  py-2 saveForFeed ">Save</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col py-3 mx-3 text-center beehiveEditMenu d-none">
+            <div class="col py-3 mx-3 col-lg-6 text-center beehiveEditMenu d-none">
                 <div class="row">
                     <div class="col-6 ">
                         <button class="btn w-100  text-light py-2 errorbg  cancelsave">Cancel</button>
