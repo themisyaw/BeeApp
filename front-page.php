@@ -20,7 +20,7 @@ if ( is_user_logged_in() ) {
                 <input type="number"  class="border-0 bg-transparent form-control p-0 searchInput" aria-label="" aria-describedby="">               
             </div>
             <div class="align-items-center justify-content-center openAddNewBeehive bglight shadow rounded mr-1 col-5 col-lg-2 py-2  d-flex">
-                <span class="mr-2 text-dark">Add new</span>
+                <span class="mr-2 text-dark">Add new1</span>
                 <span class="dashicons rounded d-flex bglight addNewIcon  align-items-center justify-content-center  dashicons-plus-alt2 ">
                 </span>
             </div>
